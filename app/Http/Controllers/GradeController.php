@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\Grades\StoreRequest;
+use App\Http\Requests\Grades\UpdateRequest;
+use App\Http\Requests\Grades\DeleteRequest;
 
 use App\Http\Requests;
+use App\User;
+use App\Models\ClassLayer\Grade;
 
 class GradeController extends Controller
 {
@@ -15,7 +19,9 @@ class GradeController extends Controller
      */
     public function index()
     {
-        //
+        return view('grades.index', [
+            'grades' => Grade::all()
+        ]);
     }
 
     /**
@@ -25,24 +31,32 @@ class GradeController extends Controller
      */
     public function create()
     {
-        //
+        return view('grades.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        //
+        Grade::create($request->all());
+
+        return redirect()
+            ->route('grade::create')
+            ->with('success',
+                trans('general.create_success', [
+                    'name' => trans('general.grade')
+                ])
+            );
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -53,34 +67,52 @@ class GradeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Grade $grade)
     {
-        //
+        return view('grades.edit', [
+            'grade' => $grade
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, Grade $grade)
     {
-        //
+        $grade->update($request->all());
+        return redirect()
+            ->route("grade::edit", $grade)
+            ->with('success',
+                trans('general.update_success', [
+                    'name' => trans('general.grade')
+                ])
+            );
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(DeleteRequest $request, Grade $grade)
     {
-        //
+        $grade->delete();
+
+        return redirect()
+            ->route("grade::index")
+            ->with('success',
+                trans('general.delete_success', [
+                    'name' => trans('general.grade')
+                ])
+            );
+
     }
 }

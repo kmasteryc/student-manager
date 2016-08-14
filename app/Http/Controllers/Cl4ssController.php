@@ -16,7 +16,7 @@ class Cl4ssController extends Controller
      */
     public function index()
     {
-        dd(Cl4ss::find(1)->scholastic);
+        dd(Cl4ss::find(1)->users->first()->marks);
     }
 
     /**

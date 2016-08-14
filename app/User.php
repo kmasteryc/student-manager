@@ -23,4 +23,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function cl4sses(){
+        return $this->belongsToMany(Models\ClassLayer\Cl4ss::class);
+    }
+    public function marks(){
+        return $this->hasMany(Models\MarkLayer\Mark::class, 'student_id');
+    }
+    public function role(){
+        return $this->belongsTo(Models\UserLayer\Role::class);
+    }
 }

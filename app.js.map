@@ -1,0 +1,1 @@
+{"version":3,"sources":["js1.js","js2.js"],"names":[],"mappings":"AAAA;AACA;ACDA;AACA;AACA;AACA;AACA;AACA;AACA","file":"app.js","sourcesContent":["console.log('8');\n","console.log(3);\n\n\n\nalert('I am here');\n\n"],"sourceRoot":"/source/"}

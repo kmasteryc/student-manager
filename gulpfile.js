@@ -1,5 +1,5 @@
 var elixir = require('laravel-elixir');
-
+var bootstrapJs = "./node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js";
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -13,4 +13,5 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.sass('app.scss');
+    mix.scripts(['*.js'],'./public/js/app.js');
 });

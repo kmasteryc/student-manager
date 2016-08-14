@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use App\User;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -14,6 +15,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         'App\Model' => 'App\Policies\ModelPolicy',
+        'App\Models\ClassLayer\Scholastic' => 'App\Policies\ScholasticPolicy',
+        'App\Models\ClassLayer\Grade' => 'App\Policies\GradePolicy'
     ];
 
     /**
@@ -26,6 +29,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies($gate);
 
-        //
+//        $gate->define('store-scholastic', function(User $user){
+//            return $user->role->id == 4;
+//        });
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models\ClassLayer;
 
+
 use Illuminate\Database\Eloquent\Model;
 
 class Cl4ss extends Model
@@ -16,5 +17,8 @@ class Cl4ss extends Model
     }
     public function scholastic(){
         return $this->belongsTo(Scholastic::class);
+    }
+    public function users(){
+        return $this->belongsToMany(\App\Models\UserLayer\User::class);
     }
 }
