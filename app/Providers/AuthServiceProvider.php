@@ -16,6 +16,7 @@ class AuthServiceProvider extends ServiceProvider
     protected $policies = [
         'App\Model' => 'App\Policies\ModelPolicy',
         'App\Models\ClassLayer\Scholastic' => 'App\Policies\ScholasticPolicy',
+        'App\Models\ClassLayer\Semester' => 'App\Policies\SemesterPolicy',
         'App\Models\ClassLayer\Grade' => 'App\Policies\GradePolicy'
     ];
 
@@ -28,9 +29,5 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(GateContract $gate)
     {
         $this->registerPolicies($gate);
-
-//        $gate->define('store-scholastic', function(User $user){
-//            return $user->role->id == 4;
-//        });
     }
 }

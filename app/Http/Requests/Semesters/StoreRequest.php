@@ -15,7 +15,6 @@ class StoreRequest extends Request
      */
     public function authorize()
     {
-        return true;
         return Gate::allows('store', $this->getSemester());
     }
 
