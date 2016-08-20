@@ -17,7 +17,11 @@ class AuthServiceProvider extends ServiceProvider
         'App\Model' => 'App\Policies\ModelPolicy',
         'App\Models\ClassLayer\Scholastic' => 'App\Policies\ScholasticPolicy',
         'App\Models\ClassLayer\Semester' => 'App\Policies\SemesterPolicy',
-        'App\Models\ClassLayer\Grade' => 'App\Policies\GradePolicy'
+        'App\Models\ClassLayer\Grade' => 'App\Policies\GradePolicy',
+        'App\Models\ClassLayer\Cl4ss' => 'App\Policies\Cl4ssPolicy',
+        'App\Models\MarkLayer\MarkType' => 'App\Policies\MarkTypePolicy',
+        'App\Models\MarkLayer\Mark' => 'App\Policies\MarkPolicy',
+        'App\Models\MarkLayer\Subject' => 'App\Policies\SubjectPolicy',
     ];
 
     /**

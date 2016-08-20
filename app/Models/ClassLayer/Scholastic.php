@@ -11,4 +11,7 @@ class Scholastic extends Model
     public function cl4sses(){
         return $this->hasMany(Cl4ss::class);
     }
+    public function getScholasticDurationAttribute(){
+        return $this->attributes['scholastic_from'].' - '.$this->attributes['scholastic_to'];
+    }
 }

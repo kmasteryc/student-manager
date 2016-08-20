@@ -6,7 +6,7 @@ use App\Http\Requests\Grades\StoreRequest;
 use App\Http\Requests\Grades\UpdateRequest;
 use App\Http\Requests\Grades\DeleteRequest;
 
-use App\Http\Requests;
+use Illuminate\Http\Request;
 use App\User;
 use App\Models\ClassLayer\Grade;
 
@@ -17,8 +17,10 @@ class GradeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+//        var_dump(request()->server());
+//        exit();
         return view('grades.index', [
             'grades' => Grade::all()
         ]);

@@ -6,12 +6,12 @@
             <form action="{!! route('grade::store') !!}" method="post" class="form-horizontal" role="form">
                 {{csrf_field()}}
                 <div class="form-group">
-                    <legend>@lang('form.create_grade_form_title')</legend>
+                    <legend><i class="fa fa-star-o"></i> @lang('form.create_grade_form_title')</legend>
                 </div>
 
                 <div class="form-group">
                     <div class="col-sm-2">
-                        <label>@lang('form.grade_name')</label>
+                        <label>@lang('general.grade')</label>
                     </div>
                     <div class="col-sm-10">
                         <input type="text"
@@ -24,7 +24,7 @@
 
                 <div class="form-group">
                     <div class="col-sm-10 col-sm-offset-2">
-                        <button type="submit" class="btn btn-primary">@lang('form.create_btn')</button>
+                        <button type="submit" class="btn btn-primary">@lang('form.btn_create')</button>
                     </div>
                 </div>
             </form>

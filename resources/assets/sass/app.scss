@@ -1,3 +1,9 @@
 @import "var";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "global";
+@import "sidebar";
+
+.loading-btn{
+  //display: none;
+}
+

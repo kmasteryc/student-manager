@@ -6,7 +6,7 @@
             <form action="{!! route('scholastic::store') !!}" method="post" class="form-horizontal" role="form">
                 {{csrf_field()}}
                 <div class="form-group">
-                    <legend>@lang('form.create_scholastic_form_title')</legend>
+                    <legend><i class="fa fa-star-o"></i> @lang('form.create_scholastic_form_title')</legend>
                 </div>
 
                 <div class="form-group">

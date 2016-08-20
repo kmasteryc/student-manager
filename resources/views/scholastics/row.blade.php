@@ -4,11 +4,15 @@
         {!! method_field('DELETE') !!}
         <td class="fit">
             <div class="btn-group">
-                <a class="btn btn-default" href="{!! route('scholastic::edit', $scholastic) !!}">
+                <a class="btn btn-default" href="{!! route('scholastic::edit', $scholastic) !!}" data-pjax>
+                    <i class="fa fa-pencil"></i>
                     @lang('form.btn_edit')
                 </a>
 
-                <button class="btn btn-danger" type="submit">@lang('form.btn_delete')</button>
+                <button class="btn btn-danger btn-delete" type="submit">
+                    <i class="fa fa-trash"></i>
+                    @lang('form.btn_delete')
+                </button>
 
             </div>
         </td>

@@ -1,10 +1,14 @@
-@extends('layouts.list_panel')
+@extends('layouts.page_content')
 
-@section('panel_title')
-    @lang('form.scholastic_panel_title')
+@section('title')
+    Total {!! $scholastics->count() !!} scholastics.
 @endsection
 
-@section('panel_body')
+@section('sub_title')
+    <a href="{!! route("scholastic::create") !!}" data-pjax>Add new scholastic</a>
+@endsection
+
+@section('body')
     <table class="table table-bordered table-hover">
     	<thead>
     		<tr>

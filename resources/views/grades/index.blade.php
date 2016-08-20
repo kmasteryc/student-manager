@@ -1,15 +1,19 @@
-@extends('layouts.list_panel')
+@extends('layouts.page_content')
 
-@section('panel_title')
-    @lang('form.grade_panel_title')
+@section('title')
+    Total {!! $grades->count() !!} grades.
 @endsection
 
-@section('panel_body')
+@section('sub_title')
+    <a href="{!! route("grade::create") !!}" data-pjax>Add new grade</a>
+@endsection
+
+@section('body')
     <table class="table table-bordered table-hover">
     	<thead>
     		<tr>
     			<th>@lang('general.action')</th>
-    			<th>@lang('general.grade_name')</th>
+    			<th>@lang('general.grade')</th>
     		</tr>
     	</thead>
     	<tbody>
