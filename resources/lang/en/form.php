@@ -34,4 +34,12 @@ return [
 	'create_grade_form_title' => 'Create new grade',
 	'edit_grade_form_title' => 'Edit grade',
 
+	'edit_teacher_form_title' => 'Edit teacher',
+	'create_teacher_form_title' => 'Create new teacher',
+
+	'create_parent_form_title' => 'Create new parent',
+	'edit_parent_form_title' => 'Edit parent',
+
+	'create_student_form_title' => 'Create new student',
+	'edit_student_form_title' => 'Edit student',
 ];

@@ -11,13 +11,11 @@
 |
 */
 
-Route::post('test1', 'TestController@test1');
-Route::post('test2', 'TestController@test2');
+Route::post('test', 'TestController@test');
 
 Route::get('test','TestController@index');
 
 Route::auth();
-
 
 Route::group(['prefix'=>'scholastic', 'as'=>'scholastic::'], function(){
     Route::get('/', 'ScholasticController@index')->name('index');
@@ -80,4 +78,40 @@ Route::group(['prefix'=>'mark_type', 'as'=> 'mark_type::'], function(){
 
     Route::get('create', 'MarkTypeController@create')->name('create');
     Route::post('/', 'MarkTypeController@store')->name('store');
+});
+
+Route::group(['prefix'=>'teacher', 'as'=> 'teacher::'], function(){
+	Route::get('/', 'TeacherController@index')->name('index');
+
+	Route::get('{teacher}/edit', 'TeacherController@edit')->name('edit');
+	Route::put('{teacher}', 'TeacherController@update')->name('update');
+
+	Route::delete('{teacher}', 'TeacherController@destroy')->name('destroy');
+
+	Route::get('create', 'TeacherController@create')->name('create');
+	Route::post('/', 'TeacherController@store')->name('store');
+});
+
+Route::group(['prefix'=>'parent', 'as'=> 'parent::'], function(){
+	Route::get('/', 'ParentController@index')->name('index');
+
+	Route::get('{parent}/edit', 'ParentController@edit')->name('edit');
+	Route::put('{parent}', 'ParentController@update')->name('update');
+
+	Route::delete('{parent}', 'ParentController@destroy')->name('destroy');
+
+	Route::get('create', 'ParentController@create')->name('create');
+	Route::post('/', 'ParentController@store')->name('store');
+});
+
+Route::group(['prefix'=>'student', 'as'=> 'student::'], function(){
+	Route::get('/', 'StudentController@index')->name('index');
+
+	Route::get('{student}/edit', 'StudentController@edit')->name('edit');
+	Route::put('{student}', 'StudentController@update')->name('update');
+
+	Route::delete('{student}', 'StudentController@destroy')->name('destroy');
+
+	Route::get('create', 'StudentController@create')->name('create');
+	Route::post('/', 'StudentController@store')->name('store');
 });

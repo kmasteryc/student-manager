@@ -3,6 +3,7 @@
 namespace App\Models\ClassLayer;
 
 
+use App\Models\UserLayer\Student;
 use Illuminate\Database\Eloquent\Model;
 
 class Cl4ss extends Model
@@ -20,9 +21,12 @@ class Cl4ss extends Model
     public function scholastic(){
         return $this->belongsTo(Scholastic::class);
     }
-    public function users(){
-        return $this->belongsToMany(\App\User::class);
-    }
+//    public function users(){
+//        return $this->belongsToMany(\App\User::class);
+//    }
+public function students(){
+	return $this->belongsToMany(Student::class,'cl4ss_student','cl4ss_id','student_id');
+}
     public function subjects(){
         return $this->belongsToMany(\App\Models\MarkLayer\Subject::class);
     }

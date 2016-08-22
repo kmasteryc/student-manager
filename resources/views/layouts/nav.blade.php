@@ -23,7 +23,7 @@
                 <div class="form-group">
                     <input type="text" name="q" class="form-control" placeholder="Search">
                 </div>
-                <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="http://www.pingpong-labs.com" target="_blank">Visit Site</a></li>

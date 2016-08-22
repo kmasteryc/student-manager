@@ -1,5 +1,5 @@
 <tr>
-    <form action="{!! route("cl4ss::destroy", $cl4ss) !!}" method="POST">
+    <form action="{!! route("cl4ss::destroy", $cl4ss) !!}" method="POST" data-pjax>
         {!! csrf_field() !!}
         {!! method_field('DELETE') !!}
         <td class="fit">

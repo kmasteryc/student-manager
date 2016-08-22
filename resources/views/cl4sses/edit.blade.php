@@ -36,7 +36,7 @@
                             @foreach($users as $user)
                                 <option value="{!! $user->id !!}"
                                         {!! $user->id == $cl4ss->teacher_id ? 'selected' : '' !!}}>
-                                    {!! $user->name !!}
+                                    {!! $user->full_name !!}
                                 </option>
                             @endforeach
                         </select>
@@ -52,7 +52,7 @@
                             @foreach($users as $user)
                                 <option value="{!! $user->id !!}"
                                         {!! $user->id == $cl4ss->parent_id ? 'selected' : '' !!}}>
-                                    {!! $user->name !!}
+                                    {!! $user->full_name() !!}
                                 </option>
                             @endforeach
                         </select>

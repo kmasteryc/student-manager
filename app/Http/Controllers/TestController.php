@@ -7,14 +7,15 @@ use App\Http\Requests\Grades\UpdateRequest;
 use App\Http\Requests\Grades\DeleteRequest;
 
 use App\Http\Requests;
-use App\Models\ClassLayer\Cl4ss;
 use App\Models\MarkLayer\MarkType;
 use App\User;
 use App\Models\ClassLayer\Grade;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
-
+use App\Models\ClassLayer\Cl4ss;
+use Cookie;
+use App\TestClass;
 class TestController extends Controller
 {
 
@@ -33,14 +34,10 @@ class TestController extends Controller
 		echo 'I am index1';
 	}
 
-	public function test1(Request $request)
+	public function test(Request $request)
 	{
+		echo $request['sss'];
 		dd($request->all());
-	}
-
-	public function test2()
-	{
-
 	}
 
 }

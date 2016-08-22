@@ -6,6 +6,9 @@ use App\Http\Requests\Cl4sses\StoreRequest;
 use App\Http\Requests\Cl4sses\UpdateRequest;
 use App\Http\Requests\Cl4sses\DeleteRequest;
 
+use App\Models\UserLayer\Paren;
+use App\Models\UserLayer\Student;
+use App\Models\UserLayer\Teacher;
 use Illuminate\Http\Request;
 use App\Models\ClassLayer\Cl4ss;
 use App\Models\ClassLayer\Grade;
@@ -37,9 +40,10 @@ class Cl4ssController extends Controller
         $grades = Grade::all();
         $semesters = Semester::all();
         $scholastics = Scholastic::all();
-        $users = User::all();
+        $parents = Paren::all();
+        $teachers = Teacher::all();
 
-        return view('cl4sses.create', compact('grades','semesters','scholastics','users'));
+        return view('cl4sses.create', compact('grades','semesters','scholastics','teachers','parents'));
     }
 
     /**
@@ -80,7 +84,7 @@ class Cl4ssController extends Controller
         $semesters = Semester::all();
         $scholastics = Scholastic::all();
         $users = User::all();
-
+	    
         return view('cl4sses.edit', compact('cl4ss','grades','semesters','scholastics','users'));
     }
 
@@ -118,8 +122,9 @@ class Cl4ssController extends Controller
     }
 
     public function addStudent(Cl4ss $cl4ss){
-        $cur_students = $cl4ss->users;
-        $all_students = User::where('role_id',1)->whereNotIn('id', $cur_students->pluck('id'))->get();
+        $cur_students = $cl4ss->students()->with('parents')->get();
+//	    dd($cur_students);
+        $all_students = Student::whereNotIn('id', $cur_students->pluck('id'))->with('parents')->get();
         return view('cl4sses.add_student',[
             'cl4ss' => $cl4ss,
             'all_students'=>$all_students,
@@ -129,7 +134,7 @@ class Cl4ssController extends Controller
 
     public function updateStudent(Request $request, Cl4ss $cl4ss){
         $students = $request->students !== null ? $request->students : [] ;
-        $cl4ss->users()->sync($students);
+        $cl4ss->students()->sync($students);
         return redirect()
             ->route('cl4ss::add-student',$cl4ss)
             ->with('success',trans('general.update_success'));

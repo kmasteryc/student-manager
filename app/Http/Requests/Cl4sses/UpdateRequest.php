@@ -14,7 +14,8 @@ class UpdateRequest extends Request
      */
     public function authorize()
     {
-        return Gate::allows('update', $this->getCl4ss());
+	    return true;
+//        return Gate::allows('update', $this->getCl4ss());
     }
 
     /**

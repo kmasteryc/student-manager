@@ -14,7 +14,18 @@ return [
     'birthday' => 'Birthday',
     'class' => 'Class',
     'cl4ss' => 'Class',
+	'subject' => 'Subject',
 	'total' => 'Total',
+	'child' => 'Child',
 
-    'edit' => 'Edit'
+    'edit' => 'Edit',
+
+	'user_name' => 'User name',
+    'last_name' => 'Last name',
+    'first_name' => 'First name',
+	'password' => 'Password',
+	'repassword' => 'Confirm password',
+	'email' => 'Email',
+	'info' => 'Info'
+
 ];

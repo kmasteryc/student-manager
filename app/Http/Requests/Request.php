@@ -7,6 +7,8 @@ use App\Models\ClassLayer\Scholastic;
 use App\Models\ClassLayer\Semester;
 use App\Models\ClassLayer\Cl4ss;
 use App\Models\MarkLayer\MarkType;
+use App\Models\UserLayer\Teacher;
+use App\Models\UserLayer\Student;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -27,5 +29,8 @@ abstract class Request extends FormRequest
     public function getMarkType(){
         return new MarkType(request()->all());
     }
+	public function getTeacher(){
+		return new Teacher(request()->all());
+	}
 }
 

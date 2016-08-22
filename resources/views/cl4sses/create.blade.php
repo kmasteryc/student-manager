@@ -27,11 +27,9 @@
                         <label>@lang('general.teacher')</label>
                     </div>
                     <div class="col-sm-10">
-                        <select name="teacher_id" class="form-control">
-                            @foreach($users as $user)
-                                <option value="{!! $user->id !!}">
-                                    {!! $user->name !!}
-                                </option>
+                        <select name="teacher_id" class="form-control select2">
+                            @foreach($teachers as $teacher)
+                                <option value="{!! $teacher->id !!}">{!! $teacher->full_name !!}</option>
                             @endforeach
                         </select>
                     </div>
@@ -42,10 +40,10 @@
                         <label>@lang('general.parent')</label>
                     </div>
                     <div class="col-sm-10">
-                        <select name="parent_id" class="form-control">
-                            @foreach($users as $user)
-                                <option value="{!! $user->id !!}">
-                                    {!! $user->name !!}
+                        <select name="parent_id" class="form-control select2">
+                            @foreach($parents as $parent)
+                                <option value="{!! $parent->id !!}">
+                                    {!! $parent->full_name !!}
                                 </option>
                             @endforeach
                         </select>

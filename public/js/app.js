@@ -15,22 +15,63 @@ $(document).ready(function () {
 
     $(document).pjax('a[data-pjax]', '#pjax-container', {timeout: 5000});
 
-    $(document).on('submit', 'form[data-pjax]', function (event) {
-        event.preventDefault();
-        $(this).find(".icon-loading-btn").addClass('fa-spinner fa-spin');
-        form_ajax($(this).serialize(), $(this).attr('action'));
-    });
+
 
     $(document).on('pjax:send', function () {
         $('#pjax-container').html(ajaxIcon())
     });
 
-    $(document).on("click",".btn-delete", function (event) {
-       return areYouSure();
+    $(document).on('pjax:end ready', function () {
+        call_pickadate();
+        call_form_pjax();
+        call_btn_delete();
+        call_select2();
     });
-
+    //
+    // call_btn_delete();
+    // call_pickadate();
+    // call_form_pjax();
 });
-
+function call_select2(){
+    if ($(".select2") != undefined){
+        $(".select2").select2();
+    }
+}
+function call_form_pjax(){
+    // $(document).on('submit', 'form[data-pjax]', function (event) {
+    //     event.preventDefault();
+    //     $(this).find(".icon-loading-btn").addClass('fa-spinner fa-spin');
+    //     form_ajax($(this).serialize(), $(this).attr('action'));
+    // });
+    $("form[data-pjax]").submit(function(event){
+        event.preventDefault();
+        $(this).find(".icon-loading-btn").addClass('fa-spinner fa-spin');
+        form_ajax($(this).serialize(), $(this).attr('action'));
+    });
+}
+function call_btn_delete(){
+    // $(document).on("click", ".btn-delete", function (event) {
+    //     var answer = areYouSure();
+    //     if (answer) {
+    //         var tr = $(this).closest('tr');
+    //         tr.hide('slow');
+    //     }
+    // });
+    $(".btn-delete").click(function(){
+        var answer = areYouSure();
+        if (answer) {
+            var tr = $(this).closest('tr');
+            tr.hide('slow');
+        }
+    });
+}
+function call_pickadate() {
+    if ($(".pickadate") != undefined) {
+        $(".pickadate").pickadate({
+            format: "yyyy/m/d"
+        });
+    }
+}
 function form_ajax(data, url) {
     $.ajax({
         url: url,
@@ -107,9 +148,10 @@ function clearHiddenText() {
     $("input[name='error_text']").val('');
 }
 
-function areYouSure(){
+function areYouSure() {
     return window.confirm("DELETE THIS? IT CAN'T BE UNDONE");
 }
+
 /**
  * Created by kmasteryc on 16/08/2016.
  */
@@ -134,6 +176,11 @@ $(document).ready(function () {
     });
 
 });
-
+$(document).ready(function () {
+    // $(".custom-dropdown li").click(function () {
+    //     $(".custom-dropdown li").removeClass('active');
+    //     $(this).addClass('active');
+    // });
+});
 
 //# sourceMappingURL=app.js.map

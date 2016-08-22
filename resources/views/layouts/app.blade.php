@@ -9,13 +9,18 @@
     <title>{!! $title or 'Student Manager System' !!}</title>
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"
-          integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('lib/font-awesome/css/font-awesome.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700">
-
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/pnotify.custom.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('lib/pnotify/pnotify.css') }}">
+    <link rel="stylesheet" href="{{ asset('lib/select2/css/select2.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('lib/pickadate/themes/default.css') }}">
+    <link rel="stylesheet" href="{{ asset('lib/pickadate/themes/default.date.css') }}">
+    <link rel="stylesheet" href="{{ asset('lib/pickadate/themes/rtl.css') }}">
+
+    <script src="{!! asset('lib/jquery/jquery.js') !!}"></script>
 </head>
 <body id="app-layout">
 
@@ -34,14 +39,16 @@
     }
 </script>
 
-
-
-<script src="{!! asset('js/jquery.min.js') !!}"></script>
-<script src="{!! asset('js/pjax.js') !!}"></script>
-<script src="{!! asset('js/bootstrap.min.js') !!}"></script>
-<script src="{!! asset('js/pnotify.custom.min.js') !!}"></script>
+<script src="{!! asset('lib/jquery-pjax/jquery.pjax.js') !!}"></script>
+<script src="{!! asset('lib/bootstrap/js/bootstrap.js') !!}"></script>
+<script src="{!! asset('lib/pnotify/pnotify.js') !!}"></script>
+<script src="{!! asset('lib/pickadate/picker.js') !!}"></script>
+<script src="{!! asset('lib/pickadate/picker.date.js') !!}"></script>
+<script src="{!! asset('lib/select2/js/select2.js') !!}"></script>
 <script src="{!! asset('js/app.js') !!}"></script>
+
 @section('script')
 @show
+
 </body>
 </html>

@@ -6,8 +6,7 @@
             <form action="{!! route('mark_type::update', $mark_type) !!}"
                   method="post"
                   class="form-horizontal"
-                  role="form"
-                  data-pjax>
+                  role="form">
                 {{csrf_field()}}
                 {{method_field("PUT")}}
                 <div class="form-group">

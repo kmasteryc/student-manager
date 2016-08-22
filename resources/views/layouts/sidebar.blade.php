@@ -7,74 +7,46 @@
             <!-- Main Menu -->
             <div class="side-menu-container">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a>
-                    </li>
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
 
-                    <li>
-                        <a href="{!! route('cl4ss::index') !!}" data-pjax>
-                            <span class="glyphicon glyphicon-plane"></span> Manage classes
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{!! route('grade::index') !!}" data-pjax>
-                            <span class="glyphicon glyphicon-plane"></span> Manage grade
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{!! route('semester::index') !!}" data-pjax>
-                            <span class="glyphicon glyphicon-plane"></span> Manage semester
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{!! route('scholastic::index') !!}" data-pjax>
-                            <span class="glyphicon glyphicon-plane"></span> Manage scholastic
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="{!! route('mark_type::index') !!}" data-pjax>
-                            <span class="glyphicon glyphicon-plane"></span> Manage mark types
-                        </a>
-                    </li>
-
-                    <li><a href="#"><span class="glyphicon glyphicon-cloud"></span> Link</a></li>
-
-                    <!-- Dropdown-->
-                    <li class="panel panel-default" id="dropdown">
-                        <a data-toggle="collapse" href="#dropdown-lvl1">
-                            <span class="glyphicon glyphicon-user"></span> Sub Level <span class="caret"></span>
-                        </a>
-
-                        <!-- Dropdown level 1 -->
-                        <div id="dropdown-lvl1" class="panel-collapse collapse">
+                    <li class="panel panel-default custom-dropdown">
+                        <a data-toggle="collapse" href="#class_layer">Class Layer <span class="caret"></span></a>
+                        <div id="class_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="#">Link</a></li>
-                                    <li><a href="#">Link</a></li>
-                                    <li><a href="#">Link</a></li>
-
-                                    <!-- Dropdown level 2 -->
-                                    <li class="panel panel-default" id="dropdown">
-                                        <a data-toggle="collapse" href="#dropdown-lvl2">
-                                            <span class="glyphicon glyphicon-off"></span> Sub Level <span
-                                                    class="caret"></span>
-                                        </a>
-                                        <div id="dropdown-lvl2" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <ul class="nav navbar-nav">
-                                                    <li><a href="#">Link</a></li>
-                                                    <li><a href="#">Link</a></li>
-                                                    <li><a href="#">Link</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    <li><a href="{!! route('cl4ss::index') !!}" data-pjax>Manage classes</a></li>
+                                    <li><a href="{!! route('grade::index') !!}" data-pjax>Manage grade</a></li>
+                                    <li><a href="{!! route('semester::index') !!}" data-pjax>Manage semester</a></li>
+                                    <li><a href="{!! route('scholastic::index') !!}" data-pjax>Manage scholastic</a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
 
-                    <li><a href="#"><span class="glyphicon glyphicon-signal"></span> Link</a></li>
+                    <li class="panel panel-default custom-dropdown">
+                        <a data-toggle="collapse" href="#user_layer">User Layer <span class="caret"></span></a>
+                        <div id="user_layer" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="{!! route('student::index') !!}" data-pjax>Manage students</a></li>
+                                    <li><a href="{!! route('parent::index') !!}" data-pjax>Manage parents</a></li>
+                                    <li><a href="{!! route('teacher::index') !!}" data-pjax>Manage teacher</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="panel panel-default custom-dropdown">
+                        <a data-toggle="collapse" href="#mark_layer">Mark Layer <span class="caret"></span></a>
+                        <div id="mark_layer" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="{!! route('cl4ss::index') !!}" data-pjax>Manage mark</a></li>
+                                    <li><a href="{!! route('mark_type::index') !!}" data-pjax>Manage mark type</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
 
                 </ul>
             </div><!-- /.navbar-collapse -->
