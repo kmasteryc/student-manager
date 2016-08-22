@@ -9,6 +9,7 @@
 @endsection
 
 @section('body')
+    @include('students.filter')
     <table class="table table-bordered table-hover">
     	<thead>
     		<tr>

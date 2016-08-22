@@ -24,8 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('TestClass', function($app){
-			return new \App\TestClass($app->make('request'));
+        $this->app->bind('cc', function($app){
+			return new \App\Test\TestClass;
         });
     }
 }
