@@ -22,4 +22,5 @@
     		@each('students.row', $students, 'student')
     	</tbody>
     </table>
+    <div class="center">{!! $students->links() !!}</div>
 @endsection

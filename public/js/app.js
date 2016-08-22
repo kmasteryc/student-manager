@@ -26,6 +26,7 @@ $(document).ready(function () {
         call_form_pjax();
         call_btn_delete();
         call_select2();
+        call_pagination();
     });
     //
     // call_btn_delete();
@@ -48,6 +49,12 @@ function call_form_pjax(){
         $(this).find(".icon-loading-btn").addClass('fa-spinner fa-spin');
         form_ajax($(this).serialize(), $(this).attr('action'));
     });
+}
+
+function call_pagination(){
+    if ($('.pagination').length > 0){
+        $('.pagination').find('a').attr('data-pjax','');
+    }
 }
 function call_btn_delete(){
     // $(document).on("click", ".btn-delete", function (event) {

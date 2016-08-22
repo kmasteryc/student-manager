@@ -5736,6 +5736,9 @@ body {
 .h3 {
   margin-top: 0; }
 
+.center {
+  text-align: center; }
+
 h1.page-header {
   margin-top: -5px; }
 
