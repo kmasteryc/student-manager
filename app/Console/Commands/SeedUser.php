@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\ClassLayer\Cl4ss;
+use App\Models\MarkLayer\Subject;
 use Illuminate\Console\Command;
 use Faker\Factory;
 
@@ -49,12 +50,29 @@ class SeedUser extends Command
 	 */
 	public function handle()
 	{
-//		\DB::table('users')->truncate();
-//		\DB::table('class_student')->truncate();
-//		\DB::table('parent_student')->truncate();
 		\DB::beginTransaction();
 		$faker = Factory::create();
 		$arr_class = ['A', 'B', 'C'];
+
+		$this->info("----- START SEEDING USERS -----");
+		$this->info("Create some teachers...");
+
+		for ($i = 1; $i<=40; $i++){
+			$teacher = Teacher::create([
+				'user_name'      => $faker->userName,
+				'first_name'     => $faker->firstName,
+				'last_name'      => $faker->lastName,
+				'email'          => $faker->safeEmail,
+				'role_id'        => 3,
+				'password'       => bcrypt(123456),
+				'birthday'       => $faker->date('Y-m-d'),
+				'info'           => $faker->address,
+				'remember_token' => str_random(10),
+			]);
+			$this->info("Sync subjects to teacher....");
+			$subject_ids = Subject::inRandomOrder()->take(rand(1,3))->pluck('id')->toArray();
+			$teacher->subjects()->sync($subject_ids);
+		}
 
 		foreach ($arr_class as $cl4ss_name) {
 			$user_ids = [];
@@ -77,6 +95,7 @@ class SeedUser extends Command
 					'first_name'     => $faker->firstName,
 					'last_name'      => $faker->lastName,
 					'email'          => $faker->safeEmail,
+					'role_id'        => 2,
 					'password'       => bcrypt(123456),
 					'birthday'       => $faker->date('Y-m-d'),
 					'info'           => $faker->address,
@@ -90,11 +109,23 @@ class SeedUser extends Command
 				->getSerialCl4ss()
 				->get();
 
-			$all_cl4sses->each(function ($cl4ss) use ($user_ids) {
+			$all_cl4sses->each(function ($cl4ss) use ($user_ids, $faker) {
+
+				$this->info("Attach teacher to class....");
+				$cl4ss->teacher_id = Teacher::inRandomOrder()->first()->id;
+
+				$this->info("Sync students to class....");
 				$cl4ss->students()->sync($user_ids);
+
+				$cl4ss->save();
 			});
+
+
+
 		}
 
 		\DB::commit();
+
+		$this->info("DONE!");
 	}
 }

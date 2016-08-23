@@ -56,7 +56,7 @@ class StudentController extends Controller
 	public function create()
 	{
 		$parents = Paren::all();
-		$cl4sses = Cl4ss::all();
+		$cl4sses = Cl4ss::loadRelation()->get();
 
 		return view('students.create', [
 			'parents' => $parents,

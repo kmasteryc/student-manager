@@ -107,7 +107,7 @@
                     </div>
                     <div class="col-sm-10">
                         <input type="text" class="form-control pickadate" name="birthday"
-                               value="{!! $parent->birthday->format('Y/m/d') !!}">
+                               value="{!! $parent->birthday !!}">
                     </div>
                 </div>
 

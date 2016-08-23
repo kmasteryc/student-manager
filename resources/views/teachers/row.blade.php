@@ -18,6 +18,6 @@
         </td>
         <td>{!! $teacher->full_name !!}</td>
         <td>{!! $teacher->birthday !!}</td>
-        <td>{!! $teacher->subjects->pluck('subject_title')->implode(',') !!}</td>
+        <td>{!! $teacher->subjects->pluck('subject_name')->implode(', ') !!}</td>
     </tr>
 </form>

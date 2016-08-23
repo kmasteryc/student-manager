@@ -16,6 +16,7 @@
                 </button>
             </div>
         </td>
+        <td>IMAGE</td>
         <td>{!! $student->last_name !!}</td>
         <td>{!! $student->first_name !!}</td>
         <td>
@@ -23,10 +24,6 @@
                 <a href="{!! route('parent::edit', $parent) !!}" data-pjax>{!! $parent->full_name !!}</a>
             @endforeach
         </td>
-        <td>
-            @foreach($student->cl4sses as $cl4ss)
-                <a href="{!! route('cl4ss::edit', $cl4ss) !!}" data-pjax>{!! $cl4ss->detail_name !!}</a>
-            @endforeach
-        </td>
+        <td>{!! $student->birthday !!}</td>
     </tr>
 </form>

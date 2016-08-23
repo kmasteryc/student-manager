@@ -26,8 +26,6 @@ class Cl4ssTableSeeder extends Seeder
 						$cl4ss->scholastic_id = $scholastic->id;
 						$cl4ss->semester_id = $semester->id;
 						$cl4ss->grade_id = $grade->id;
-//						$cl4ss->parent_id = Paren::inRandomOrder()->first()->id;
-//						$cl4ss->teacher_id = Teacher::inRandomOrder()->first()->id;
 						$cl4ss->cl4ss_name = $cl4ss_name;
 						$cl4ss->save();
 					}

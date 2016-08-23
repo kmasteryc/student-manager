@@ -1,7 +1,7 @@
 @extends('layouts.page_content')
 
 @section('title')
-    Total {!! $cl4sses->count() !!} classes.
+    Total {!! $cl4sses->total() !!} classes.
 @endsection
 
 @section('sub_title')
