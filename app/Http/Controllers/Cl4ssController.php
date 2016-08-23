@@ -26,12 +26,25 @@ class Cl4ssController extends Controller
 	 */
 	public function index()
 	{
-		$cl4ss = Cl4ss::with('semester', 'grade', 'scholastic', 'teacher')
-			->orderBy('id','DESC')
+		$q_sesmester = request()->query('filter_semester');
+		$q_scholastic = request()->query('filter_scholastic');
+		$q_grade = request()->query('filter_grade');
+		$q_cl4ss = request()->query('filter_cl4ss');
+		$q_teacher_name = request()->query('filter_teacher_name');
+
+		$cl4sses = Cl4ss::search($q_scholastic, $q_sesmester, $q_grade, $q_cl4ss, $q_teacher_name)
+			->loadRelation()
+			->orderBy('id', 'DESC')
 			->paginate(10);
 
+		$cl4sses->setPath(request()->getUri());
+
 		return view('cl4sses.index', [
-			'cl4sses' => $cl4ss,
+			'result_cl4sses' => $cl4sses,
+			'scholastics' => Scholastic::all(),
+			'semesters'   => Semester::all(),
+			'grades'      => Grade::all(),
+			'cl4sses'     => Cl4ss::all()
 		]);
 	}
 

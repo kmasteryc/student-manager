@@ -5,6 +5,7 @@ namespace App\Models\ClassLayer;
 
 use App\Models\UserLayer\Student;
 use App\Models\UserLayer\Teacher;
+use App\Models\UserLayer\Paren;
 use Illuminate\Database\Eloquent\Model;
 
 class Cl4ss extends Model
@@ -34,6 +35,12 @@ class Cl4ss extends Model
 		return $this->belongsTo(Teacher::class);
 	}
 
+	public function parent()
+	{
+		return $this->belongsTo(Paren::class);
+	}
+
+
 	public function students()
 	{
 		return $this->belongsToMany(Student::class, 'cl4ss_student', 'cl4ss_id', 'student_id');
@@ -46,7 +53,7 @@ class Cl4ss extends Model
 
 	public function scopeLoadRelation($q)
 	{
-		return $q->with('scholastic', 'grade', 'semester');
+		return $q->with('scholastic', 'grade', 'semester', 'teacher', 'parent');
 	}
 
 	public function getSerialCl4ss()
@@ -96,4 +103,40 @@ class Cl4ss extends Model
 
 		return trans('general.class') . " $grade $cl4ss, $semester $scholastic_from - $scholastic_to";
 	}
+
+	public function scopeSearch($q, $q_scholastic, $q_sesmester, $q_grade, $q_cl4ss, $q_teacher_name){
+
+		$q->where(function ($q) use ($q_cl4ss, $q_grade, $q_scholastic, $q_sesmester){
+
+			if ($q_scholastic){
+				$q->whereHas('scholastic', function($qq) use ($q_scholastic){
+					return $qq->where('id',$q_scholastic);
+				});
+			}
+
+			if ($q_sesmester){
+				$q->whereHas('semester', function($qq) use ($q_sesmester){
+					return $qq->where('id',$q_sesmester);
+				});
+			}
+
+			if ($q_grade){
+				$q->whereHas('grade', function($qq) use ($q_grade){
+					return $qq->where('id',$q_grade);
+				});
+			}
+
+			if ($q_cl4ss){
+				$q->where('cl4sses.id',$q_cl4ss);
+			}
+		});
+
+		if($q_teacher_name) {
+			$words = explode(' ', $q_teacher_name);
+			$q->whereIn('first_name',$words)->orWhereIn('last_name',$words);
+		}
+
+		return $q;
+	}
+
 }

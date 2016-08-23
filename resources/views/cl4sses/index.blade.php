@@ -1,7 +1,7 @@
 @extends('layouts.page_content')
 
 @section('title')
-    Total {!! $cl4sses->total() !!} classes.
+    Total {!! $result_cl4sses->total() !!} classes.
 @endsection
 
 @section('sub_title')
@@ -9,6 +9,7 @@
 @endsection
 
 @section('body')
+    @include('cl4sses.filter')
     <table class="table table-bordered table-hover">
     	<thead>
     		<tr>
@@ -21,10 +22,10 @@
     		</tr>
     	</thead>
     	<tbody>
-    		@each('cl4sses.row', $cl4sses, 'cl4ss')
+    		@each('cl4sses.row', $result_cl4sses, 'cl4ss')
     	</tbody>
     </table>
     <div class="center">
-        {!! $cl4sses->links() !!}
+        {!! $result_cl4sses->links() !!}
     </div>
 @endsection
