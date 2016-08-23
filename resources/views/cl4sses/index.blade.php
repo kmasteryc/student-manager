@@ -13,14 +13,18 @@
     	<thead>
     		<tr>
     			<th>@lang('general.action')</th>
-    			<th>@lang('general.cl4ss')</th>
-    			<th>@lang('general.scholastic')</th>
-    			<th>@lang('general.semester')</th>
-    			<th>@lang('general.grade')</th>
+                <th>@lang('general.grade')</th>
+                <th>@lang('general.cl4ss')</th>
+                <th>@lang('general.semester')</th>
+                <th>@lang('general.response_teacher')</th>
+                <th>@lang('general.scholastic')</th>
     		</tr>
     	</thead>
     	<tbody>
     		@each('cl4sses.row', $cl4sses, 'cl4ss')
     	</tbody>
     </table>
+    <div class="center">
+        {!! $cl4sses->links() !!}
+    </div>
 @endsection

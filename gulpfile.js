@@ -49,3 +49,17 @@ gulp.task('copy-select2', function(){
     gulp.src(bower_dir + '/select2/dist/js/i18n/en.js')
         .pipe(gulp.dest(public_dir+'/lib/select2/js/i18n'));
 });
+
+gulp.task('copy-datatables', function(){
+   gulp.src(bower_dir+ '/datatables/media/js/jquery.dataTables.js')
+       .pipe(gulp.dest(public_dir+'/lib/datatables/media/js'));
+    gulp.src(bower_dir+ '/datatables/media/images/*')
+        .pipe(gulp.dest(public_dir+'/lib/datatables/media/images'));
+    gulp.src(bower_dir+ '/datatables/media/css/*')
+        .pipe(gulp.dest(public_dir+'/lib/datatables/media/css'));
+});
+
+gulp.task('copy-modal', function(){
+    gulp.src(bower_dir+ '/bootstrap-modal/**/*')
+        .pipe(gulp.dest(public_dir+'/lib/bootstrap-modal'));
+});

@@ -36,7 +36,9 @@
                         <h3 class="panel-title">@lang('form.list_all_students')</h3>
                     </div>
                     <div class="panel-body">
-                        <table class="table table-bordered table-hover">
+
+                        <table class="table table-bordered table-hover datatable"
+                        data-columns='[{"orderable": false},null,null,{"orderable":false}]'>
                             <thead>
                             <tr>
                                 <th>@lang('general.action')</th>

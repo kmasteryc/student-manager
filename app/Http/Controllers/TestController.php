@@ -26,20 +26,8 @@ class TestController extends Controller
 
 	public function index()
 	{
-		$data = array(
-			'code' => '1',
-			'name' => 'asd'
-		);
-		var_dump(array_keys($data));
-		$rules = [
-			array_keys($data)[0] => 'required|numeric',
-			array_keys($data)[1] => 'required'
-		];
-
-		$valid = \Validator::make($data, $rules);
-
-		dd($valid->fails());
-		return view('test');
+		$class = Cl4ss::first();
+		dd($class->getSerialCl4ss()->get()->toArray());
 	}
 
 	public function index1()

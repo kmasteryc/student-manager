@@ -15,23 +15,19 @@ $(document).ready(function () {
 
     $(document).pjax('a[data-pjax]', '#pjax-container', {timeout: 5000});
 
-
-
     $(document).on('pjax:send', function () {
         $('#pjax-container').html(ajaxIcon())
     });
 
-    $(document).on('pjax:end ready', function () {
+    $(document).on('pjax:complete ready', function () {
         call_pickadate();
         call_form_pjax();
         call_btn_delete();
         call_select2();
         call_pagination();
+        call_datatable();
     });
-    //
-    // call_btn_delete();
-    // call_pickadate();
-    // call_form_pjax();
+
 });
 function call_select2(){
     if ($(".select2") != undefined){
@@ -39,15 +35,10 @@ function call_select2(){
     }
 }
 function call_form_pjax(){
-    // $(document).on('submit', 'form[data-pjax]', function (event) {
-    //     event.preventDefault();
-    //     $(this).find(".icon-loading-btn").addClass('fa-spinner fa-spin');
-    //     form_ajax($(this).serialize(), $(this).attr('action'));
-    // });
     $("form[data-pjax]").submit(function(event){
         event.preventDefault();
         $(this).find(".icon-loading-btn").addClass('fa-spinner fa-spin');
-        form_ajax($(this).serialize(), $(this).attr('action'));
+        form_ajax($(this).serialize(), $(this).attr('action'), $(this).attr('method'));
     });
 }
 
@@ -57,13 +48,6 @@ function call_pagination(){
     }
 }
 function call_btn_delete(){
-    // $(document).on("click", ".btn-delete", function (event) {
-    //     var answer = areYouSure();
-    //     if (answer) {
-    //         var tr = $(this).closest('tr');
-    //         tr.hide('slow');
-    //     }
-    // });
     $(".btn-delete").click(function(){
         var answer = areYouSure();
         if (answer) {
@@ -72,6 +56,11 @@ function call_btn_delete(){
         }
     });
 }
+function call_datatable(){
+        if ($(".datatable") != undefined) {
+            $(".datatable").DataTable();
+        }
+}
 function call_pickadate() {
     if ($(".pickadate") != undefined) {
         $(".pickadate").pickadate({
@@ -79,10 +68,10 @@ function call_pickadate() {
         });
     }
 }
-function form_ajax(data, url) {
+function form_ajax(data, url, method='POST') {
     $.ajax({
         url: url,
-        method: 'POST',
+        method: method,
         data: data,
         success: function () {
             console.log('AJAX OK');

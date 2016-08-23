@@ -1,0 +1,5 @@
+$icon-font-path: '../lib/bootstrap/fonts/';
+
+@function font-path($path) {
+  @return $path;
+}

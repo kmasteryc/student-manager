@@ -16,7 +16,8 @@
                 </button>
             </div>
         </td>
-        <td>{!! $student->full_name !!}</td>
+        <td>{!! $student->last_name !!}</td>
+        <td>{!! $student->first_name !!}</td>
         <td>
             @foreach($student->parents as $parent)
                 <a href="{!! route('parent::edit', $parent) !!}" data-pjax>{!! $parent->full_name !!}</a>

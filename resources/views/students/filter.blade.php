@@ -77,7 +77,7 @@
             </div>
 
             <div class="form-group">
-                <div class="col-sm-5 col-sm-offset-7">
+                <div class="col-sm-7 col-sm-offset-5">
                     <button type="submit" class="btn btn-primary"><i class="fa fa-filter"></i> Filter</button>
                 </div>
             </div>
@@ -87,9 +87,19 @@
 </form>
 
 <script>
-    $("select[name=filter_semester]").val({!! request()->query('filter_semester') !!}).trigger('change');
-    $("select[name=filter_scholastic]").val({!! request()->query('filter_scholastic') !!}).trigger('change');
-    $("select[name=filter_grade]").val({!! request()->query('filter_grade') !!}).trigger('change');
-    $("select[name=filter_cl4ss]").val({!! request()->query('filter_cl4ss') !!}).trigger('change');
-    $("input[name=filter_student_name]").val("{!! request()->query('filter_student_name') !!}");
+    @if(request()->query('filter_semester'))
+        $("select[name=filter_semester]").val({!! request()->query('filter_semester') !!}).trigger('change');
+    @endif
+    @if(request()->query('filter_scholastic'))
+        $("select[name=filter_scholastic]").val({!! request()->query('filter_scholastic') !!}).trigger('change');
+    @endif
+    @if(request()->query('filter_grade'))
+        $("select[name=filter_grade]").val({!! request()->query('filter_grade') !!}).trigger('change');
+    @endif
+    @if(request()->query('filter_cl4ss'))
+        $("select[name=filter_cl4ss]").val({!! request()->query('filter_cl4ss') !!}).trigger('change');
+    @endif
+    @if(request()->query('filter_student_name'))
+        $("input[name=filter_student_name]").val("{!! request()->query('filter_student_name') !!}");
+    @endif
 </script>

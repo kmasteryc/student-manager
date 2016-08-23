@@ -20,7 +20,7 @@ class ScholasticController extends Controller
     public function index()
     {
         return view('scholastics.index', [
-            'scholastics' => Scholastic::all()
+            'scholastics' => Scholastic::orderBy('scholastic_from','ASC')->get()
         ]);
     }
 

@@ -33,7 +33,9 @@ class StudentController extends Controller
 		$q_student_name = request()->query('filter_student_name');
 
 		$students = Student::search($q_scholastic, $q_sesmester, $q_grade, $q_cl4ss, $q_student_name)
-			->with('parents', 'cl4sses')
+			->with(['parents', 'cl4sses'=>function($q){
+				$q->loadRelation();
+			}])
 			->paginate(10);
 		$students->setPath(request()->getUri());
 
@@ -98,7 +100,7 @@ class StudentController extends Controller
 	{
 		return view('students.edit', [
 			'parents' => Paren::all(),
-			'cl4sses' => Cl4ss::all(),
+			'cl4sses' => Cl4ss::loadRelation()->get(),
 			'student' => $student,
 		]);
 	}

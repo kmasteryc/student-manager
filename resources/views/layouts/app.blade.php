@@ -20,7 +20,34 @@
     <link rel="stylesheet" href="{{ asset('lib/pickadate/themes/default.date.css') }}">
     <link rel="stylesheet" href="{{ asset('lib/pickadate/themes/rtl.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('lib/bootstrap-modal/css/bootstrap-modal-bs3patch.css') }}">
+    <link rel="stylesheet" href="{{ asset('lib/bootstrap-modal/css/bootstrap-modal.css') }}">
+    <link rel="stylesheet" href="{{ asset('lib/bootstrap-modal/css/bootstrap-modal-bs3patch.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('lib/datatables/media/css/jquery.dataTables.css') }}">
+    <link rel="stylesheet" href="{{ asset('lib/datatables/media/css/dataTables.bootstrap.css') }}">
+{{--    <link rel="stylesheet" href="{{ asset('lib/datatables/media/css/dataTables.uikit.css') }}">--}}
+
     <script src="{!! asset('lib/jquery/jquery.js') !!}"></script>
+
+    <script>
+        function url(url) {
+            return "{!! url('/') !!}/" + url;
+        }
+    </script>
+
+    <script src="{!! asset('lib/jquery-pjax/jquery.pjax.js') !!}"></script>
+    <script src="{!! asset('lib/bootstrap/js/bootstrap.js') !!}"></script>
+
+    <script src="{!! asset('lib/bootstrap-modal/js/bootstrap-modal.js') !!}"></script>
+    <script src="{!! asset('lib/bootstrap-modal/js/bootstrap-modalmanager.js') !!}"></script>
+
+    <script src="{!! asset('lib/pnotify/pnotify.js') !!}"></script>
+    <script src="{!! asset('lib/pickadate/picker.js') !!}"></script>
+    <script src="{!! asset('lib/pickadate/picker.date.js') !!}"></script>
+    <script src="{!! asset('lib/select2/js/select2.js') !!}"></script>
+    <script src="{!! asset('lib/datatables/media/js/jquery.dataTables.js') !!}"></script>
+    <script src="{!! asset('js/app.js') !!}"></script>
 </head>
 <body id="app-layout">
 
@@ -31,22 +58,23 @@
     @include('layouts.sidebar')
 </div>
 
+
 <!-- JavaScripts -->
 
-<script>
-    function url(url) {
-        return "{!! url('/') !!}/" + url;
-    }
-</script>
+{{--<script>--}}
+    {{--function url(url) {--}}
+        {{--return "{!! url('/') !!}/" + url;--}}
+    {{--}--}}
+{{--</script>--}}
 
-<script src="{!! asset('lib/jquery-pjax/jquery.pjax.js') !!}"></script>
-<script src="{!! asset('lib/bootstrap/js/bootstrap.js') !!}"></script>
-<script src="{!! asset('lib/pnotify/pnotify.js') !!}"></script>
-<script src="{!! asset('lib/pickadate/picker.js') !!}"></script>
-<script src="{!! asset('lib/pickadate/picker.date.js') !!}"></script>
-<script src="{!! asset('lib/select2/js/select2.js') !!}"></script>
-<script src="{!! asset('js/app.js') !!}"></script>
-
+{{--<script src="{!! asset('lib/jquery-pjax/jquery.pjax.js') !!}"></script>--}}
+{{--<script src="{!! asset('lib/bootstrap/js/bootstrap.js') !!}"></script>--}}
+{{--<script src="{!! asset('lib/pnotify/pnotify.js') !!}"></script>--}}
+{{--<script src="{!! asset('lib/pickadate/picker.js') !!}"></script>--}}
+{{--<script src="{!! asset('lib/pickadate/picker.date.js') !!}"></script>--}}
+{{--<script src="{!! asset('lib/select2/js/select2.js') !!}"></script>--}}
+{{--<script src="{!! asset('lib/datatables/media/js/jquery.dataTables.js') !!}"></script>--}}
+{{--<script src="{!! asset('js/app.js') !!}"></script>--}}
 @section('script')
 @show
 

@@ -2,6 +2,7 @@
 
 namespace App\Models\UserLayer;
 
+use App\Models\ClassLayer\Cl4ss;
 use App\User;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -15,6 +16,10 @@ class Teacher extends User
 		static::addGlobalScope('teacher', function (Builder $builder) {
 			$builder->where('role_id', 3);
 		});
+	}
+
+	public function cl4sses(){
+		return $this->hasMany(Cl4ss::class);
 	}
 
 	public static function storeTeacher($request)

@@ -2,7 +2,7 @@
     <form action="{!! route("cl4ss::destroy", $cl4ss) !!}" method="POST" data-pjax>
         {!! csrf_field() !!}
         {!! method_field('DELETE') !!}
-        <td class="fit">
+        <td>
             <div class="btn-group">
                 <a class="btn btn-primary" href="{!! route('cl4ss::add-student', $cl4ss) !!}" data-pjax>
                     <i class="fa fa-plus"></i>
@@ -21,11 +21,11 @@
 
             </div>
         </td>
-
-        <td class="fit">{!! $cl4ss->cl4ss_name !!}</td>
-        <td class="fit">{!! $cl4ss->scholastic->scholastic_duration !!}</td>
-        <td class="fit">{!! $cl4ss->semester->semester_name !!}</td>
-        <td class="fit">{!! $cl4ss->grade->grade_name !!}</td>
+        <td>{!! $cl4ss->grade->grade_name !!}</td>
+        <td>{!! $cl4ss->cl4ss_name !!}</td>
+        <td>{!! $cl4ss->semester->semester_name !!}</td>
+        <td>{!! $cl4ss->teacher->full_name !!}</td>
+        <td>{!! $cl4ss->scholastic->scholastic_duration !!}</td>
 
     </form>
 </tr>

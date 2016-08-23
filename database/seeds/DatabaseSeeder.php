@@ -4,13 +4,15 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-         factory(App\User::class, 200)->create();
-    }
+
+	/**
+	 * Run the database seeds.
+	 *
+	 * @return void
+	 */
+	public function run()
+	{
+//		factory(App\User::class, 200)->create();
+		$this->call(Cl4ssTableSeeder::class);
+	}
 }
