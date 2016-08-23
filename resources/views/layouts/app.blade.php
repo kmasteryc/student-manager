@@ -26,7 +26,7 @@
 
     <link rel="stylesheet" href="{{ asset('lib/datatables/media/css/jquery.dataTables.css') }}">
     <link rel="stylesheet" href="{{ asset('lib/datatables/media/css/dataTables.bootstrap.css') }}">
-{{--    <link rel="stylesheet" href="{{ asset('lib/datatables/media/css/dataTables.uikit.css') }}">--}}
+    {{--    <link rel="stylesheet" href="{{ asset('lib/datatables/media/css/dataTables.uikit.css') }}">--}}
 
     <script src="{!! asset('lib/jquery/jquery.js') !!}"></script>
 
@@ -53,28 +53,33 @@
 
 @include('layouts.nav')
 
-<div class="container">
-    @include('layouts.alert')
-    @include('layouts.sidebar')
+@include('layouts.alert')
+
+<div class="col-md-2" id="sidebar">
+    @if(auth()->user())
+        @if(auth()->user()->role_id == 4)
+            @include('layouts.sidebar_admin')
+        @endif
+        @if(auth()->user()->role_id == 3)
+            @include('layouts.sidebar_teacher')
+        @endif
+        @if(auth()->user()->role_id == 2)
+            @include('layouts.sidebar_parent')
+        @endif
+        @if(auth()->user()->role_id == 1)
+            @include('layouts.sidebar_student')
+        @endif
+    @else
+        @include('layouts.sidebar_guest')
+    @endif
 </div>
 
+<div class="col-md-10" id="content">
+    <div id="pjax-container">
+        @yield('content')
+    </div>
+</div>
 
-<!-- JavaScripts -->
-
-{{--<script>--}}
-    {{--function url(url) {--}}
-        {{--return "{!! url('/') !!}/" + url;--}}
-    {{--}--}}
-{{--</script>--}}
-
-{{--<script src="{!! asset('lib/jquery-pjax/jquery.pjax.js') !!}"></script>--}}
-{{--<script src="{!! asset('lib/bootstrap/js/bootstrap.js') !!}"></script>--}}
-{{--<script src="{!! asset('lib/pnotify/pnotify.js') !!}"></script>--}}
-{{--<script src="{!! asset('lib/pickadate/picker.js') !!}"></script>--}}
-{{--<script src="{!! asset('lib/pickadate/picker.date.js') !!}"></script>--}}
-{{--<script src="{!! asset('lib/select2/js/select2.js') !!}"></script>--}}
-{{--<script src="{!! asset('lib/datatables/media/js/jquery.dataTables.js') !!}"></script>--}}
-{{--<script src="{!! asset('js/app.js') !!}"></script>--}}
 @section('script')
 @show
 

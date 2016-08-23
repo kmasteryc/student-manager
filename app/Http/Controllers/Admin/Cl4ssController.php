@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 
 use App\Http\Requests\Cl4sses\StoreRequest;
 use App\Http\Requests\Cl4sses\UpdateRequest;
 use App\Http\Requests\Cl4sses\DeleteRequest;
 
+use App\Models\ClassLayer\Cl4ssType;
 use App\Models\UserLayer\Paren;
 use App\Models\UserLayer\Student;
 use App\Models\UserLayer\Teacher;
@@ -29,10 +31,10 @@ class Cl4ssController extends Controller
 		$q_sesmester = request()->query('filter_semester');
 		$q_scholastic = request()->query('filter_scholastic');
 		$q_grade = request()->query('filter_grade');
-		$q_cl4ss = request()->query('filter_cl4ss');
+		$q_cl4ss_type = request()->query('filter_cl4ss_type');
 		$q_teacher_name = request()->query('filter_teacher_name');
 
-		$cl4sses = Cl4ss::search($q_scholastic, $q_sesmester, $q_grade, $q_cl4ss, $q_teacher_name)
+		$cl4sses = Cl4ss::search($q_scholastic, $q_sesmester, $q_grade, $q_cl4ss_type, $q_teacher_name)
 			->loadRelation()
 			->orderBy('id', 'DESC')
 			->paginate(10);
@@ -44,7 +46,7 @@ class Cl4ssController extends Controller
 			'scholastics' => Scholastic::all(),
 			'semesters'   => Semester::all(),
 			'grades'      => Grade::all(),
-			'cl4sses'     => Cl4ss::all()
+			'cl4ss_types'     => Cl4ssType::all()
 		]);
 	}
 
@@ -55,13 +57,14 @@ class Cl4ssController extends Controller
 	 */
 	public function create()
 	{
+		$cl4ss_types = Cl4ssType::all();
 		$grades = Grade::all();
 		$semesters = Semester::all();
 		$scholastics = Scholastic::all();
 		$parents = Paren::all();
 		$teachers = Teacher::all();
 
-		return view('cl4sses.create', compact('grades', 'semesters', 'scholastics', 'teachers', 'parents'));
+		return view('cl4sses.create', compact('grades', 'semesters', 'scholastics', 'teachers', 'parents', 'cl4ss_types'));
 	}
 
 	/**

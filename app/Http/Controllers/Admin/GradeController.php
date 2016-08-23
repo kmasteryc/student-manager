@@ -1,28 +1,30 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 
-use App\Http\Requests\Parents\StoreRequest;
-use App\Http\Requests\Parents\UpdateRequest;
-use App\Http\Requests\Parents\DeleteRequest;
 
-use App\Models\MarkLayer\Subject;
+use App\Http\Requests\Grades\StoreRequest;
+use App\Http\Requests\Grades\UpdateRequest;
+use App\Http\Requests\Grades\DeleteRequest;
+
 use Illuminate\Http\Request;
 use App\User;
-use App\Models\UserLayer\Paren;
-use App\Models\UserLayer\Student;
+use App\Models\ClassLayer\Grade;
 
-class ParentController extends Controller
+class GradeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('parents.index', [
-            'parents' => Paren::with('students')->get()
+//        var_dump(request()->server());
+//        exit();
+        return view('grades.index', [
+            'grades' => Grade::all()
         ]);
     }
 
@@ -33,10 +35,7 @@ class ParentController extends Controller
      */
     public function create()
     {
-	    $students = Student::all();
-        return view('parents.create',[
-	        'students' => $students
-        ]);
+        return view('grades.create');
     }
 
     /**
@@ -47,11 +46,15 @@ class ParentController extends Controller
      */
     public function store(StoreRequest $request)
     {
-	    Paren::storeParent($request);
+        Grade::create($request->all());
 
         return redirect()
-            ->route('parent::index')
-            ->with('success', trans('general.create_success'));
+            ->route('grade::create')
+            ->with('success',
+                trans('general.create_success', [
+                    'name' => trans('general.grade')
+                ])
+            );
     }
 
     /**
@@ -71,11 +74,10 @@ class ParentController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Paren $parent)
+    public function edit(Grade $grade)
     {
-        return view('parents.edit', [
-	        'students' => Student::all(),
-            'parent' => $parent
+        return view('grades.edit', [
+            'grade' => $grade
         ]);
     }
 
@@ -86,13 +88,16 @@ class ParentController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRequest $request, Paren $parent)
+    public function update(UpdateRequest $request, Grade $grade)
     {
-	    $parent->updateParent($request);
-
+        $grade->update($request->all());
         return redirect()
-            ->route("parent::edit", $parent)
-            ->with('success',trans('general.update_success'));
+            ->route("grade::edit", $grade)
+            ->with('success',
+                trans('general.update_success', [
+                    'name' => trans('general.grade')
+                ])
+            );
     }
 
     /**
@@ -101,15 +106,15 @@ class ParentController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DeleteRequest $request, Paren $parent)
+    public function destroy(DeleteRequest $request, Grade $grade)
     {
-        $parent->delete();
+        $grade->delete();
 
         return redirect()
-            ->route("parent::index")
+            ->route("grade::index")
             ->with('success',
                 trans('general.delete_success', [
-                    'name' => trans('general.parent')
+                    'name' => trans('general.grade')
                 ])
             );
 

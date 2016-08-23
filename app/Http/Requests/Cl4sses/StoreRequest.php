@@ -27,7 +27,7 @@ class StoreRequest extends Request
     public function rules()
     {
         return [
-            'cl4ss_name' => 'required',
+            'cl4ss_type_id' => 'required|integer',
             'grade_id' => 'required|integer',
             'scholastic_id' => 'required|integer',
             'semester_id' => 'required|integer',

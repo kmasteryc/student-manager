@@ -27,7 +27,7 @@ class UpdateRequest extends Request
     {
         return [
 //            'cl4ss_name' => 'required|unique:cl4sses,cl4ss_name,'.$this->getCl4ss()->id,
-            'cl4ss_name' => 'required',
+	        'cl4ss_type_id' => 'required|integer',
             'grade_id' => 'required|integer',
             'scholastic_id' => 'required|integer',
             'semester_id' => 'required|integer',

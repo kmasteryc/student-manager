@@ -56,10 +56,10 @@
                     <label>Filter by class</label>
                 </div>
                 <div class="col-sm-7">
-                    <select name="filter_cl4ss" class="form-control select2">
+                    <select name="filter_cl4ss_type" class="form-control select2">
                         <option value="0">All classes</option>
-                        @foreach($cl4sses as $cl4ss)
-                            <option value="{!! $cl4ss->id !!}">{!! $cl4ss->cl4ss_name !!}</option>
+                        @foreach($cl4ss_types as $cl4ss_type)
+                            <option value="{!! $cl4ss_type->id !!}">{!! $cl4ss_type->cl4ss_type_name !!}</option>
                         @endforeach
                     </select>
                 </div>
@@ -96,8 +96,8 @@
     @if(request()->query('filter_grade'))
         $("select[name=filter_grade]").val({!! request()->query('filter_grade') !!}).trigger('change');
     @endif
-    @if(request()->query('filter_cl4ss'))
-        $("select[name=filter_cl4ss]").val({!! request()->query('filter_cl4ss') !!}).trigger('change');
+    @if(request()->query('filter_cl4ss_type'))
+        $("select[name=filter_cl4ss_type]").val({!! request()->query('filter_cl4ss_type') !!}).trigger('change');
     @endif
     @if(request()->query('filter_student_name'))
         $("input[name=filter_student_name]").val("{!! request()->query('filter_student_name') !!}");

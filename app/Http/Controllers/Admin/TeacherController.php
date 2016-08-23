@@ -1,16 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 
-use App\Http\Requests\Mark_types\StoreRequest;
-use App\Http\Requests\Mark_types\UpdateRequest;
-use App\Http\Requests\Mark_types\DeleteRequest;
+use App\Http\Requests\Teachers\StoreRequest;
+use App\Http\Requests\Teachers\UpdateRequest;
+use App\Http\Requests\Teachers\DeleteRequest;
 
-use App\Http\Requests;
+use App\Models\MarkLayer\Subject;
+use Illuminate\Http\Request;
 use App\User;
-use App\Models\MarkLayer\MarkType;
+use App\Models\UserLayer\Teacher;
 
-class MarkTypeController extends Controller
+class TeacherController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +21,8 @@ class MarkTypeController extends Controller
      */
     public function index()
     {
-        return view('mark_types.index', [
-            'mark_types' => MarkType::all()
+        return view('teachers.index', [
+            'teachers' => Teacher::with('subjects')->get()
         ]);
     }
 
@@ -31,7 +33,10 @@ class MarkTypeController extends Controller
      */
     public function create()
     {
-        return view('mark_types.create');
+	    $subjects = Subject::all();
+        return view('teachers.create',[
+	        'subjects' => $subjects
+        ]);
     }
 
     /**
@@ -42,15 +47,11 @@ class MarkTypeController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        MarkType::create($request->all());
+	    Teacher::storeTeacher($request);
 
         return redirect()
-            ->route('mark_type::create')
-            ->with('success',
-                trans('general.create_success', [
-                    'name' => trans('general.mark_type')
-                ])
-            );
+            ->route('teacher::index')
+            ->with('success', trans('general.create_success'));
     }
 
     /**
@@ -70,10 +71,11 @@ class MarkTypeController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(MarkType $mark_type)
+    public function edit(Teacher $teacher)
     {
-        return view('mark_types.edit', [
-            'mark_type' => $mark_type
+        return view('teachers.edit', [
+	        'subjects' => Subject::all(),
+            'teacher' => $teacher
         ]);
     }
 
@@ -84,16 +86,13 @@ class MarkTypeController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRequest $request, MarkType $mark_type)
+    public function update(UpdateRequest $request, Teacher $teacher)
     {
-        $mark_type->update($request->all());
+	    $teacher->updateTeacher($request);
+
         return redirect()
-            ->route("mark_type::edit", $mark_type)
-            ->with('success',
-                trans('general.update_success', [
-                    'name' => trans('general.mark_type')
-                ])
-            );
+            ->route("teacher::edit", $teacher)
+            ->with('success',trans('general.update_success'));
     }
 
     /**
@@ -102,15 +101,15 @@ class MarkTypeController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DeleteRequest $request, MarkType $mark_type)
+    public function destroy(DeleteRequest $request, Teacher $teacher)
     {
-        $mark_type->delete();
+        $teacher->delete();
 
         return redirect()
-            ->route("mark_type::index")
+            ->route("teacher::index")
             ->with('success',
                 trans('general.delete_success', [
-                    'name' => trans('general.mark_type')
+                    'name' => trans('general.teacher')
                 ])
             );
 

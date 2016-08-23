@@ -11,19 +11,25 @@
 @section('body')
     @include('cl4sses.filter')
     <table class="table table-bordered table-hover">
-    	<thead>
-    		<tr>
-    			<th>@lang('general.action')</th>
-                <th>@lang('general.grade')</th>
-                <th>@lang('general.cl4ss')</th>
-                <th>@lang('general.semester')</th>
-                <th>@lang('general.response_teacher')</th>
-                <th>@lang('general.scholastic')</th>
-    		</tr>
-    	</thead>
-    	<tbody>
-    		@each('cl4sses.row', $result_cl4sses, 'cl4ss')
-    	</tbody>
+        <thead>
+        <tr>
+            <th>@lang('general.action')</th>
+            <th>@lang('general.grade')</th>
+            <th>@lang('general.cl4ss_type')</th>
+            <th>@lang('general.semester')</th>
+            <th>@lang('general.response_teacher')</th>
+            <th>@lang('general.scholastic')</th>
+        </tr>
+        </thead>
+        <tbody>
+        @if($result_cl4sses->count() > 0)
+            @each('cl4sses.row', $result_cl4sses, 'cl4ss')
+        @else
+            <tr>
+                <td colspan="6">No class found!</td>
+            </tr>
+        @endif
+        </tbody>
     </table>
     <div class="center">
         {!! $result_cl4sses->links() !!}

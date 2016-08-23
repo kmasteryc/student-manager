@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 
 use App\Http\Requests\Students\StoreRequest;
 use App\Http\Requests\Students\UpdateRequest;
 use App\Http\Requests\Students\DeleteRequest;
 
 use App\Models\ClassLayer\Cl4ss;
+use App\Models\ClassLayer\Cl4ssType;
 use App\Models\ClassLayer\Scholastic;
 use App\Models\ClassLayer\Grade;
 use App\Models\ClassLayer\Semester;
-use App\Models\MarkLayer\Subject;
-use Illuminate\Http\Request;
-use App\User;
+
 use App\Models\UserLayer\Paren;
 use App\Models\UserLayer\Student;
 
@@ -29,14 +29,17 @@ class StudentController extends Controller
 		$q_sesmester = request()->query('filter_semester');
 		$q_scholastic = request()->query('filter_scholastic');
 		$q_grade = request()->query('filter_grade');
-		$q_cl4ss = request()->query('filter_cl4ss');
+		$q_cl4ss_type = request()->query('filter_cl4ss_type');
 		$q_student_name = request()->query('filter_student_name');
 
-		$students = Student::search($q_scholastic, $q_sesmester, $q_grade, $q_cl4ss, $q_student_name)
+		$students = Student::search($q_scholastic, $q_sesmester, $q_grade, $q_cl4ss_type, $q_student_name)
 			->with(['parents', 'cl4sses'=>function($q){
 				$q->loadRelation();
 			}])
 			->paginate(10);
+//		$students = Student::whereHas('cl4sses',function($q){})->count();
+//		dd($students);
+//		dd($students->count());
 		$students->setPath(request()->getUri());
 
 		return view('students.index', [
@@ -44,7 +47,7 @@ class StudentController extends Controller
 			'scholastics' => Scholastic::all(),
 			'semesters'   => Semester::all(),
 			'grades'      => Grade::all(),
-			'cl4sses'     => Cl4ss::all()
+			'cl4ss_types'     => Cl4ssType::all()
 		]);
 	}
 

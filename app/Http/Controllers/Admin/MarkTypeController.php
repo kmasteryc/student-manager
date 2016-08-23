@@ -1,28 +1,27 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 
-use App\Http\Requests\Grades\StoreRequest;
-use App\Http\Requests\Grades\UpdateRequest;
-use App\Http\Requests\Grades\DeleteRequest;
+use App\Http\Requests\Mark_types\StoreRequest;
+use App\Http\Requests\Mark_types\UpdateRequest;
+use App\Http\Requests\Mark_types\DeleteRequest;
 
-use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\User;
-use App\Models\ClassLayer\Grade;
+use App\Models\MarkLayer\MarkType;
 
-class GradeController extends Controller
+class MarkTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-//        var_dump(request()->server());
-//        exit();
-        return view('grades.index', [
-            'grades' => Grade::all()
+        return view('mark_types.index', [
+            'mark_types' => MarkType::all()
         ]);
     }
 
@@ -33,7 +32,7 @@ class GradeController extends Controller
      */
     public function create()
     {
-        return view('grades.create');
+        return view('mark_types.create');
     }
 
     /**
@@ -44,13 +43,13 @@ class GradeController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        Grade::create($request->all());
+        MarkType::create($request->all());
 
         return redirect()
-            ->route('grade::create')
+            ->route('mark_type::create')
             ->with('success',
                 trans('general.create_success', [
-                    'name' => trans('general.grade')
+                    'name' => trans('general.mark_type')
                 ])
             );
     }
@@ -72,10 +71,10 @@ class GradeController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Grade $grade)
+    public function edit(MarkType $mark_type)
     {
-        return view('grades.edit', [
-            'grade' => $grade
+        return view('mark_types.edit', [
+            'mark_type' => $mark_type
         ]);
     }
 
@@ -86,14 +85,14 @@ class GradeController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRequest $request, Grade $grade)
+    public function update(UpdateRequest $request, MarkType $mark_type)
     {
-        $grade->update($request->all());
+        $mark_type->update($request->all());
         return redirect()
-            ->route("grade::edit", $grade)
+            ->route("mark_type::edit", $mark_type)
             ->with('success',
                 trans('general.update_success', [
-                    'name' => trans('general.grade')
+                    'name' => trans('general.mark_type')
                 ])
             );
     }
@@ -104,15 +103,15 @@ class GradeController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DeleteRequest $request, Grade $grade)
+    public function destroy(DeleteRequest $request, MarkType $mark_type)
     {
-        $grade->delete();
+        $mark_type->delete();
 
         return redirect()
-            ->route("grade::index")
+            ->route("mark_type::index")
             ->with('success',
                 trans('general.delete_success', [
-                    'name' => trans('general.grade')
+                    'name' => trans('general.mark_type')
                 ])
             );
 

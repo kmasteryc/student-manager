@@ -12,9 +12,10 @@ class Cl4ss extends Model
 {
 
 	public $table = 'cl4sses';
-	public $fillable = ['cl4ss_name', 'scholastic_id', 'semester_id', 'grade_id', 'parent_id', 'teacher_id'];
+	public $fillable = ['cl4ss_type_id', 'scholastic_id', 'semester_id', 'grade_id', 'parent_id', 'teacher_id'];
 	public $timestamps = false;
 
+	// RELATIONSHIP
 	public function grade()
 	{
 		return $this->belongsTo(Grade::class);
@@ -40,7 +41,6 @@ class Cl4ss extends Model
 		return $this->belongsTo(Paren::class);
 	}
 
-
 	public function students()
 	{
 		return $this->belongsToMany(Student::class, 'cl4ss_student', 'cl4ss_id', 'student_id');
@@ -51,11 +51,16 @@ class Cl4ss extends Model
 		return $this->belongsToMany(\App\Models\MarkLayer\Subject::class);
 	}
 
-	public function scopeLoadRelation($q)
-	{
-		return $q->with('scholastic', 'grade', 'semester', 'teacher', 'parent');
+	public function cl4ssType(){
+		return $this->belongsTo(Cl4ssType::class,'cl4ss_type_id');
 	}
 
+	public function scopeLoadRelation($q)
+	{
+		return $q->with('scholastic', 'grade', 'semester', 'teacher', 'parent', 'cl4ssType');
+	}
+
+	// MODEL MAIN
 	public function getSerialCl4ss()
 	{
 		$current_cl4ss = $this;
@@ -64,7 +69,7 @@ class Cl4ss extends Model
 
 		$other_scholastics = Scholastic::get();
 
-		$result = $this->where('cl4ss_name', $this->attributes['cl4ss_name']);
+//		$result = $this->where('cl4ss_name', $this->attributes['cl4ss_name']);
 
 		$condition = [];
 		foreach ($other_scholastics as $other_scholastic) {
@@ -83,7 +88,8 @@ class Cl4ss extends Model
 			}
 		}
 
-		$result = $result->where(function($q) use ($condition){
+//		$result = $result->where(function($q) use ($condition){
+		$result = $this->where(function($q) use ($condition){
 			foreach ($condition as $cond){
 				$q = $q->orWhere('scholastic_id',$cond['scholastic_id'])->where('grade_id', $cond['grade_id']);
 			}
@@ -99,14 +105,14 @@ class Cl4ss extends Model
 		$semester = $this->semester->semester_name;
 		$scholastic_from = $this->scholastic->scholastic_from;
 		$scholastic_to = $this->scholastic->scholastic_to;
-		$cl4ss = $this->attributes['cl4ss_name'];
+		$cl4ss_type = $this->cl4ssType->cl4ss_type_name;
 
-		return trans('general.class') . " $grade $cl4ss, $semester $scholastic_from - $scholastic_to";
+		return trans('general.class') . " $grade $cl4ss_type, $semester $scholastic_from - $scholastic_to";
 	}
 
-	public function scopeSearch($q, $q_scholastic, $q_sesmester, $q_grade, $q_cl4ss, $q_teacher_name){
+	public function scopeSearch($q, $q_scholastic, $q_sesmester, $q_grade, $q_cl4ss_type, $q_teacher_name){
 
-		$q->where(function ($q) use ($q_cl4ss, $q_grade, $q_scholastic, $q_sesmester){
+		$q->where(function ($q) use ($q_cl4ss_type, $q_grade, $q_scholastic, $q_sesmester){
 
 			if ($q_scholastic){
 				$q->whereHas('scholastic', function($qq) use ($q_scholastic){
@@ -126,14 +132,16 @@ class Cl4ss extends Model
 				});
 			}
 
-			if ($q_cl4ss){
-				$q->where('cl4sses.id',$q_cl4ss);
+			if ($q_cl4ss_type){
+				$q->where('cl4ss_type_id',$q_cl4ss_type);
 			}
 		});
 
 		if($q_teacher_name) {
 			$words = explode(' ', $q_teacher_name);
-			$q->whereIn('first_name',$words)->orWhereIn('last_name',$words);
+			$q->whereHas('teacher', function($qq) use ($words){
+				return $qq->whereIn('first_name',$words)->orWhereIn('last_name',$words);
+			});
 		}
 
 		return $q;

@@ -14,11 +14,11 @@
                         <label>@lang('general.cl4ss')</label>
                     </div>
                     <div class="col-sm-10">
-                        <input type="text"
-                               class="form-control"
-                               name="cl4ss_name"
-                               value="{{ old('cl4ss_name') }}"
-                               placeholder="201x">
+                        <select name="cl4ss_type_id" class="form-control select2">
+                            @foreach($cl4ss_types as $cl4ss_type)
+                                <option value="{!! $cl4ss_type->id !!}">{!! $cl4ss_type->cl4ss_type_name !!}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
 

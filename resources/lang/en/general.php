@@ -16,6 +16,7 @@ return [
     'birthday' => 'Birthday',
     'class' => 'Class',
     'cl4ss' => 'Class',
+    'cl4ss_type' => 'Class type',
 	'subject' => 'Subject',
 	'total' => 'Total',
 	'child' => 'Child',

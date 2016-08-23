@@ -26,8 +26,10 @@ class TestController extends Controller
 
 	public function index()
 	{
-		$class = Cl4ss::first();
-		dd($class->getSerialCl4ss()->get()->toArray());
+
+		var_dump(Cl4ss::where('id','<',200)->count());
+
+
 	}
 
 	public function index1()

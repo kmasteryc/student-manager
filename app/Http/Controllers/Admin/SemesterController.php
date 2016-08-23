@@ -1,17 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 
-use App\Http\Requests\Teachers\StoreRequest;
-use App\Http\Requests\Teachers\UpdateRequest;
-use App\Http\Requests\Teachers\DeleteRequest;
+use App\Http\Requests\Semesters\StoreRequest;
+use App\Http\Requests\Semesters\UpdateRequest;
+use App\Http\Requests\Semesters\DeleteRequest;
 
-use App\Models\MarkLayer\Subject;
-use Illuminate\Http\Request;
-use App\User;
-use App\Models\UserLayer\Teacher;
+use App\Http\Requests;
+use App\Models\ClassLayer\Semester;
 
-class TeacherController extends Controller
+class SemesterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +19,8 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        return view('teachers.index', [
-            'teachers' => Teacher::with('subjects')->get()
+        return view('semesters.index', [
+            'semesters' => Semester::all()
         ]);
     }
 
@@ -32,10 +31,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-	    $subjects = Subject::all();
-        return view('teachers.create',[
-	        'subjects' => $subjects
-        ]);
+        return view('semesters.create');
     }
 
     /**
@@ -46,10 +42,10 @@ class TeacherController extends Controller
      */
     public function store(StoreRequest $request)
     {
-	    Teacher::storeTeacher($request);
+        Semester::create($request->all());
 
         return redirect()
-            ->route('teacher::index')
+            ->route('semester::create')
             ->with('success', trans('general.create_success'));
     }
 
@@ -70,11 +66,10 @@ class TeacherController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Teacher $teacher)
+    public function edit(Semester $semester)
     {
-        return view('teachers.edit', [
-	        'subjects' => Subject::all(),
-            'teacher' => $teacher
+        return view('semesters.edit', [
+            'semester' => $semester
         ]);
     }
 
@@ -85,13 +80,12 @@ class TeacherController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRequest $request, Teacher $teacher)
+    public function update(UpdateRequest $request, Semester $semester)
     {
-	    $teacher->updateTeacher($request);
-
+        $semester->update($request->all());
         return redirect()
-            ->route("teacher::edit", $teacher)
-            ->with('success',trans('general.update_success'));
+            ->route("semester::edit", $semester)
+            ->with('success', trans('general.update_success'));
     }
 
     /**
@@ -100,17 +94,13 @@ class TeacherController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DeleteRequest $request, Teacher $teacher)
+    public function destroy(DeleteRequest $request, Semester $semester)
     {
-        $teacher->delete();
+        $semester->delete();
 
         return redirect()
-            ->route("teacher::index")
-            ->with('success',
-                trans('general.delete_success', [
-                    'name' => trans('general.teacher')
-                ])
-            );
+            ->route("semester::index")
+            ->with('success', trans('general.delete_success'));
 
     }
 }

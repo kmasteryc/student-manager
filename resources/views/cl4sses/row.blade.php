@@ -22,7 +22,7 @@
             </div>
         </td>
         <td>{!! $cl4ss->grade->grade_name !!}</td>
-        <td>{!! $cl4ss->cl4ss_name !!}</td>
+        <td>{!! $cl4ss->cl4ssType->cl4ss_type_name !!}</td>
         <td>{!! $cl4ss->semester->semester_name !!}</td>
         <td>{!! $cl4ss->teacher->full_name !!}</td>
         <td>{!! $cl4ss->scholastic->scholastic_duration !!}</td>

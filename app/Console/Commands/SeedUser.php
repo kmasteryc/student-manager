@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\ClassLayer\Cl4ss;
+use App\Models\ClassLayer\Cl4ssType;
 use App\Models\MarkLayer\Subject;
 use Illuminate\Console\Command;
 use Faker\Factory;
@@ -24,7 +25,7 @@ class SeedUser extends Command
 	 *
 	 * @var string
 	 */
-	protected $signature = 'seed:seed-user';
+	protected $signature = 'seed:user';
 
 	/**
 	 * The console command description.
@@ -51,8 +52,9 @@ class SeedUser extends Command
 	public function handle()
 	{
 		\DB::beginTransaction();
+
 		$faker = Factory::create();
-		$arr_class = ['A', 'B', 'C'];
+		$cl4ss_types = Cl4ssType::all();
 
 		$this->info("----- START SEEDING USERS -----");
 		$this->info("Create some teachers...");
@@ -74,7 +76,7 @@ class SeedUser extends Command
 			$teacher->subjects()->sync($subject_ids);
 		}
 
-		foreach ($arr_class as $cl4ss_name) {
+		foreach ($cl4ss_types as $cl4ss_type) {
 			$user_ids = [];
 			for ($i = 1; $i <= 50; $i++) {
 				$data = [
@@ -104,7 +106,11 @@ class SeedUser extends Command
 				$user_ids[] = $student->id;
 			}
 
-			$all_cl4sses = Cl4ss::where('cl4ss_name', $cl4ss_name)
+//			$all_cl4sses = Cl4ss::where('cl4ss_name', $cl4ss_name)
+//				->first()
+//				->getSerialCl4ss()
+//				->get();
+			$all_cl4sses = $cl4ss_type->cl4sses()
 				->first()
 				->getSerialCl4ss()
 				->get();

@@ -1,4 +1,4 @@
-<div class="col-md-2 sidebar">
+
     <!-- uncomment code for absolute positioning tweek see top comment in css -->
     <div class="absolute-wrapper"></div>
     <!-- Menu -->
@@ -8,6 +8,18 @@
             <div class="side-menu-container">
                 <ul class="nav navbar-nav">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+
+                    <li class="panel panel-default custom-dropdown">
+                        <a data-toggle="collapse" href="#class_layer">School news <span class="caret"></span></a>
+                        <div id="class_layer" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="{!! route('cl4ss::index') !!}" data-pjax>Category 1</a></li>
+                                    <li><a href="{!! route('cl4ss::index') !!}" data-pjax>Category 2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
 
                     <li class="panel panel-default custom-dropdown">
                         <a data-toggle="collapse" href="#class_layer">Class Layer <span class="caret"></span></a>
@@ -51,12 +63,5 @@
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
+    </div>
 
-    </div>
-</div>
-<div class="col-md-10 content">
-    <div id="pjax-container">
-        @section('content')
-        @show
-    </div>
-</div>

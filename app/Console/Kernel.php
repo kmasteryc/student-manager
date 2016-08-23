@@ -14,9 +14,12 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-         Commands\DumpConsole::class,
          Commands\SeedUser::class,
          Commands\ReSyncClass::class,
+         Commands\Truncate::class,
+         Commands\SeedSubject::class,
+         Commands\SeedCl4ssType::class,
+         Commands\SeedCl4ss::class,
     ];
 
     /**

@@ -4,6 +4,8 @@ namespace App\Models\UserLayer;
 
 use App\User;
 use App\Models\ClassLayer\Cl4ss;
+use App\Models\ClassLayer\Cl4ssType;
+
 use Illuminate\Database\Eloquent\Builder;
 
 class Student extends User
@@ -54,9 +56,9 @@ class Student extends User
 		$this->cl4sses()->sync($cl4sses);
 	}
 
-	public function scopeSearch($q, $q_scholastic, $q_sesmester, $q_grade, $q_cl4ss, $q_student_name){
+	public function scopeSearch($q, $q_scholastic, $q_sesmester, $q_grade, $q_cl4ss_type, $q_student_name){
 
-		$q->whereHas('cl4sses', function ($q) use ($q_cl4ss, $q_grade, $q_scholastic, $q_sesmester){
+		$q->whereHas('cl4sses', function ($q) use ($q_cl4ss_type, $q_grade, $q_scholastic, $q_sesmester){
 
 			if ($q_scholastic){
 				$q->whereHas('scholastic', function($qq) use ($q_scholastic){
@@ -76,9 +78,10 @@ class Student extends User
 				});
 			}
 
-			if ($q_cl4ss){
-				$q->where('cl4sses.id',$q_cl4ss);
+			if ($q_cl4ss_type){
+				$q->where('cl4ss_type_id',$q_cl4ss_type);
 			}
+
 		});
 
 		if($q_student_name) {

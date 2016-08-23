@@ -1,15 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 
-use App\Http\Requests\Semesters\StoreRequest;
-use App\Http\Requests\Semesters\UpdateRequest;
-use App\Http\Requests\Semesters\DeleteRequest;
+use App\Http\Requests\Parents\StoreRequest;
+use App\Http\Requests\Parents\UpdateRequest;
+use App\Http\Requests\Parents\DeleteRequest;
 
-use App\Http\Requests;
-use App\Models\ClassLayer\Semester;
+use App\Models\MarkLayer\Subject;
+use Illuminate\Http\Request;
+use App\User;
+use App\Models\UserLayer\Paren;
+use App\Models\UserLayer\Student;
 
-class SemesterController extends Controller
+class ParentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +22,8 @@ class SemesterController extends Controller
      */
     public function index()
     {
-        return view('semesters.index', [
-            'semesters' => Semester::all()
+        return view('parents.index', [
+            'parents' => Paren::with('students')->get()
         ]);
     }
 
@@ -30,7 +34,10 @@ class SemesterController extends Controller
      */
     public function create()
     {
-        return view('semesters.create');
+	    $students = Student::all();
+        return view('parents.create',[
+	        'students' => $students
+        ]);
     }
 
     /**
@@ -41,10 +48,10 @@ class SemesterController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        Semester::create($request->all());
+	    Paren::storeParent($request);
 
         return redirect()
-            ->route('semester::create')
+            ->route('parent::index')
             ->with('success', trans('general.create_success'));
     }
 
@@ -65,10 +72,11 @@ class SemesterController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Semester $semester)
+    public function edit(Paren $parent)
     {
-        return view('semesters.edit', [
-            'semester' => $semester
+        return view('parents.edit', [
+	        'students' => Student::all(),
+            'parent' => $parent
         ]);
     }
 
@@ -79,12 +87,13 @@ class SemesterController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRequest $request, Semester $semester)
+    public function update(UpdateRequest $request, Paren $parent)
     {
-        $semester->update($request->all());
+	    $parent->updateParent($request);
+
         return redirect()
-            ->route("semester::edit", $semester)
-            ->with('success', trans('general.update_success'));
+            ->route("parent::edit", $parent)
+            ->with('success',trans('general.update_success'));
     }
 
     /**
@@ -93,13 +102,17 @@ class SemesterController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DeleteRequest $request, Semester $semester)
+    public function destroy(DeleteRequest $request, Paren $parent)
     {
-        $semester->delete();
+        $parent->delete();
 
         return redirect()
-            ->route("semester::index")
-            ->with('success', trans('general.delete_success'));
+            ->route("parent::index")
+            ->with('success',
+                trans('general.delete_success', [
+                    'name' => trans('general.parent')
+                ])
+            );
 
     }
 }
