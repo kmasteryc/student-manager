@@ -1,7 +1,9 @@
 /.idea
 /vendor
 /node_modules
-/public/storage
-Homestead.yaml
-Homestead.json
+/bower_components
 .env
+storage/app
+storage/debugbar
+storage/framework
+storage/logs

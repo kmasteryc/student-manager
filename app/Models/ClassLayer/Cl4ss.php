@@ -66,9 +66,15 @@ class Cl4ss extends Model
 
 	public function scopeLoadRelation($q)
 	{
-		return $q->with('scholastic', 'grade', 'semester', 'cl4ssType',
-			'teacher', 'parent',
-			'students.parents');
+		return $q->with(
+			[
+				'scholastic' => function ($q) {
+					return $q->orderBy('scholastic_from');
+				},
+				'grade', 'semester', 'cl4ssType',
+				'teacher', 'parent',
+				'students.parents',
+			]);
 	}
 
 	// MODEL MAIN
