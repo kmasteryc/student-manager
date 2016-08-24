@@ -17,7 +17,7 @@ Route::get('test', 'TestController@index');
 
 Route::auth();
 
-Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware'=>'auth', 'as'=>'admin::'], function () {
 
 	Route::group(['prefix' => 'scholastic', 'as' => 'scholastic::'], function () {
 		Route::get('/', 'ScholasticController@index')->name('index');
@@ -118,4 +118,19 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware'=>'auth'], 
 		Route::post('/', 'StudentController@store')->name('store');
 	});
 
+});
+
+Route::group(['prefix'=>'teacher','namespace'=>'Teacher','middleware'=>'auth','as'=>'teacher::'], function(){
+	Route::group(['prefix'=>'class_current','as'=>'class_current::'], function(){
+		Route::get('/', 'Cl4ssCurrentController@index')->name('index');
+	});
+	Route::group(['prefix'=>'class_past','as'=>'class_past::'], function(){
+		Route::get('/', 'Cl4ssPastController@index')->name('index');
+	});
+	Route::group(['prefix'=>'subject_teaching','as'=>'subject_teaching::'], function(){
+		Route::get('/', 'SubjectTeachingController@index')->name('index');
+	});
+	Route::group(['prefix'=>'subject_teached','as'=>'subject_teached::'], function(){
+		Route::get('/', 'SubjectTeachedController@index')->name('index');
+	});
 });

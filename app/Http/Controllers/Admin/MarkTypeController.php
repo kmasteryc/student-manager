@@ -20,7 +20,7 @@ class MarkTypeController extends Controller
      */
     public function index()
     {
-        return view('mark_types.index', [
+        return view('admin.mark_types.index', [
             'mark_types' => MarkType::all()
         ]);
     }
@@ -32,7 +32,7 @@ class MarkTypeController extends Controller
      */
     public function create()
     {
-        return view('mark_types.create');
+        return view('admin.mark_types.create');
     }
 
     /**
@@ -46,12 +46,8 @@ class MarkTypeController extends Controller
         MarkType::create($request->all());
 
         return redirect()
-            ->route('mark_type::create')
-            ->with('success',
-                trans('general.create_success', [
-                    'name' => trans('general.mark_type')
-                ])
-            );
+            ->route('admin::mark_type::create')
+            ->with('success', trans('general.create_success'));
     }
 
     /**
@@ -73,7 +69,7 @@ class MarkTypeController extends Controller
      */
     public function edit(MarkType $mark_type)
     {
-        return view('mark_types.edit', [
+        return view('admin.mark_types.edit', [
             'mark_type' => $mark_type
         ]);
     }
@@ -89,12 +85,8 @@ class MarkTypeController extends Controller
     {
         $mark_type->update($request->all());
         return redirect()
-            ->route("mark_type::edit", $mark_type)
-            ->with('success',
-                trans('general.update_success', [
-                    'name' => trans('general.mark_type')
-                ])
-            );
+            ->route("admin::mark_type::edit", $mark_type)
+            ->with('success',trans('general.update_success'));
     }
 
     /**
@@ -108,12 +100,8 @@ class MarkTypeController extends Controller
         $mark_type->delete();
 
         return redirect()
-            ->route("mark_type::index")
-            ->with('success',
-                trans('general.delete_success', [
-                    'name' => trans('general.mark_type')
-                ])
-            );
+            ->route("admin::mark_type::index")
+            ->with('success',trans('general.delete_success'));
 
     }
 }

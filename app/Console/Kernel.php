@@ -20,6 +20,7 @@ class Kernel extends ConsoleKernel
          Commands\SeedSubject::class,
          Commands\SeedCl4ssType::class,
          Commands\SeedCl4ss::class,
+         Commands\SeedCl4ssSubject::class,
     ];
 
     /**

@@ -42,7 +42,7 @@ class StudentController extends Controller
 //		dd($students->count());
 		$students->setPath(request()->getUri());
 
-		return view('students.index', [
+		return view('admin.students.index', [
 			'students'           => $students,
 			'scholastics' => Scholastic::all(),
 			'semesters'   => Semester::all(),
@@ -61,7 +61,7 @@ class StudentController extends Controller
 		$parents = Paren::all();
 		$cl4sses = Cl4ss::loadRelation()->get();
 
-		return view('students.create', [
+		return view('admin.students.create', [
 			'parents' => $parents,
 			'cl4sses' => $cl4sses,
 		]);
@@ -78,7 +78,7 @@ class StudentController extends Controller
 		Student::storeStudent($request);
 
 		return redirect()
-			->route('student::index')
+			->route('admin::student::index')
 			->with('success', trans('general.create_success'));
 	}
 
@@ -101,7 +101,7 @@ class StudentController extends Controller
 	 */
 	public function edit(Student $student)
 	{
-		return view('students.edit', [
+		return view('admin.students.edit', [
 			'parents' => Paren::all(),
 			'cl4sses' => Cl4ss::loadRelation()->get(),
 			'student' => $student,
@@ -120,7 +120,7 @@ class StudentController extends Controller
 		$student->updateStudent($request);
 
 		return redirect()
-			->route("student::edit", $student)
+			->route("admin::student::edit", $student)
 			->with('success', trans('general.update_success'));
 	}
 
@@ -135,7 +135,7 @@ class StudentController extends Controller
 		$student->delete();
 
 		return redirect()
-			->route("student::index")
+			->route("admin::student::index")
 			->with('success', trans('general.delete_success'));
 	}
 }

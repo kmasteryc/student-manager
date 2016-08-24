@@ -22,7 +22,7 @@ class ParentController extends Controller
      */
     public function index()
     {
-        return view('parents.index', [
+        return view('admin.parents.index', [
             'parents' => Paren::with('students')->get()
         ]);
     }
@@ -35,7 +35,7 @@ class ParentController extends Controller
     public function create()
     {
 	    $students = Student::all();
-        return view('parents.create',[
+        return view('admin.parents.create',[
 	        'students' => $students
         ]);
     }
@@ -51,7 +51,7 @@ class ParentController extends Controller
 	    Paren::storeParent($request);
 
         return redirect()
-            ->route('parent::index')
+            ->route('admin::parent::index')
             ->with('success', trans('general.create_success'));
     }
 
@@ -74,7 +74,7 @@ class ParentController extends Controller
      */
     public function edit(Paren $parent)
     {
-        return view('parents.edit', [
+        return view('admin.parents.edit', [
 	        'students' => Student::all(),
             'parent' => $parent
         ]);
@@ -92,7 +92,7 @@ class ParentController extends Controller
 	    $parent->updateParent($request);
 
         return redirect()
-            ->route("parent::edit", $parent)
+            ->route("admin::parent::edit", $parent)
             ->with('success',trans('general.update_success'));
     }
 
@@ -107,7 +107,7 @@ class ParentController extends Controller
         $parent->delete();
 
         return redirect()
-            ->route("parent::index")
+            ->route("admin::parent::index")
             ->with('success',
                 trans('general.delete_success', [
                     'name' => trans('general.parent')

@@ -11,8 +11,16 @@ use Illuminate\Database\Eloquent\Model;
 class Cl4ss extends Model
 {
 
+	const STATE_ALL = 0;
+	const STATE_DEACTIVE = 1;
+	const STATE_ACTIVE = 2;
 	public $table = 'cl4sses';
-	public $fillable = ['cl4ss_type_id', 'scholastic_id', 'semester_id', 'grade_id', 'parent_id', 'teacher_id'];
+	public $fillable = [
+		'cl4ss_type_id', 'scholastic_id', 'semester_id', 'grade_id',
+		'parent_id', 'teacher_id',
+		'cl4ss_state',
+	];
+
 	public $timestamps = false;
 
 	// RELATIONSHIP
@@ -51,16 +59,39 @@ class Cl4ss extends Model
 		return $this->belongsToMany(\App\Models\MarkLayer\Subject::class);
 	}
 
-	public function cl4ssType(){
-		return $this->belongsTo(Cl4ssType::class,'cl4ss_type_id');
+	public function cl4ssType()
+	{
+		return $this->belongsTo(Cl4ssType::class, 'cl4ss_type_id');
 	}
 
 	public function scopeLoadRelation($q)
 	{
-		return $q->with('scholastic', 'grade', 'semester', 'teacher', 'parent', 'cl4ssType');
+		return $q->with('scholastic', 'grade', 'semester', 'cl4ssType',
+			'teacher', 'parent',
+			'students.parents');
 	}
 
 	// MODEL MAIN
+	public function scopeResponsibleCl4ss($q, $cl4ss_state = self::STATE_ALL)
+	{
+		$q->where('teacher_id', auth()->id());
+		if ($cl4ss_state <> self::STATE_ALL) {
+			$q->where('cl4ss_state', $cl4ss_state);
+		}
+
+		return $q;
+	}
+
+	public function scopeDeactivedCl4ss($q)
+	{
+		return $q->where('cl4ss_state', self::STATE_DEACTIVE);
+	}
+
+	public function scopeActivedCl4ss($q)
+	{
+		return $q->where('cl4ss_state', self::STATE_ACTIVE);
+	}
+
 	public function getSerialCl4ss()
 	{
 		$current_cl4ss = $this;
@@ -88,11 +119,11 @@ class Cl4ss extends Model
 			}
 		}
 
-//		$result = $result->where(function($q) use ($condition){
-		$result = $this->where(function($q) use ($condition){
-			foreach ($condition as $cond){
-				$q = $q->orWhere('scholastic_id',$cond['scholastic_id'])->where('grade_id', $cond['grade_id']);
+		$result = $this->where(function ($q) use ($condition) {
+			foreach ($condition as $cond) {
+				$q = $q->orWhere('scholastic_id', $cond['scholastic_id'])->where('grade_id', $cond['grade_id']);
 			}
+
 			return $q;
 		});
 
@@ -110,41 +141,50 @@ class Cl4ss extends Model
 		return trans('general.class') . " $grade $cl4ss_type, $semester $scholastic_from - $scholastic_to";
 	}
 
-	public function scopeSearch($q, $q_scholastic, $q_sesmester, $q_grade, $q_cl4ss_type, $q_teacher_name){
+	public function scopeSearch($q, $q_scholastic, $q_sesmester, $q_grade, $q_cl4ss_type, $q_teacher_name, $q_cl4ss_state)
+	{
 
-		$q->where(function ($q) use ($q_cl4ss_type, $q_grade, $q_scholastic, $q_sesmester){
+		$q->where(function ($q) use ($q_cl4ss_type, $q_grade, $q_scholastic, $q_sesmester, $q_cl4ss_state) {
 
-			if ($q_scholastic){
-				$q->whereHas('scholastic', function($qq) use ($q_scholastic){
-					return $qq->where('id',$q_scholastic);
+			if ($q_scholastic) {
+				$q->whereHas('scholastic', function ($qq) use ($q_scholastic) {
+					return $qq->where('id', $q_scholastic);
 				});
 			}
 
-			if ($q_sesmester){
-				$q->whereHas('semester', function($qq) use ($q_sesmester){
-					return $qq->where('id',$q_sesmester);
+			if ($q_sesmester) {
+				$q->whereHas('semester', function ($qq) use ($q_sesmester) {
+					return $qq->where('id', $q_sesmester);
 				});
 			}
 
-			if ($q_grade){
-				$q->whereHas('grade', function($qq) use ($q_grade){
-					return $qq->where('id',$q_grade);
+			if ($q_grade) {
+				$q->whereHas('grade', function ($qq) use ($q_grade) {
+					return $qq->where('id', $q_grade);
 				});
 			}
 
-			if ($q_cl4ss_type){
-				$q->where('cl4ss_type_id',$q_cl4ss_type);
+			if ($q_cl4ss_type) {
+				$q->where('cl4ss_type_id', $q_cl4ss_type);
+			}
+
+			if ($q_cl4ss_state) {
+				$q->where('cl4ss_state', $q_cl4ss_state);
 			}
 		});
 
-		if($q_teacher_name) {
+		if ($q_teacher_name) {
 			$words = explode(' ', $q_teacher_name);
-			$q->whereHas('teacher', function($qq) use ($words){
-				return $qq->whereIn('first_name',$words)->orWhereIn('last_name',$words);
+			$q->whereHas('teacher', function ($qq) use ($words) {
+				return $qq->whereIn('first_name', $words)->orWhereIn('last_name', $words);
 			});
 		}
 
 		return $q;
 	}
 
+//	public function getStudentNotInCl4ss(){
+//		$active_students = $this->activeCl4ss()->students()->pluck('id');
+//
+//	}
 }

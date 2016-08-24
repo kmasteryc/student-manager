@@ -25,7 +25,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown ">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        Account {!! auth()->user()->user_name !!}
+                        Account {!! auth()->check()?auth()->user()->user_name:'' !!}
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         @if(auth()->check())

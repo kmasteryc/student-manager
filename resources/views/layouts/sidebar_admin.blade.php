@@ -1,5 +1,4 @@
-
-    <!-- uncomment code for absolute positioning tweek see top comment in css -->
+<!-- uncomment code for absolute positioning tweek see top comment in css -->
     <div class="absolute-wrapper"></div>
     <!-- Menu -->
     <div class="side-menu">
@@ -14,8 +13,8 @@
                         <div id="class_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="{!! route('cl4ss::index') !!}" data-pjax>Category 1</a></li>
-                                    <li><a href="{!! route('cl4ss::index') !!}" data-pjax>Category 2</a></li>
+                                    <li><a href="{!! route('admin::cl4ss::index') !!}" data-pjax>Category 1</a></li>
+                                    <li><a href="{!! route('admin::cl4ss::index') !!}" data-pjax>Category 2</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -26,10 +25,10 @@
                         <div id="class_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="{!! route('cl4ss::index') !!}" data-pjax>Manage classes</a></li>
-                                    <li><a href="{!! route('grade::index') !!}" data-pjax>Manage grade</a></li>
-                                    <li><a href="{!! route('semester::index') !!}" data-pjax>Manage semester</a></li>
-                                    <li><a href="{!! route('scholastic::index') !!}" data-pjax>Manage scholastic</a></li>
+                                    <li><a href="{!! route('admin::cl4ss::index') !!}" data-pjax>Manage classes</a></li>
+                                    <li><a href="{!! route('admin::grade::index') !!}" data-pjax>Manage grade</a></li>
+                                    <li><a href="{!! route('admin::semester::index') !!}" data-pjax>Manage semester</a></li>
+                                    <li><a href="{!! route('admin::scholastic::index') !!}" data-pjax>Manage scholastic</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -40,9 +39,9 @@
                         <div id="user_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="{!! route('student::index') !!}" data-pjax>Manage students</a></li>
-                                    <li><a href="{!! route('parent::index') !!}" data-pjax>Manage parents</a></li>
-                                    <li><a href="{!! route('teacher::index') !!}" data-pjax>Manage teacher</a></li>
+                                    <li><a href="{!! route('admin::student::index') !!}" data-pjax>Manage students</a></li>
+                                    <li><a href="{!! route('admin::parent::index') !!}" data-pjax>Manage parents</a></li>
+                                    <li><a href="{!! route('admin::teacher::index') !!}" data-pjax>Manage teacher</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -53,13 +52,12 @@
                         <div id="mark_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="{!! route('cl4ss::index') !!}" data-pjax>Manage mark</a></li>
-                                    <li><a href="{!! route('mark_type::index') !!}" data-pjax>Manage mark type</a></li>
+                                    <li><a href="{!! route('admin::cl4ss::index') !!}" data-pjax>Manage mark</a></li>
+                                    <li><a href="{!! route('admin::mark_type::index') !!}" data-pjax>Manage mark type</a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
-
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>

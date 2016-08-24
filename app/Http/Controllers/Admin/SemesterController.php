@@ -19,7 +19,7 @@ class SemesterController extends Controller
      */
     public function index()
     {
-        return view('semesters.index', [
+        return view('admin.semesters.index', [
             'semesters' => Semester::all()
         ]);
     }
@@ -31,7 +31,7 @@ class SemesterController extends Controller
      */
     public function create()
     {
-        return view('semesters.create');
+        return view('admin.semesters.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class SemesterController extends Controller
         Semester::create($request->all());
 
         return redirect()
-            ->route('semester::create')
+            ->route('admin::semester::create')
             ->with('success', trans('general.create_success'));
     }
 
@@ -68,7 +68,7 @@ class SemesterController extends Controller
      */
     public function edit(Semester $semester)
     {
-        return view('semesters.edit', [
+        return view('admin.semesters.edit', [
             'semester' => $semester
         ]);
     }
@@ -84,7 +84,7 @@ class SemesterController extends Controller
     {
         $semester->update($request->all());
         return redirect()
-            ->route("semester::edit", $semester)
+            ->route("admin::semester::edit", $semester)
             ->with('success', trans('general.update_success'));
     }
 
@@ -99,7 +99,7 @@ class SemesterController extends Controller
         $semester->delete();
 
         return redirect()
-            ->route("semester::index")
+            ->route("admin::semester::index")
             ->with('success', trans('general.delete_success'));
 
     }

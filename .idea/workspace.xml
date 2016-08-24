@@ -2,41 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c026a9c2-269f-478c-9861-97dc473dbfd6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Console/Commands/DumpConsole.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/Cl4ssController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Cl4ssController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/GradeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/GradeController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/MarkTypeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MarkTypeController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/ParentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ParentController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/PermissionController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PermissionController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/ScholasticController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ScholasticController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/SemesterController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SemesterController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/StudentController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/TeacherController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TeacherController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar_admin.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Console/Commands/SeedUser.php" afterPath="$PROJECT_DIR$/app/Console/Commands/SeedUser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Console/Kernel.php" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/Cl4sses/StoreRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/Cl4sses/StoreRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/Cl4sses/UpdateRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/Cl4sses/UpdateRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/ClassLayer/Cl4ss.php" afterPath="$PROJECT_DIR$/app/Models/ClassLayer/Cl4ss.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/UserLayer/Student.php" afterPath="$PROJECT_DIR$/app/Models/UserLayer/Student.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/Cl4ssTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/Cl4ssTableSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css" afterPath="$PROJECT_DIR$/public/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css.map" afterPath="$PROJECT_DIR$/public/css/app.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/sass/app.scss" afterPath="$PROJECT_DIR$/resources/assets/sass/app.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/en/general.php" afterPath="$PROJECT_DIR$/resources/lang/en/general.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cl4sses/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/cl4sses/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cl4sses/filter.blade.php" afterPath="$PROJECT_DIR$/resources/views/cl4sses/filter.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cl4sses/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/cl4sses/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cl4sses/row.blade.php" afterPath="$PROJECT_DIR$/resources/views/cl4sses/row.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/students/filter.blade.php" afterPath="$PROJECT_DIR$/resources/views/students/filter.blade.php" />
     </list>
     <ignored path="studentmanager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,21 +26,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sidebar_admin.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/sidebar_admin.blade.php">
+      <file leaf-file-name="SubjectTeachedController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Teacher/SubjectTeachedController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+            <state relative-caret-position="332">
+              <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sidebar_teacher.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/sidebar_teacher.blade.php">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/teacher/subject_teacheds/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+            <state relative-caret-position="102">
+              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="488">
+              <caret line="133" column="39" selection-start-line="133" selection-start-column="39" selection-end-line="133" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Teacher.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Models/UserLayer/Teacher.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -96,57 +82,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Console/Commands/ReSyncClass.php" />
-        <option value="$PROJECT_DIR$/resources/views/teachers/row.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/students/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/students/row.blade.php" />
-        <option value="$PROJECT_DIR$/database/seeds/Cl4ssTableSeeder.php" />
-        <option value="$PROJECT_DIR$/app/Console/Commands/SeedSubject.php" />
-        <option value="$PROJECT_DIR$/app/Console/Commands/Truncate.php" />
-        <option value="$PROJECT_DIR$/app/Models/ClassLayer/Cl4ssType.php" />
-        <option value="$PROJECT_DIR$/app/Console/Commands/SeedCl4ssType.php" />
-        <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
-        <option value="$PROJECT_DIR$/app/Console/Commands/SeedCl4ss.php" />
-        <option value="$PROJECT_DIR$/app/Console/Commands/SeedUser.php" />
-        <option value="$PROJECT_DIR$/resources/views/cl4sses/row.blade.php" />
-        <option value="$PROJECT_DIR$/resources/lang/en/general.php" />
-        <option value="$PROJECT_DIR$/resources/views/cl4sses/filter.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cl4sses/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/students/filter.blade.php" />
-        <option value="$PROJECT_DIR$/app/Models/UserLayer/Student.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Cl4ssController.php" />
-        <option value="$PROJECT_DIR$/resources/views/cl4sses/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/Cl4sses/StoreRequest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/Cl4sses/UpdateRequest.php" />
-        <option value="$PROJECT_DIR$/app/Models/ClassLayer/Cl4ss.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/StudentController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/TeacherController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/SemesterController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ScholasticController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/PermissionController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ParentController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/MarkTypeController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/GradeController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/Cl4ssController.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
-        <option value="$PROJECT_DIR$/resources/assets/sass/app.scss" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/page_content.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/mark_types/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/sass/_modules.scss" />
         <option value="$PROJECT_DIR$/resources/views/layouts/sidebar_guest.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/sidebar_teacher.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/sidebar_admin.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/sidebar_student.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/teacher/cl4ss_current/index.blade.php" />
+        <option value="$PROJECT_DIR$/public/test.txt" />
         <option value="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/GradeController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/MarkTypeController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ParentController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ScholasticController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/SemesterController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/StudentController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/TeacherController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/cl4sses/row.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/cl4sses/add_student.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/sidebar_admin.blade.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/resources/views/admin/cl4sses/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/Cl4sses/DeleteRequest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/Cl4ssController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/Cl4sses/StoreRequest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/Cl4sses/UpdateRequest.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/cl4sses/filter.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/cl4sses/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/cl4sses/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Teacher/Cl4ssCurrentController.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/sidebar_teacher.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/teacher/cl4ss_currents/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Models/UserLayer/Student.php" />
+        <option value="$PROJECT_DIR$/resources/views/teacher/cl4ss_currents/row.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/teacher/cl4ss_currents/row_student.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/teacher/cl4ss_pasts/row.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/teacher/cl4ss_pasts/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Teacher/Cl4ssPastController.php" />
+        <option value="$PROJECT_DIR$/app/User.php" />
+        <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
+        <option value="$PROJECT_DIR$/app/Console/Commands/SeedCl4ssSubject.php" />
+        <option value="$PROJECT_DIR$/resources/views/teacher/subject_teaching/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/teacher/subject_teachings/row_cl4ss.blade.php" />
+        <option value="$PROJECT_DIR$/app/Models/MarkLayer/TeachSubject.php" />
+        <option value="$PROJECT_DIR$/app/Models/ClassLayer/Cl4ss.php" />
+        <option value="$PROJECT_DIR$/app/Models/MarkLayer/Subject.php" />
+        <option value="$PROJECT_DIR$/resources/views/teacher/subject_teachings/row.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Teacher/SubjectTeachingController.php" />
+        <option value="$PROJECT_DIR$/resources/views/teacher/subject_teachings/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Teacher/SubjectTeachedController.php" />
+        <option value="$PROJECT_DIR$/resources/views/teacher/subject_teacheds/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Models/UserLayer/Teacher.php" />
       </list>
     </option>
   </component>
@@ -168,11 +154,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="-26" />
     <option name="width" value="1366" />
-    <option name="height" value="794" />
+    <option name="height" value="768" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -185,7 +170,7 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
-      <showMembers ProjectPane="true" />
+      <showMembers ProjectPane="false" />
       <showModules />
       <showLibraryContents />
       <hideEmptyPackages />
@@ -197,6 +182,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -251,7 +247,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
+              <option name="myItemId" value="teacher" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="subject_teachings" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -273,7 +273,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="auth" />
+              <option name="myItemId" value="teacher" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="subject_teacheds" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -288,6 +292,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teacher" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="studentmanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="studentmanager" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="studentmanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="studentmanager" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -345,43 +389,57 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="studentmanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="studentmanager" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Teacher" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="nav&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/layouts/nav.blade.php&#10;sidebar_s&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/layouts/sidebar_student.blade.php&#10;mo&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/assets/sass/_modules.scss&#10;modu&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/assets/sass/_modules.scss&#10;mark/inde&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/mark_types/index.blade.php&#10;ker&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Kernel.php&#10;app.sc&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/assets/sass/app.scss&#10;app.b&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/layouts/app.blade.php&#10;route&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/routes.php&#10;test&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Controllers/TestController.php&#10;cl4ss&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Models/ClassLayer/Cl4ss.php&#10;cl4ss/upd&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Requests/Cl4sses/UpdateRequest.php&#10;cl4/store&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Requests/Cl4sses/StoreRequest.php&#10;cl4/crea&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/cl4sses/create.blade.php&#10;cl4ssc&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Controllers/Cl4ssController.php&#10;student&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Controllers/StudentController.php&#10;seed&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Console/Commands/SeedUser.php&#10;cl/add&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/cl4sses/add_student.blade.php&#10;stude&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Models/UserLayer/Student.php&#10;students/filter&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/students/filter.blade.php&#10;student/row&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/students/row.blade.php&#10;studentc&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Controllers/StudentController.php&#10;cl4ss/filter&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/cl4sses/filter.blade.php&#10;gen&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/lang/en/general.php&#10;cl4ss/row&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/cl4sses/row.blade.php&#10;cl4/in&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/cl4sses/index.blade.php&#10;cl4c&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Controllers/Cl4ssController.php&#10;user&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/User.php&#10;cl4sstype&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Models/ClassLayer/Cl4ssType.php&#10;cl4&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/database/seeds/Cl4ssTableSeeder.php&#10;cl/in&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/cl4sses/index.blade.php&#10;stu&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Models/UserLayer/Student.php&#10;student/index&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/students/index.blade.php&#10;cl/index&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/cl4sses/index.blade.php&#10;clcon&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Controllers/Cl4ssController.php&#10;studentco&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Controllers/StudentController.php&#10;student/in&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/students/index.blade.php&#10;teacher/r&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/teachers/row.blade.php&#10;cl/inde&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/cl4sses/index.blade.php&#10;laravel&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/storage/logs/laravel.log&#10;data&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/database/seeds/DatabaseSeeder.php&#10;8d9b7f710de7918475f6a7901603f65998b9c250.php &#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/storage/framework/views/8d9b7f710de7918475f6a7901603f65998b9c250.php&#10;parent/edit&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/parents/edit.blade.php&#10;stu/index&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/students/index.blade.php&#10;cl&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Models/ClassLayer/Cl4ss.php&#10;8d9b7f710de7918475f6a7901603f65998b9c250&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/storage/framework/views/8d9b7f710de7918475f6a7901603f65998b9c250.php&#10;cl/row&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/cl4sses/row.blade.php&#10;studentcon&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Controllers/StudentController.php&#10;stucon&#9;null&#9;null&#10;general&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/lang/en/general.php" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="SearchEverywhereHistoryKey" value="teacher&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Models/UserLayer/Teacher.php&#10;route&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/routes.php&#10;subject&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Models/MarkLayer/Subject.php&#10;Teach&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Models/MarkLayer/TeachSubject.php&#10;6d9bbfa857589339e5d1c1f744d0904b28de4d1b&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/storage/framework/views/6d9bbfa857589339e5d1c1f744d0904b28de4d1b.php&#10;cl4s&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Models/ClassLayer/Cl4ss.php&#10;cl4ss&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Models/ClassLayer/Cl4ss.php&#10;subjec&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Models/MarkLayer/Subject.php&#10;teac&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Models/UserLayer/Teacher.php&#10;ro&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/routes.php&#10;subj&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Models/MarkLayer/Subject.php&#10;user&#9;null&#9;null&#10;student&#9;null&#9;null&#10;sidebar&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/layouts/sidebar_teacher.blade.php&#10;cl4&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Models/ClassLayer/Cl4ss.php&#10;cl/ed&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/admin/cl4sses/edit.blade.php&#10;cl/store&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Requests/Cl4sses/StoreRequest.php&#10;cl/upd&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Requests/Cl4sses/UpdateRequest.php&#10;cl4/del&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Requests/Cl4sses/DeleteRequest.php&#10;cl/edi&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/admin/cl4sses/edit.blade.php&#10;cl/cre&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/admin/cl4sses/create.blade.php&#10;cl/edit&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/admin/cl4sses/edit.blade.php&#10;cl/filt&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/admin/cl4sses/filter.blade.php&#10;cl4ss/ind&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/admin/cl4sses/index.blade.php&#10;studentc&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Controllers/Admin/StudentController.php&#10;student/edit&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/admin/students/edit.blade.php&#10;cl4/cre&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/admin/cl4sses/create.blade.php&#10;cl4/store&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Requests/Cl4sses/StoreRequest.php&#10;nav.bl&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/layouts/nav.blade.php&#10;nav&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/layouts/nav.blade.php&#10;sidebar_s&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/layouts/sidebar_student.blade.php&#10;mo&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/assets/sass/_modules.scss&#10;modu&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/assets/sass/_modules.scss&#10;mark/inde&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/mark_types/index.blade.php&#10;ker&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Kernel.php&#10;app.sc&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/assets/sass/app.scss&#10;app.b&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/layouts/app.blade.php&#10;test&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Controllers/TestController.php&#10;cl4ss/upd&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Requests/Cl4sses/UpdateRequest.php&#10;cl4/crea&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/cl4sses/create.blade.php&#10;cl4ssc&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Http/Controllers/Cl4ssController.php&#10;seed&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Console/Commands/SeedUser.php&#10;cl/add&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/cl4sses/add_student.blade.php&#10;stude&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/app/Models/UserLayer/Student.php&#10;students/filter&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/students/filter.blade.php&#10;student/row&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/students/row.blade.php&#10;cl4ss/filter&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/cl4sses/filter.blade.php&#10;gen&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/lang/en/general.php&#10;cl4ss/row&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/cl4sses/row.blade.php&#10;cl4/in&#9;FILE&#9;file:///home/kmasteryc/Projects/studentmanager/resources/views/cl4sses/index.blade.php" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.PHP" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../frontend" />
-    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/admin" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
       <recent name="$PROJECT_DIR$/app/Http/Requests/Scholastics" />
       <recent name="$PROJECT_DIR$/app/Models/MarkLayer" />
       <recent name="$PROJECT_DIR$/app/Models/UserLayer" />
-      <recent name="$PROJECT_DIR$/app/Models/ClassLayer" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/layouts" />
-      <recent name="$PROJECT_DIR$/resources/views/cl4sses" />
-      <recent name="$PROJECT_DIR$/resources/views" />
-      <recent name="$PROJECT_DIR$/app/Policies" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers" />
+      <recent name="$PROJECT_DIR$/resources/views/teacher" />
+      <recent name="$PROJECT_DIR$/resources/views/teacher/subject_teaching" />
+      <recent name="$PROJECT_DIR$/resources/views/teacher/cl4ss_pasts" />
+      <recent name="$PROJECT_DIR$/resources/views/teacher/cl4ss_currents" />
+      <recent name="$PROJECT_DIR$/resources/views/teacher/cl4ss_current" />
     </key>
   </component>
   <component name="RunManager">
@@ -449,36 +507,42 @@
       <workItem from="1471742011236" duration="19375000" />
       <workItem from="1471771635608" duration="17563000" />
       <workItem from="1471828184697" duration="45053000" />
-      <workItem from="1471916307063" duration="40252000" />
+      <workItem from="1471916307063" duration="45347000" />
+      <workItem from="1472000936236" duration="178000" />
+      <workItem from="1472009004939" duration="154000" />
+      <workItem from="1472010940440" duration="1831000" />
+      <workItem from="1472015707927" duration="17497000" />
+      <workItem from="1472044614684" duration="93000" />
+      <workItem from="1472044723225" duration="2531000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="289392000" />
+    <option name="totallyTimeSpent" value="316771000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-26" width="1366" height="794" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="6" />
+    <editor active="true" />
     <layout>
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19399707" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19692533" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294271" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294271" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -513,418 +577,441 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/Teacher/SubjectTeachingController.php</url>
+          <line>8</line>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/seeds/Cl4ssTableSeeder.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/PermissionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="7" selection-end-column="36" />
-          <folding />
+        <state relative-caret-position="-736">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/SeedCl4ss.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1094">
-          <caret line="68" column="11" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
-          <folding />
+        <state relative-caret-position="32">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ScholasticController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-64">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="3264">
+          <caret line="102" column="28" selection-start-line="102" selection-start-column="28" selection-end-line="102" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/ClassLayer/Cl4ssType.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/SemesterController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="3232">
+          <caret line="101" column="28" selection-start-line="101" selection-start-column="28" selection-end-line="101" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/Truncate.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/StudentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="4384">
+          <caret line="137" column="28" selection-start-line="137" selection-start-column="28" selection-end-line="137" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/SeedCl4ssType.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/TeacherController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1600">
-          <caret line="50" column="12" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
-          <folding />
+        <state relative-caret-position="3520">
+          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/general.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/MarkTypeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="3008">
+          <caret line="94" column="22" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cl4sses/filter.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/cl4sses/row.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="75" column="22" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
-          <folding />
+        <state relative-caret-position="32">
+          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cl4sses/row.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cl4sses/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cl4sses/row_current_student.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/grades/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/fzaninotto/faker/src/Faker/Provider/vi_VN/Person.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/cl4sses/add_student.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4992">
+        <state relative-caret-position="832">
+          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="26" column="3" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/SeedUser.php">
+    <entry file="file://$PROJECT_DIR$/phpunit.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-352">
-          <caret line="61" column="35" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cl4sses/row_all_student.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cl4sses/add_student.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/sidebar_admin.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1120">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="608">
+          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/students/filter.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/cl4sses/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="98" column="43" selection-start-line="98" selection-start-column="26" selection-end-line="98" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/students/row.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/UserLayer/Student.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="82" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Cl4sses/UpdateRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="256">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/Cl4sses/StoreRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="451">
+          <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cl4sses/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Cl4sses/UpdateRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/cl4sses/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="104" column="44" selection-start-line="104" selection-start-column="44" selection-end-line="104" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Cl4sses/DeleteRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/cl4sses/filter.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/cl4sses/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="33" column="97" selection-start-line="33" selection-start-column="97" selection-end-line="33" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/sidebar_teacher.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
-          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+          <caret line="49" column="61" selection-start-line="49" selection-start-column="59" selection-end-line="49" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/UserLayer/Student.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="95" column="1" selection-start-line="95" selection-start-column="1" selection-end-line="95" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Cl4ssController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="157" column="11" selection-start-line="157" selection-start-column="11" selection-end-line="157" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/teacher/cl4ss_currents/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/teacher/cl4ss_currents/row.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/teacher/cl4ss_currents/row_student.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/teacher/cl4ss_pasts/row_student.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/teacher/cl4ss_pasts/row.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/teacher/cl4ss_pasts/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/SeedSubject.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1056">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/SeedUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3744">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Teacher/Cl4ssPastController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/SeedCl4ssType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="51" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/SeedCl4ssSubject.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="49" column="88" selection-start-line="49" selection-start-column="88" selection-end-line="49" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Teacher/Cl4ssCurrentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/framework/views/6d9bbfa857589339e5d1c1f744d0904b28de4d1b.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/MarkLayer/TeachSubject.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="706">
+          <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/ClassLayer/Cl4ss.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+        <state relative-caret-position="272">
+          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding>
+            <element signature="e#42#75#0#PHP" expanded="false" />
+            <element signature="e#334#447#0#PHP" expanded="false" />
+            <element signature="e#498#568#0#PHP" expanded="false" />
+            <element signature="e#571#647#0#PHP" expanded="false" />
+            <element signature="e#650#730#0#PHP" expanded="false" />
+            <element signature="e#733#807#0#PHP" expanded="false" />
+            <element signature="e#884#1006#0#PHP" expanded="false" />
+            <element signature="e#1009#1110#0#PHP" expanded="false" />
+            <element signature="e#1113#1208#0#PHP" expanded="false" />
+            <element signature="e#1817#2850#0#PHP" expanded="false" />
+            <element signature="e#2114#2607#0#PHP" expanded="false" />
+            <element signature="e#2480#2603#0#PHP" expanded="false" />
+            <element signature="e#2513#2597#0#PHP" expanded="false" />
+            <element signature="e#2621#2827#0#PHP" expanded="false" />
+            <element signature="e#2634#2826#2#PHP" expanded="false" />
+            <element signature="e#2670#2807#0#PHP" expanded="false" />
+            <element signature="e#2853#3246#0#PHP" expanded="false" />
+            <element signature="e#3249#4295#0#PHP" expanded="false" />
+            <element signature="e#3374#4061#0#PHP" expanded="false" />
+            <element signature="e#3384#4060#2#PHP" expanded="false" />
+            <element signature="e#3479#3625#0#PHP" expanded="false" />
+            <element signature="e#3504#3619#0#PHP" expanded="false" />
+            <element signature="e#3531#3618#1#PHP" expanded="false" />
+            <element signature="e#3630#3771#0#PHP" expanded="false" />
+            <element signature="e#3654#3765#0#PHP" expanded="false" />
+            <element signature="e#3679#3764#1#PHP" expanded="false" />
+            <element signature="e#3776#3902#0#PHP" expanded="false" />
+            <element signature="e#3796#3896#0#PHP" expanded="false" />
+            <element signature="e#3818#3895#1#PHP" expanded="false" />
+            <element signature="e#3907#3979#0#PHP" expanded="false" />
+            <element signature="e#3984#4056#0#PHP" expanded="false" />
+            <element signature="e#4066#4278#0#PHP" expanded="false" />
+            <element signature="e#4135#4273#0#PHP" expanded="false" />
+            <element signature="e#4159#4272#1#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/MarkLayer/Subject.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/teacher/subject_teachings/_row_cl4ss.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="5" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/TeacherController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/teacher/subject_teachings/_row.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="34">
+          <caret line="1" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/StudentController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/teacher/subject_teachings/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="284">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/SemesterController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Teacher/SubjectTeachingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ScholasticController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/PermissionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ParentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/GradeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/MarkTypeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Cl4ssController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1344">
-          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+        <state relative-caret-position="476">
+          <caret line="14" column="57" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="19" column="76" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
+        <state relative-caret-position="488">
+          <caret line="133" column="39" selection-start-line="133" selection-start-column="39" selection-end-line="133" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/teacher/subject_teacheds/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="102">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/_global.scss">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Teacher/SubjectTeachedController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="332">
+          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/_sidebar.scss">
+    <entry file="file://$PROJECT_DIR$/app/Models/UserLayer/Teacher.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="400">
+          <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-128">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/page_content.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/mark_types/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="30" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/_modules.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="57" column="33" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/sidebar_guest.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="678">
-          <caret line="27" column="75" selection-start-line="27" selection-start-column="75" selection-end-line="27" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/phrase.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/sidebar_admin.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/sidebar_student.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/nav.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/sidebar_teacher.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

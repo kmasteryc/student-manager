@@ -23,7 +23,7 @@ class GradeController extends Controller
     {
 //        var_dump(request()->server());
 //        exit();
-        return view('grades.index', [
+        return view('admin.grades.index', [
             'grades' => Grade::all()
         ]);
     }
@@ -35,7 +35,7 @@ class GradeController extends Controller
      */
     public function create()
     {
-        return view('grades.create');
+        return view('admin.grades.create');
     }
 
     /**
@@ -49,12 +49,8 @@ class GradeController extends Controller
         Grade::create($request->all());
 
         return redirect()
-            ->route('grade::create')
-            ->with('success',
-                trans('general.create_success', [
-                    'name' => trans('general.grade')
-                ])
-            );
+            ->route('admin::grade::create')
+            ->with('success', trans('general.create_success'));
     }
 
     /**
@@ -76,7 +72,7 @@ class GradeController extends Controller
      */
     public function edit(Grade $grade)
     {
-        return view('grades.edit', [
+        return view('admin.grades.edit', [
             'grade' => $grade
         ]);
     }
@@ -92,12 +88,8 @@ class GradeController extends Controller
     {
         $grade->update($request->all());
         return redirect()
-            ->route("grade::edit", $grade)
-            ->with('success',
-                trans('general.update_success', [
-                    'name' => trans('general.grade')
-                ])
-            );
+            ->route("admin::grade::edit", $grade)
+            ->with('success', trans('general.update_success'));
     }
 
     /**
@@ -111,12 +103,8 @@ class GradeController extends Controller
         $grade->delete();
 
         return redirect()
-            ->route("grade::index")
-            ->with('success',
-                trans('general.delete_success', [
-                    'name' => trans('general.grade')
-                ])
-            );
+            ->route("admin::grade::index")
+            ->with('success', trans('general.delete_success'));
 
     }
 }

@@ -47,13 +47,6 @@ class User extends Authenticatable
 		return $this->belongsTo(Models\UserLayer\Role::class);
 	}
 
-	// This use for teacher only
-	public function subjects()
-	{
-		return $this->belongsToMany(Models\MarkLayer\Subject::class, 'subject_user', 'user_id');
-	}
-	//	END RELATIONSHIP
-
 	public function getBirthDayAttribute(){
 		return Carbon::parse($this->attributes['birthday'])->format('Y/m/d');
 	}

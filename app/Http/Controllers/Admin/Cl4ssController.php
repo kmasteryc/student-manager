@@ -33,17 +33,18 @@ class Cl4ssController extends Controller
 		$q_grade = request()->query('filter_grade');
 		$q_cl4ss_type = request()->query('filter_cl4ss_type');
 		$q_teacher_name = request()->query('filter_teacher_name');
+		$q_cl4ss_state = request()->query('filter_cl4ss_state');
 
-		$cl4sses = Cl4ss::search($q_scholastic, $q_sesmester, $q_grade, $q_cl4ss_type, $q_teacher_name)
+		$cl4sses = Cl4ss::search($q_scholastic, $q_sesmester, $q_grade, $q_cl4ss_type, $q_teacher_name, $q_cl4ss_state)
 			->loadRelation()
 			->orderBy('id', 'DESC')
 			->paginate(10);
 
 		$cl4sses->setPath(request()->getUri());
 
-		return view('cl4sses.index', [
+		return view('admin.cl4sses.index', [
 			'result_cl4sses' => $cl4sses,
-			'scholastics' => Scholastic::all(),
+			'scholastics' => Scholastic::orderBy('scholastic_from','DESC')->get(),
 			'semesters'   => Semester::all(),
 			'grades'      => Grade::all(),
 			'cl4ss_types'     => Cl4ssType::all()
@@ -64,7 +65,7 @@ class Cl4ssController extends Controller
 		$parents = Paren::all();
 		$teachers = Teacher::all();
 
-		return view('cl4sses.create', compact('grades', 'semesters', 'scholastics', 'teachers', 'parents', 'cl4ss_types'));
+		return view('admin.cl4sses.create', compact('grades', 'semesters', 'scholastics', 'teachers', 'parents', 'cl4ss_types'));
 	}
 
 	/**
@@ -105,8 +106,9 @@ class Cl4ssController extends Controller
 		$semesters = Semester::all();
 		$scholastics = Scholastic::all();
 		$users = User::all();
+		$cl4ss_types = Cl4ssType::all();
 
-		return view('cl4sses.edit', compact('cl4ss', 'grades', 'semesters', 'scholastics', 'users'));
+		return view('admin.cl4sses.edit', compact('cl4ss', 'cl4ss_types','grades', 'semesters', 'scholastics', 'users'));
 	}
 
 	/**
@@ -121,7 +123,7 @@ class Cl4ssController extends Controller
 		$cl4ss->update($request->all());
 
 		return redirect()
-			->route("cl4ss::edit", $cl4ss)
+			->route("admin::cl4ss::edit", $cl4ss)
 			->with('success', trans('general.update_success'));
 	}
 
@@ -134,11 +136,11 @@ class Cl4ssController extends Controller
 	public function destroy(DeleteRequest $request, Cl4ss $cl4ss)
 	{
 		$cl4ss->subjects()->detach();
-		$cl4ss->users()->detach();
+		$cl4ss->students()->detach();
 		$cl4ss->delete();
 
 		return redirect()
-			->route("cl4ss::index")
+			->route("admin::cl4ss::index")
 			->with('success', trans('general.delete_success'));
 
 	}
@@ -149,7 +151,7 @@ class Cl4ssController extends Controller
 //	    dd($cur_students);
 		$all_students = Student::whereNotIn('id', $cur_students->pluck('id'))->with('parents')->get();
 
-		return view('cl4sses.add_student', [
+		return view('admin.cl4sses.add_student', [
 			'cl4ss'        => $cl4ss,
 			'all_students' => $all_students,
 			'cur_students' => $cur_students,
@@ -162,7 +164,7 @@ class Cl4ssController extends Controller
 		$cl4ss->students()->sync($students);
 
 		return redirect()
-			->route('cl4ss::add-student', $cl4ss)
+			->route('admin::cl4ss::add-student', $cl4ss)
 			->with('success', trans('general.update_success'));
 	}
 }

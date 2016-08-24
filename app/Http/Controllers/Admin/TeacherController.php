@@ -21,7 +21,7 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        return view('teachers.index', [
+        return view('admin.teachers.index', [
             'teachers' => Teacher::with('subjects')->get()
         ]);
     }
@@ -34,7 +34,7 @@ class TeacherController extends Controller
     public function create()
     {
 	    $subjects = Subject::all();
-        return view('teachers.create',[
+        return view('admin.teachers.create',[
 	        'subjects' => $subjects
         ]);
     }
@@ -50,7 +50,7 @@ class TeacherController extends Controller
 	    Teacher::storeTeacher($request);
 
         return redirect()
-            ->route('teacher::index')
+            ->route('admin::teacher::index')
             ->with('success', trans('general.create_success'));
     }
 
@@ -73,7 +73,7 @@ class TeacherController extends Controller
      */
     public function edit(Teacher $teacher)
     {
-        return view('teachers.edit', [
+        return view('admin.teachers.edit', [
 	        'subjects' => Subject::all(),
             'teacher' => $teacher
         ]);
@@ -91,7 +91,7 @@ class TeacherController extends Controller
 	    $teacher->updateTeacher($request);
 
         return redirect()
-            ->route("teacher::edit", $teacher)
+            ->route("admin::teacher::edit", $teacher)
             ->with('success',trans('general.update_success'));
     }
 
@@ -106,12 +106,8 @@ class TeacherController extends Controller
         $teacher->delete();
 
         return redirect()
-            ->route("teacher::index")
-            ->with('success',
-                trans('general.delete_success', [
-                    'name' => trans('general.teacher')
-                ])
-            );
+            ->route("admin::teacher::index")
+            ->with('success', trans('general.delete_success'));
 
     }
 }

@@ -33,6 +33,7 @@ class StoreRequest extends Request
             'semester_id' => 'required|integer',
             'parent_id' => 'required|integer',
             'teacher_id' => 'required|integer',
+            'cl4ss_state' => 'required|integer',
         ];
     }
 }

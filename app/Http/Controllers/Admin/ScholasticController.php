@@ -20,7 +20,7 @@ class ScholasticController extends Controller
      */
     public function index()
     {
-        return view('scholastics.index', [
+        return view('admin.scholastics.index', [
             'scholastics' => Scholastic::orderBy('scholastic_from','ASC')->get()
         ]);
     }
@@ -32,7 +32,7 @@ class ScholasticController extends Controller
      */
     public function create()
     {
-        return view('scholastics.create');
+        return view('admin.scholastics.create');
     }
 
     /**
@@ -46,12 +46,8 @@ class ScholasticController extends Controller
         Scholastic::create($request->all());
 
         return redirect()
-            ->route('scholastic::create')
-            ->with('success',
-                trans('general.create_success', [
-                    'name' => trans('general.scholastic')
-                ])
-            );
+            ->route('admin::scholastic::create')
+            ->with('success', trans('general.create_success'));
     }
 
     /**
@@ -73,7 +69,7 @@ class ScholasticController extends Controller
      */
     public function edit(Scholastic $scholastic)
     {
-        return view('scholastics.edit', [
+        return view('admin.scholastics.edit', [
             'scholastic' => $scholastic
         ]);
     }
@@ -89,12 +85,8 @@ class ScholasticController extends Controller
     {
         $scholastic->update($request->all());
         return redirect()
-            ->route("scholastic::edit", $scholastic)
-            ->with('success',
-                trans('general.update_success', [
-                    'name' => trans('general.scholastic')
-                ])
-            );
+            ->route("admin::scholastic::edit", $scholastic)
+            ->with('success', trans('general.update_success'));
     }
 
     /**
@@ -108,12 +100,8 @@ class ScholasticController extends Controller
         $scholastic->delete();
 
         return redirect()
-            ->route("scholastic::index")
-            ->with('success',
-                trans('general.delete_success', [
-                    'name' => trans('general.scholastic')
-                ])
-            );
+            ->route("admin::scholastic::index")
+            ->with('success', trans('general.delete_success'));
 
     }
 }
