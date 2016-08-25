@@ -3,6 +3,7 @@
 namespace App\Models\ClassLayer;
 
 
+use App\Models\MarkLayer\Cl4ssSubject;
 use App\Models\UserLayer\Student;
 use App\Models\UserLayer\Teacher;
 use App\Models\UserLayer\Paren;
@@ -64,6 +65,10 @@ class Cl4ss extends Model
 		return $this->belongsTo(Cl4ssType::class, 'cl4ss_type_id');
 	}
 
+	public function cl4ssSubjects(){
+		return $this->hasMany(Cl4ssSubject::class);
+	}
+
 	public function scopeLoadRelation($q)
 	{
 		return $q->with(
@@ -73,7 +78,9 @@ class Cl4ss extends Model
 				},
 				'grade', 'semester', 'cl4ssType',
 				'teacher', 'parent',
-				'students.parents',
+				'students' => function($q){
+					$q->orderBy('last_name','ASC')->with('parents');
+				},
 			]);
 	}
 

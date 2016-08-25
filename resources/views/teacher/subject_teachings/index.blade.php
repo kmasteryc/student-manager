@@ -20,7 +20,11 @@
             <tbody>
             @forelse($teaching_subjects->where('subject_id',$teachable_subject->id) as $teaching_subject)
                 <tr>
-                    <td>Action</td>
+                    <td>
+                        <a href="{!! route('teacher::mark::create', $teaching_subject) !!}">
+                            <button class="btn btn-primary"><i class="fa fa-braille"></i> Add marks</button>
+                        </a>
+                    </td>
                     <td>{!! $teaching_subject->cl4ss->detail_name !!}</td>
                     <td>{!! $teaching_subject->teacher->full_name !!}</td>
                     <td>{!! $teaching_subject->cl4ss->parent->full_name !!}</td>

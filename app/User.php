@@ -17,11 +17,11 @@ class User extends Authenticatable
 		'user_name', 'email', 'password', 'first_name', 'last_name', 'birthday', 'role_id', 'info'
 	];
 
-	protected $dates = ['birthday'];
+//	protected $dates = ['birthday'];
 
 	public $appends = ['full_name'];
 
-	public $dateFormat = 'Y/m/d';
+//	public $dateFormat = 'Y/m/d';
 
 	/**
 	 * The attributes that should be hidden for arrays.
@@ -55,6 +55,10 @@ class User extends Authenticatable
 	}
 	public function full_name(){
 		return $this->attributes['last_name'].' '.$this->attributes['first_name'];
+	}
+
+	public static function createFromAuth(){
+		return static::find(auth()->id());
 	}
 }
 

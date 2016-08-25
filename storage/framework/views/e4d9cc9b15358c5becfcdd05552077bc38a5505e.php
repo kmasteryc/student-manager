@@ -55,33 +55,46 @@
 
 <?php echo $__env->make('layouts.alert', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
-<div class="col-md-2" id="sidebar">
-    <?php if(auth()->user()): ?>
-        <?php if(auth()->user()->role_id == 4): ?>
-            <?php echo $__env->make('layouts.sidebar_admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-        <?php endif; ?>
-        <?php if(auth()->user()->role_id == 3): ?>
-            <?php echo $__env->make('layouts.sidebar_teacher', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-        <?php endif; ?>
-        <?php if(auth()->user()->role_id == 2): ?>
-            <?php echo $__env->make('layouts.sidebar_parent', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-        <?php endif; ?>
-        <?php if(auth()->user()->role_id == 1): ?>
-            <?php echo $__env->make('layouts.sidebar_student', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-        <?php endif; ?>
-    <?php else: ?>
-        <?php echo $__env->make('layouts.sidebar_guest', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-    <?php endif; ?>
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-2" id="sidebar">
+
+            <?php if(auth()->user()): ?>
+                <?php if(auth()->user()->role_id == 4): ?>
+                    <?php echo $__env->make('layouts.sidebar_admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php endif; ?>
+                <?php if(auth()->user()->role_id == 3): ?>
+                    <?php echo $__env->make('layouts.sidebar_teacher', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php endif; ?>
+                <?php if(auth()->user()->role_id == 2): ?>
+                    <?php echo $__env->make('layouts.sidebar_parent', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php endif; ?>
+                <?php if(auth()->user()->role_id == 1): ?>
+                    <?php echo $__env->make('layouts.sidebar_student', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php endif; ?>
+            <?php else: ?>
+                <?php echo $__env->make('layouts.sidebar_guest', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php endif; ?>
+
+        </div>
+
+        <div class="col-md-10" id="content">
+
+            <div id="pjax-container">
+                <?php echo $__env->yieldContent('content'); ?>
+            </div>
+
+        </div>
+    </div>
 </div>
 
-<div class="col-md-10" id="content">
-    <div id="pjax-container">
-        <?php echo $__env->yieldContent('content'); ?>
+<div class="row">
+    <div class="col-md-12">
+        <?php echo $__env->make('layouts.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     </div>
 </div>
 
 <?php $__env->startSection('script'); ?>
 <?php echo $__env->yieldSection(); ?>
-
 </body>
 </html>

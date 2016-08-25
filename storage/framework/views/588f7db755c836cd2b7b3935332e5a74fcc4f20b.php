@@ -1,5 +1,5 @@
 <?php $__env->startSection('title'); ?>
-    You are teaching <?php echo $teachable_subjects->count(); ?> subjects in <?php echo $teaching_subjects->count(); ?> classes!.
+    You are teaching <?php echo $teachable_subjects->count(); ?> subjects in <?php echo $teaching_subjects->count(); ?> classes!
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('body'); ?>
@@ -18,7 +18,11 @@
             <tbody>
             <?php $__empty_1 = true; foreach($teaching_subjects->where('subject_id',$teachable_subject->id) as $teaching_subject): $__empty_1 = false; ?>
                 <tr>
-                    <td>Action</td>
+                    <td>
+                        <a href="<?php echo route('teacher::mark::create', $teaching_subject); ?>">
+                            <button class="btn btn-primary"><i class="fa fa-braille"></i> Add marks</button>
+                        </a>
+                    </td>
                     <td><?php echo $teaching_subject->cl4ss->detail_name; ?></td>
                     <td><?php echo $teaching_subject->teacher->full_name; ?></td>
                     <td><?php echo $teaching_subject->cl4ss->parent->full_name; ?></td>

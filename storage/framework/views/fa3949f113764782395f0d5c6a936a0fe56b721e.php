@@ -1,5 +1,5 @@
 <?php $__env->startSection('title'); ?>
-    You have teached <?php echo $teachable_subjects->count(); ?> subjects in <?php echo $teached_subjects->count(); ?> classes!.
+    You have teached <?php echo $teachable_subjects->count(); ?> subjects in <?php echo $teached_subjects->count(); ?> classes!
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('body'); ?>
@@ -20,7 +20,7 @@
                 <tr>
                     <td>Action</td>
                     <td><?php echo $teached_subject->cl4ss->detail_name; ?></td>
-                    <td><?php echo $teached_subject->teacher->full_name; ?></td>
+                    <td><?php echo $teached_subject->cl4ss->teacher->full_name; ?></td>
                     <td><?php echo $teached_subject->cl4ss->parent->full_name; ?></td>
                 </tr>
             <?php endforeach; if ($__empty_1): ?>

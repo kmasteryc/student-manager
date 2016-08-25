@@ -106,7 +106,7 @@
                         <label>@lang('general.birthday')</label>
                     </div>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control pickadate" name="birthday" value="{!! $teacher->birthday->format('Y/m/d') !!}">
+                        <input type="text" class="form-control pickadate" name="birthday" value="{!! $teacher->birthday !!}">
                     </div>
                 </div>
 

@@ -22,7 +22,7 @@
                 <tr>
                     <td>Action</td>
                     <td>{!! $teached_subject->cl4ss->detail_name !!}</td>
-                    <td>{!! $teached_subject->teacher->full_name !!}</td>
+                    <td>{!! $teached_subject->cl4ss->teacher->full_name !!}</td>
                     <td>{!! $teached_subject->cl4ss->parent->full_name !!}</td>
                 </tr>
             @empty

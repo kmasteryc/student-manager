@@ -55,33 +55,46 @@
 
 @include('layouts.alert')
 
-<div class="col-md-2" id="sidebar">
-    @if(auth()->user())
-        @if(auth()->user()->role_id == 4)
-            @include('layouts.sidebar_admin')
-        @endif
-        @if(auth()->user()->role_id == 3)
-            @include('layouts.sidebar_teacher')
-        @endif
-        @if(auth()->user()->role_id == 2)
-            @include('layouts.sidebar_parent')
-        @endif
-        @if(auth()->user()->role_id == 1)
-            @include('layouts.sidebar_student')
-        @endif
-    @else
-        @include('layouts.sidebar_guest')
-    @endif
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-2" id="sidebar">
+
+            @if(auth()->user())
+                @if(auth()->user()->role_id == 4)
+                    @include('layouts.sidebar_admin')
+                @endif
+                @if(auth()->user()->role_id == 3)
+                    @include('layouts.sidebar_teacher')
+                @endif
+                @if(auth()->user()->role_id == 2)
+                    @include('layouts.sidebar_parent')
+                @endif
+                @if(auth()->user()->role_id == 1)
+                    @include('layouts.sidebar_student')
+                @endif
+            @else
+                @include('layouts.sidebar_guest')
+            @endif
+
+        </div>
+
+        <div class="col-md-10" id="content">
+
+            <div id="pjax-container">
+                @yield('content')
+            </div>
+
+        </div>
+    </div>
 </div>
 
-<div class="col-md-10" id="content">
-    <div id="pjax-container">
-        @yield('content')
+<div class="row">
+    <div class="col-md-12">
+        @include('layouts.footer')
     </div>
 </div>
 
 @section('script')
 @show
-
 </body>
 </html>

@@ -7,15 +7,15 @@
             <!-- Main Menu -->
             <div class="side-menu-container">
                 <ul class="nav navbar-nav">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                    <li><a href="#"></i> Dashboard</a></li>
 
                     <li class="panel panel-default custom-dropdown">
                         <a data-toggle="collapse" href="#class_layer">School news <span class="caret"></span></a>
                         <div id="class_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="{!! route('cl4ss::index') !!}" data-pjax>Category 1</a></li>
-                                    <li><a href="{!! route('cl4ss::index') !!}" data-pjax>Category 2</a></li>
+                                    <li><a href="#" data-pjax>Category 1</a></li>
+                                    <li><a href="#" data-pjax>Category 2</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -26,20 +26,19 @@
                         <div id="class_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="{!! route('cl4ss::index') !!}" data-pjax>Announments</a></li>
-                                    <li><a href="{!! route('grade::index') !!}" data-pjax>Schedule</a></li>
+                                    <li><a href="#" data-pjax>Announments</a></li>
+                                    <li><a href="#" data-pjax>Schedule</a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
 
                     <li class="panel panel-default custom-dropdown">
-                        <a data-toggle="collapse" href="#class_layer">Studying subjects <span class="caret"></span></a>
+                        <a data-toggle="collapse" href="#class_layer">Subjects <span class="caret"></span></a>
                         <div id="class_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="{!! route('cl4ss::index') !!}" data-pjax>Announments</a></li>
-                                    <li><a href="{!! route('grade::index') !!}" data-pjax>Schedule</a></li>
+
                                 </ul>
                             </div>
                         </div>
@@ -50,8 +49,8 @@
                         <div id="class_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="{!! route('cl4ss::index') !!}" data-pjax>Class 1</a></li>
-                                    <li><a href="{!! route('cl4ss::index') !!}" data-pjax>Class 2</a></li>
+                                    <li><a href="#" data-pjax>Class 1</a></li>
+                                    <li><a href="#" data-pjax>Class 2</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -62,9 +61,9 @@
                         <div id="user_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="{!! route('student::index') !!}" data-pjax>Manage students</a></li>
-                                    <li><a href="{!! route('parent::index') !!}" data-pjax>Manage parents</a></li>
-                                    <li><a href="{!! route('teacher::index') !!}" data-pjax>Manage teacher</a></li>
+                                    <li><a href="#" data-pjax>Manage students</a></li>
+                                    <li><a href="#" data-pjax>Manage parents</a></li>
+                                    <li><a href="#" data-pjax>Manage teacher</a></li>
                                 </ul>
                             </div>
                         </div>

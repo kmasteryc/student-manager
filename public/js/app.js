@@ -81,6 +81,7 @@ function form_ajax(data, url, method='POST') {
             if (success_text == undefined) {
                 success_text = 'OK';
             }
+            $.pjax.reload('#pjax-container', {timeout:5000})
             showNotify('success', success_text);
         },
         error: function (errors) {

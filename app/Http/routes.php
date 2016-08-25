@@ -133,4 +133,18 @@ Route::group(['prefix'=>'teacher','namespace'=>'Teacher','middleware'=>'auth','a
 	Route::group(['prefix'=>'subject_teached','as'=>'subject_teached::'], function(){
 		Route::get('/', 'SubjectTeachedController@index')->name('index');
 	});
+
+	Route::group(['prefix'=>'mark', 'as'=>'mark::'], function(){
+		Route::get('create/{cl4ss_subject}', 'MarkController@create')->name('create');
+		Route::post('store/{cl4ss_subject}', 'MarkController@store')->name('store');
+	});
 });
+
+Route::group(['prefix'=>'student','namespace'=>'Student','middleware'=>'auth','as'=>'student::'], function(){
+	Route::group(['prefix'=>'subject', 'as'=>'subject::'], function(){
+		Route::get('/', 'SubjectController@showCurrent')->name('showCurrent');
+		Route::get('/all', 'SubjectController@showAll')->name('showAll');
+		Route::get('{scholastic}/{semester?}', 'SubjectController@showOther')->name('showOther');
+	});
+});
+

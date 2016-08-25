@@ -3,8 +3,9 @@
 namespace App\Models\UserLayer;
 
 use App\Models\ClassLayer\Cl4ss;
+use App\Models\MarkLayer\Cl4ssSubject;
 use App\Models\MarkLayer\Subject;
-use App\Models\MarkLayer\TeachSubject;
+
 use App\User;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -33,7 +34,7 @@ class Teacher extends User
 
 	public function teachSubjects()
 	{
-		return $this->hasMany(TeachSubject::class)
+		return $this->hasMany(Cl4ssSubject::class)
 			->with([
 					'subject', 'teacher',
 					'cl4ss' => function ($q) {
