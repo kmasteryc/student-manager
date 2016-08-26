@@ -45,11 +45,7 @@ class SeedCl4ss extends Command
 	public function handle()
 	{
 		\DB::transaction(function (){
-
-			$cl4ss_types = Cl4ssType::all();
-			if ($cl4ss_types->count() == 0){
-				\Artisan::call('seed:cl4ss-type');
-			}
+			
 			$cl4ss_types = Cl4ssType::all();
 
 			foreach (Scholastic::all() as $scholastic) {

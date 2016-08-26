@@ -25,13 +25,12 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown ">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        {!! auth()->check()?auth()->user()->full_name:'' !!} -
-                        {!! auth()->check()?auth()->user()->user_name:'' !!} -
-                        {!! auth()->check()?auth()->user()->email:'' !!}
+                        {!! auth()->check()?auth()->user()->full_name:'' !!}
+                        {!! auth()->check()?Tool::label(auth()->user()):'' !!}
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         @if(auth()->check())
-                            <li><a href="{!! url('/logout') !!}">Logout</a></li>
+                            <li><a href="{!! url('/logout') !!}">Logout ({!! auth()->user()->username !!})</a></li>
                         @else
                             <li><a href="{!! url('/login') !!}">Login</a></li>
                         @endif

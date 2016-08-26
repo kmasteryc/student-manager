@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\ClassLayer\Cl4ss;
 use Cookie;
 use App\TestClass;
+
 class TestController extends Controller
 {
 
@@ -26,10 +27,6 @@ class TestController extends Controller
 
 	public function index()
 	{
-
-		var_dump(Cl4ss::where('id','<',200)->count());
-
-
 	}
 
 	public function index1()

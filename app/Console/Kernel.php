@@ -8,30 +8,39 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {
-    /**
-     * The Artisan commands provided by your application.
-     *
-     * @var array
-     */
-    protected $commands = [
-         Commands\SeedUser::class,
-         Commands\ReSyncClass::class,
-         Commands\Truncate::class,
-         Commands\SeedSubject::class,
-         Commands\SeedCl4ssType::class,
-         Commands\SeedCl4ss::class,
-         Commands\SeedCl4ssSubject::class,
-    ];
 
-    /**
-     * Define the application's command schedule.
-     *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
-     * @return void
-     */
-    protected function schedule(Schedule $schedule)
-    {
-        // $schedule->command('inspire')
-        //          ->hourly();
-    }
+	/**
+	 * The Artisan commands provided by your application.
+	 *
+	 * @var array
+	 */
+	protected $commands = [
+		Commands\Inspire::class,
+		Commands\ReSyncClass::class,
+		Commands\Truncate::class,
+		
+		Commands\SeedAll::class,
+		Commands\SeedUser::class,
+		Commands\SeedRole::class,
+		Commands\SeedSubject::class,
+		Commands\SeedCl4ssType::class,
+		Commands\SeedCl4ss::class,
+		Commands\SeedMarkType::class,
+		Commands\SeedGrade::class,
+		Commands\SeedScholastic::class,
+		Commands\SeedSemester::class,
+		Commands\SeedCl4ssSubject::class,
+	];
+
+	/**
+	 * Define the application's command schedule.
+	 *
+	 * @param  \Illuminate\Console\Scheduling\Schedule $schedule
+	 * @return void
+	 */
+	protected function schedule(Schedule $schedule)
+	{
+		// $schedule->command('inspire')
+		//          ->hourly();
+	}
 }

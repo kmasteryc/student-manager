@@ -7,27 +7,14 @@
             <!-- Main Menu -->
             <div class="side-menu-container">
                 <ul class="nav navbar-nav">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-
-                    <li class="panel panel-default custom-dropdown">
-                        <a data-toggle="collapse" href="#class_layer">School news <span class="caret"></span></a>
-                        <div id="class_layer" class="panel-collapse collapse in">
-                            <div class="panel-body">
-                                <ul class="nav navbar-nav">
-                                    <li><a href="#" data-pjax>Category 1</a></li>
-                                    <li><a href="#" data-pjax>Category 2</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
 
                     <li class="panel panel-default custom-dropdown">
                         <a data-toggle="collapse" href="#class_layer">Responsible class <span class="caret"></span></a>
                         <div id="class_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="#" data-pjax>Current responsible classes</a></li>
-                                    <li><a href="#" data-pjax>Past responsible classes</a></li>
+                                    <li><a href="<?php echo route('teacher::cl4ss::current'); ?>" data-pjax>Current responsible classes</a></li>
+                                    <li><a href="<?php echo route('teacher::cl4ss::past'); ?>" data-pjax>Past responsible classes</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -38,22 +25,8 @@
                         <div id="user_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="#" data-pjax>Teaching subjects</a></li>
-                                    <li><a href="#" data-pjax>Teached subjects</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li><a href="#" data-pjax>Teaching schedule</a></li>
-
-                    <li class="panel panel-default custom-dropdown">
-                        <a data-toggle="collapse" href="#user_layer">Feedback <span class="caret"></span></a>
-                        <div id="user_layer" class="panel-collapse collapse in">
-                            <div class="panel-body">
-                                <ul class="nav navbar-nav">
-                                    <li><a href="#" data-pjax>Student's feedback</a></li>
-                                    <li><a href="#" data-pjax>Parent's feedback</a></li>
+                                    <li><a href="<?php echo route('teacher::subject::teaching'); ?>" data-pjax>Teaching subjects</a></li>
+                                    <li><a href="<?php echo route('teacher::subject::teached'); ?>" data-pjax>Teached subjects</a></li>
                                 </ul>
                             </div>
                         </div>

@@ -25,14 +25,14 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown ">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        <?php echo auth()->check()?auth()->user()->full_name:''; ?> -
-                        <?php echo auth()->check()?auth()->user()->user_name:''; ?> -
-                        <?php echo auth()->check()?auth()->user()->email:''; ?>
+                        <?php echo auth()->check()?auth()->user()->full_name:''; ?>
+
+                        <?php echo auth()->check()?Tool::label(auth()->user()):''; ?>
 
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <?php if(auth()->check()): ?>
-                            <li><a href="<?php echo url('/logout'); ?>">Logout</a></li>
+                            <li><a href="<?php echo url('/logout'); ?>">Logout (<?php echo auth()->user()->username; ?>)</a></li>
                         <?php else: ?>
                             <li><a href="<?php echo url('/login'); ?>">Login</a></li>
                         <?php endif; ?>

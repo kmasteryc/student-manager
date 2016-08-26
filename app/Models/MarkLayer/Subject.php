@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Subject extends Model
 {
+	public $fillable = ['subject_name'];
+	public $timestamps = false;
 	public function teachers(){
 		return $this->belongsToMany(Teacher::class,'subject_teacher','subject_id');
 	}

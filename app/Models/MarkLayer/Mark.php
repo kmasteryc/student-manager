@@ -19,4 +19,7 @@ class Mark extends Model
 	public function cl4ssSubject(){
 		return $this->belongsTo(Cl4ssSubject::class);
 	}
+	public function markType(){
+		return $this->belongsTo(MarkType::class);
+	}
 }

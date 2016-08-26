@@ -56,42 +56,55 @@ class Student extends User
 		$this->cl4sses()->sync($cl4sses);
 	}
 
-	public function scopeSearch($q, $q_scholastic, $q_sesmester, $q_grade, $q_cl4ss_type, $q_student_name){
+	public function scopeSearch($q, $q_scholastic, $q_sesmester, $q_grade, $q_cl4ss_type, $q_student_name)
+	{
 
-		$q->whereHas('cl4sses', function ($q) use ($q_cl4ss_type, $q_grade, $q_scholastic, $q_sesmester){
+		$q->whereHas('cl4sses', function ($q) use ($q_cl4ss_type, $q_grade, $q_scholastic, $q_sesmester) {
 
-			if ($q_scholastic){
-				$q->whereHas('scholastic', function($qq) use ($q_scholastic){
-					return $qq->where('id',$q_scholastic);
+			if ($q_scholastic) {
+				$q->whereHas('scholastic', function ($qq) use ($q_scholastic) {
+					return $qq->where('id', $q_scholastic);
 				});
 			}
 
-			if ($q_sesmester){
-				$q->whereHas('semester', function($qq) use ($q_sesmester){
-					return $qq->where('id',$q_sesmester);
+			if ($q_sesmester) {
+				$q->whereHas('semester', function ($qq) use ($q_sesmester) {
+					return $qq->where('id', $q_sesmester);
 				});
 			}
 
-			if ($q_grade){
-				$q->whereHas('grade', function($qq) use ($q_grade){
-					return $qq->where('id',$q_grade);
+			if ($q_grade) {
+				$q->whereHas('grade', function ($qq) use ($q_grade) {
+					return $qq->where('id', $q_grade);
 				});
 			}
 
-			if ($q_cl4ss_type){
-				$q->where('cl4ss_type_id',$q_cl4ss_type);
+			if ($q_cl4ss_type) {
+				$q->where('cl4ss_type_id', $q_cl4ss_type);
 			}
 
 		});
 
-		if($q_student_name) {
+		if ($q_student_name) {
 			$words = explode(' ', $q_student_name);
-			$q->whereIn('first_name',$words)->orWhereIn('last_name',$words);
+			$q->whereIn('first_name', $words)->orWhereIn('last_name', $words);
 		}
 
 		return $q;
 	}
 
-	
-//	public function
+	public function getCl4ssWithMarks($state = '')
+	{
+		$q = $this->cl4sses()
+			->with([
+				'cl4ssSubjects' => function ($q) {
+					$q->with('subject', 'marks');
+				},
+			]);
+		if ($state) {
+			$q->where('cl4ss_state', $state);
+		}
+
+		return $q;
+	}
 }

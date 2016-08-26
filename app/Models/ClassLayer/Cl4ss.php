@@ -65,7 +65,8 @@ class Cl4ss extends Model
 		return $this->belongsTo(Cl4ssType::class, 'cl4ss_type_id');
 	}
 
-	public function cl4ssSubjects(){
+	public function cl4ssSubjects()
+	{
 		return $this->hasMany(Cl4ssSubject::class);
 	}
 
@@ -78,8 +79,8 @@ class Cl4ss extends Model
 				},
 				'grade', 'semester', 'cl4ssType',
 				'teacher', 'parent',
-				'students' => function($q){
-					$q->orderBy('last_name','ASC')->with('parents');
+				'students'   => function ($q) {
+					$q->orderBy('last_name', 'ASC')->with('parents');
 				},
 			]);
 	}
@@ -111,23 +112,21 @@ class Cl4ss extends Model
 		$current_scholastic = $current_cl4ss->scholastic;
 		$current_grade = $current_cl4ss->grade;
 
-		$other_scholastics = Scholastic::get();
-
-//		$result = $this->where('cl4ss_name', $this->attributes['cl4ss_name']);
+		$scholastics = Scholastic::all();
 
 		$condition = [];
-		foreach ($other_scholastics as $other_scholastic) {
-			$difference = $other_scholastic->scholastic_from - $current_scholastic->scholastic_from;
+		foreach ($scholastics as $scholastic) {
+			$difference = $scholastic->scholastic_from - $current_scholastic->scholastic_from;
 
-			$scholastic = Scholastic::where('scholastic_from', $current_scholastic->scholastic_from + $difference)
+			$other_scholastic = Scholastic::where('scholastic_from', $current_scholastic->scholastic_from + $difference)
 				->first();
-			$grade = Grade::where('grade_name', $current_grade->grade_name + $difference)
+			$other_grade = Grade::where('grade_name', $current_grade->grade_name + $difference)
 				->first();
 
-			if ($grade) {
+			if ($other_grade) {
 				$condition[] = [
-					'scholastic_id' => $scholastic->id,
-					'grade_id'      => $grade->id,
+					'scholastic_id' => $other_scholastic->id,
+					'grade_id'      => $other_grade->id,
 				];
 			}
 		}
@@ -139,6 +138,12 @@ class Cl4ss extends Model
 
 			return $q;
 		});
+
+		$cl4ss_type_id = $this->cl4ss_type_id;
+		$result = $result->whereHas('cl4ssType', function ($q) use ($cl4ss_type_id) {
+			return $q->where('id', $cl4ss_type_id);
+		});
+
 
 		return $result;
 	}
@@ -196,6 +201,10 @@ class Cl4ss extends Model
 		return $q;
 	}
 
+	public function withState($state)
+	{
+		return $this->where('cl4ss_state', $state);
+	}
 //	public function getStudentNotInCl4ss(){
 //		$active_students = $this->activeCl4ss()->students()->pluck('id');
 //

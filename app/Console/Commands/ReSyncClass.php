@@ -24,7 +24,7 @@ class ReSyncClass extends Command
      *
      * @var string
      */
-    protected $signature = 'resync:class';
+    protected $signature = 'resync:cl4ss';
 
     /**
      * The console command description.
@@ -52,13 +52,16 @@ class ReSyncClass extends Command
     {
 		$cl4sses = Cl4ss::where('parent_id',0)->orWhere('teacher_id',0)->get();
 	    $this->info("FOUND {$cl4sses->count()} CLASSES UNSYNC!. START NOW...");
-	    $cl4sses->each(function($cl4ss){
-		    $rand_teacher = Teacher::inRandomOrder()->first();
-		    $rand_parent = Paren::inRandomOrder()->first();
-		    $cl4ss->parent_id = $rand_parent->id;
-		    $cl4ss->teacher_id = $rand_teacher->id;
-		    $cl4ss->save();
-	    });
+	    if ($cl4sses->count()>0){
+		    $cl4sses->each(function($cl4ss){
+			    $rand_teacher = Teacher::inRandomOrder()->first();
+			    $rand_parent = Paren::inRandomOrder()->first();
+			    $cl4ss->parent_id = $rand_parent->id;
+			    $cl4ss->teacher_id = $rand_teacher->id;
+			    $cl4ss->save();
+		    });
+	    }
+
 	    $this->info("DONE!");
     }
 }

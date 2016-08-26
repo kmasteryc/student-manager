@@ -21,8 +21,8 @@
                     <div class="col-sm-10">
                         <input type="text"
                                class="form-control"
-                               name="user_name"
-                               value="{!! $teacher->user_name !!}"
+                               name="username"
+                               value="{!! $teacher->username !!}"
                         >
                     </div>
                 </div>

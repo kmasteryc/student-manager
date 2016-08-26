@@ -14,14 +14,14 @@ class User extends Authenticatable
 	 * @var array
 	 */
 	protected $fillable = [
-		'user_name', 'email', 'password', 'first_name', 'last_name', 'birthday', 'role_id', 'info'
+		'username', 'email', 'password', 'first_name', 'last_name', 'birthday', 'role_id', 'info'
 	];
 
 //	protected $dates = ['birthday'];
 
 	public $appends = ['full_name'];
 
-//	public $dateFormat = 'Y/m/d';
+//	public $dateFormat = 'Y-m-d';
 
 	/**
 	 * The attributes that should be hidden for arrays.
@@ -50,6 +50,7 @@ class User extends Authenticatable
 	public function getBirthDayAttribute(){
 		return Carbon::parse($this->attributes['birthday'])->format('Y/m/d');
 	}
+	
 	public function getFullNameAttribute(){
 		return $this->full_name();
 	}

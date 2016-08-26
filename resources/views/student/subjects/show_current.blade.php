@@ -1,43 +1,46 @@
 @extends('layouts.page_content')
 
 @section('title')
-    Marks result
+    Current marks result
 @endsection
 
 @section('body')
-    <h3>{!! $student->full_name !!}. {!! $cl4ss->detail_name !!}</h3>
-    <table class="table table-bordered table-hover">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Subject name</th>
-            @foreach($mark_types as $mark_type)
-                <th>{!! $mark_type->mark_type_name !!} ({!! $mark_type->mark_type_multiple !!})</th>
-            @endforeach
-            <th>Average</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach ($cl4ss_subjects as $cl4ss_subject)
-
+    @foreach($cl4sses as $cl4ss)
+        <h3>{!! $cl4ss->detail_name !!}. Responsible teacher: {!! $cl4ss->teacher->full_name !!}</h3>
+        <table class="table table-bordered table-hover">
+            <thead>
             <tr>
-                <td>#</td>
-                <td>{!! $cl4ss_subject->subject->subject_name !!}</td>
+                <th>#</th>
+                <th>Subject name</th>
+                <th>Teacher</th>
                 @foreach($mark_types as $mark_type)
-                    <td>
-                        <?php
-                        $mark = $marks->where('mark_type_id', $mark_type->id)
-                                ->where('cl4ss_subject_id', $cl4ss_subject->id)
-                                ->first();
-                        echo $mark === null ? '' : $mark->mark_point;
-                        ?>
-                    </td>
+                    <th>{!! $mark_type->mark_type_name !!} ({!! $mark_type->mark_type_multiple !!})</th>
                 @endforeach
-                <td></td>
+                <th>Average</th>
             </tr>
+            </thead>
+            <tbody>
 
-        @endforeach
-        </tbody>
-    </table>
+            @foreach ($cl4ss->cl4ssSubjects as $cl4ssSubject)
 
+                <tr>
+                    <td>#</td>
+                    <td>{!! $cl4ssSubject->subject->subject_name !!}</td>
+                    <td>{!! $cl4ssSubject->teacher->full_name !!} - {!! $cl4ssSubject->teacher->id !!}</td>
+                    @foreach($mark_types as $mark_type)
+                        <td>
+                            <?php
+                            $mark = $cl4ssSubject->marks->where('mark_type_id', $mark_type->id)->first();
+                            echo $mark === null ? '' : $mark->mark_point;
+                            $average = Tool::average($cl4ssSubject->marks);
+                            ?>
+                        </td>
+                    @endforeach
+                    <td>{!! $average !!}</td>
+                </tr>
+
+            @endforeach
+            </tbody>
+        </table>
+    @endforeach
 @endsection

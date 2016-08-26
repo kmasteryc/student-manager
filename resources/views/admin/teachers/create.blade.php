@@ -22,8 +22,8 @@
                     <div class="col-sm-10">
                         <input type="text"
                                class="form-control"
-                               name="user_name"
-                               value="{!! old('user_name') !!}"
+                               name="username"
+                               value="{!! old('username') !!}"
                         >
                     </div>
                 </div>
