@@ -16,12 +16,12 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <form class="navbar-form navbar-left" method="GET" role="search">
-                <div class="form-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-            </form>
+            <?php /*<form class="navbar-form navbar-left" method="GET" role="search">*/ ?>
+                <?php /*<div class="form-group">*/ ?>
+                    <?php /*<input type="text" name="q" class="form-control" placeholder="Search">*/ ?>
+                <?php /*</div>*/ ?>
+                <?php /*<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>*/ ?>
+            <?php /*</form>*/ ?>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown ">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

@@ -27,12 +27,13 @@ class TestController extends Controller
 
 	public function index()
 	{
-//		request()->
+		echo MarkType::where('mark_type_name',2)->count();
 	}
 
-	public function index1()
+
+	public function index2()
 	{
-		echo 'I am index1';
+
 	}
 
 	public function test(Request $request)

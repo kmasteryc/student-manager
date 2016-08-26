@@ -14,6 +14,7 @@
 Route::post('test', 'TestController@test');
 
 Route::get('test', 'TestController@index');
+Route::get('test/test.php', 'TestController@index2');
 
 Route::auth();
 
@@ -119,8 +120,8 @@ Route::group(['prefix'=>'parent','namespace'=>'Parent','middleware'=>'auth','as'
 
 Route::group(['prefix'=>'student','namespace'=>'Student','middleware'=>'auth','as'=>'student::'], function(){
 	Route::group(['prefix'=>'subject', 'as'=>'subject::'], function(){
-		Route::get('/', 'SubjectController@showCurrent')->name('showCurrent');
-		Route::get('/all', 'SubjectController@showAll')->name('showAll');
+		Route::get('/', 'SubjectController@showCurrent')->name('current');
+		Route::get('/all', 'SubjectController@showAll')->name('all');
 		Route::get('{scholastic}/{semester?}', 'SubjectController@showOther')->name('showOther');
 	});
 });

@@ -13,8 +13,8 @@
                         <div id="class_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="{!! route("student::subject::showCurrent") !!}" data-pjax>Current result</a></li>
-                                    <li><a href="{!! route("student::subject::showAll") !!}" data-pjax>All result</a></li>
+                                    <li><a href="{!! route("student::subject::current") !!}" data-pjax>Current result</a></li>
+                                    <li><a href="{!! route("student::subject::all") !!}" data-pjax>All result</a></li>
                                 </ul>
                             </div>
                         </div>
