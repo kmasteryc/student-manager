@@ -9,7 +9,7 @@
                 <ul class="nav navbar-nav">
 
                     <li class="panel panel-default custom-dropdown">
-                        <a data-toggle="collapse" href="#class_layer">Subject's result<span class="caret"></span></a>
+                        <a data-toggle="collapse" href="#class_layer"><b>Subject's result</b></a>
                         <div id="class_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">

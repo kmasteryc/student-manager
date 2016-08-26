@@ -9,7 +9,7 @@
                 <ul class="nav navbar-nav">
 
                     <li class="panel panel-default custom-dropdown">
-                        <a data-toggle="collapse" href="#class_layer">Responsible class <span class="caret"></span></a>
+                        <a data-toggle="collapse" href="#class_layer"><b>Responsible class</b></a>
                         <div id="class_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
@@ -21,7 +21,7 @@
                     </li>
 
                     <li class="panel panel-default custom-dropdown">
-                        <a data-toggle="collapse" href="#user_layer">Responsible subjects <span class="caret"></span></a>
+                        <a data-toggle="collapse" href="#user_layer"><b>Responsible subjects</b></a>
                         <div id="user_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">

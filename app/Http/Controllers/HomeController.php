@@ -14,13 +14,13 @@ class HomeController extends Controller
 		if (auth()->check()) {
 			switch (auth()->user()->role_id) {
 				case 1:
-					return redirect()->route('student::subject::showCurrent');
+					return redirect()->route('student::subject::current');
 					break;
 				case 2:
 					return redirect()->route('parent::student::index');
 					break;
 				case 3:
-					return redirect()->route('teacher::subject::subjectTeaching');
+					return redirect()->route('teacher::subject::teaching');
 					break;
 				case 4:
 					return redirect()->route('admin::cl4ss::index');

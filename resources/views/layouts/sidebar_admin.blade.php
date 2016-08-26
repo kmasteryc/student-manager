@@ -6,22 +6,9 @@
             <!-- Main Menu -->
             <div class="side-menu-container">
                 <ul class="nav navbar-nav">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
 
                     <li class="panel panel-default custom-dropdown">
-                        <a data-toggle="collapse" href="#class_layer">School news <span class="caret"></span></a>
-                        <div id="class_layer" class="panel-collapse collapse in">
-                            <div class="panel-body">
-                                <ul class="nav navbar-nav">
-                                    <li><a href="{!! route('admin::cl4ss::index') !!}" data-pjax>Category 1</a></li>
-                                    <li><a href="{!! route('admin::cl4ss::index') !!}" data-pjax>Category 2</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="panel panel-default custom-dropdown">
-                        <a data-toggle="collapse" href="#class_layer">Class Layer <span class="caret"></span></a>
+                        <a data-toggle="collapse" href="#class_layer"><b>Class Layer </b></a>
                         <div id="class_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
@@ -35,7 +22,7 @@
                     </li>
 
                     <li class="panel panel-default custom-dropdown">
-                        <a data-toggle="collapse" href="#user_layer">User Layer <span class="caret"></span></a>
+                        <a data-toggle="collapse" href="#user_layer"><b>User Layer </b></a>
                         <div id="user_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
@@ -48,11 +35,11 @@
                     </li>
 
                     <li class="panel panel-default custom-dropdown">
-                        <a data-toggle="collapse" href="#mark_layer">Mark Layer <span class="caret"></span></a>
+                        <a data-toggle="collapse" href="#mark_layer"><b>Mark Layer </b></a>
                         <div id="mark_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="{!! route('admin::cl4ss::index') !!}" data-pjax>Manage mark</a></li>
+                                    {{--<li><a href="{!! route('admin::cl4ss::index') !!}" data-pjax>Manage mark</a></li>--}}
                                     <li><a href="{!! route('admin::mark_type::index') !!}" data-pjax>Manage mark type</a></li>
                                 </ul>
                             </div>

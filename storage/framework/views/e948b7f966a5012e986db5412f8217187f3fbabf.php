@@ -6,19 +6,6 @@
             <!-- Main Menu -->
             <div class="side-menu-container">
                 <ul class="nav navbar-nav">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-
-                    <li class="panel panel-default custom-dropdown">
-                        <a data-toggle="collapse" href="#class_layer">School news <span class="caret"></span></a>
-                        <div id="class_layer" class="panel-collapse collapse in">
-                            <div class="panel-body">
-                                <ul class="nav navbar-nav">
-                                    <li><a href="<?php echo route('admin::cl4ss::index'); ?>" data-pjax>Category 1</a></li>
-                                    <li><a href="<?php echo route('admin::cl4ss::index'); ?>" data-pjax>Category 2</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
 
                     <li class="panel panel-default custom-dropdown">
                         <a data-toggle="collapse" href="#class_layer">Class Layer <span class="caret"></span></a>
@@ -52,7 +39,7 @@
                         <div id="mark_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="<?php echo route('admin::cl4ss::index'); ?>" data-pjax>Manage mark</a></li>
+                                    <?php /*<li><a href="<?php echo route('admin::cl4ss::index'); ?>" data-pjax>Manage mark</a></li>*/ ?>
                                     <li><a href="<?php echo route('admin::mark_type::index'); ?>" data-pjax>Manage mark type</a></li>
                                 </ul>
                             </div>

@@ -8,25 +8,44 @@
             <ul class="nav navbar-nav">
 
                 <li class="panel panel-default custom-dropdown">
-                    <a data-toggle="collapse" href="#builded">Các chức năng đã xây dựng <span class="caret"></span></a>
+                    <a data-toggle="collapse" href="#builded"><b>Tài khoản admin</b></a>
                     <div id="builded" class="panel-collapse collapse in">
                         <div class="panel-body">
                             <ul class="nav navbar-nav">
-                                <li><a href="#" data-pjax>Quản lý học sinh</a></li>
-                                <li><a href="#" data-pjax>Quản lý học sinh</a></li>
-                                <li><a href="#" data-pjax>Quản lý học sinh</a></li>
+                                <li><a href="#" data-pjax>admin/123456</a></li>
                             </ul>
                         </div>
                     </div>
                 </li>
 
                 <li class="panel panel-default custom-dropdown">
-                    <a data-toggle="collapse" href="#building">Các chức năng đang xây dựng <span
-                                class="caret"></span></a>
+                    <a data-toggle="collapse" href="#building"><b>Tài khoản giáo viên</b></a>
                     <div id="building" class="panel-collapse collapse in">
                         <div class="panel-body">
                             <ul class="nav navbar-nav">
-                                <li><a href="#" data-pjax>Quản lý giáo viên</a></li>
+                                <li><a href="#" data-pjax>teacher1/123456</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="panel panel-default custom-dropdown">
+                    <a data-toggle="collapse" href="#building"><b>Tài khoản phụ huynh</b></a>
+                    <div id="building" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#" data-pjax>parent1/123456</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="panel panel-default custom-dropdown">
+                    <a data-toggle="collapse" href="#building"><b>Tài khoản học sinh</b></a>
+                    <div id="building" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#" data-pjax>student1/123456</a></li>
                             </ul>
                         </div>
                     </div>

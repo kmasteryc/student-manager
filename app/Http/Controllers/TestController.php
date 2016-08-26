@@ -27,6 +27,7 @@ class TestController extends Controller
 
 	public function index()
 	{
+//		request()->
 	}
 
 	public function index1()
