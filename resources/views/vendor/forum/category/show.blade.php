@@ -95,7 +95,7 @@
                                         @endif
                                     </span>
                                     <p class="lead">
-                                        <a href="{{ Forum::route('thread.show', $thread) }}" data-pjax>{{ $thread->title }}</a>
+                                        <a href="{{ Forum::route('thread.show', $thread) }}">{{ $thread->title }}</a>
                                     </p>
                                     <p>{{ $thread->authorName }} <span class="text-muted">({{ $thread->posted }})</span></p>
                                 </td>
