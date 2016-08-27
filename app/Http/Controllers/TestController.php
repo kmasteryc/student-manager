@@ -27,13 +27,13 @@ class TestController extends Controller
 
 	public function index()
 	{
-		echo MarkType::where('mark_type_name',2)->count();
+		dd($this->api());
 	}
 
 
 	public function index2()
 	{
-
+		return redirect()->route('test',['i3d'=>3]);
 	}
 
 	public function test(Request $request)

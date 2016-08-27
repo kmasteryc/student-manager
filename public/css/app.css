@@ -5973,4 +5973,8 @@ h1.page-header {
 #content, #sidebar {
   margin-top: 70px; }
 
+#footer {
+  margin-top: 15px;
+  text-align: right; }
+
 /*# sourceMappingURL=app.css.map */

@@ -11,7 +11,8 @@
     "php": ">=5.5.9",
     "laravel/framework": "5.2.*",
     "barryvdh/laravel-debugbar": "^2.2",
-    "jacobbennett/pjax": "^1.0"
+    "jacobbennett/pjax": "^1.0",
+    "riari/laravel-forum-frontend": "~1.0"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",

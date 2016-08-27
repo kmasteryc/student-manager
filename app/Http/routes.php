@@ -13,14 +13,13 @@
 
 Route::post('test', 'TestController@test');
 
-Route::get('test', 'TestController@index');
-Route::get('test/test.php', 'TestController@index2');
+Route::get('test', 'TestController@index')->name('test');
 
 Route::auth();
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('index');
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware'=>'auth', 'as'=>'admin::'], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware'=>['auth','role:4'], 'as'=>'admin::'], function () {
 
 	Route::group(['prefix' => 'scholastic', 'as' => 'scholastic::'], function () {
 		Route::get('/', 'ScholasticController@index')->name('index');
@@ -97,7 +96,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware'=>'auth',
 	});
 });
 
-Route::group(['prefix'=>'teacher','namespace'=>'Teacher','middleware'=>'auth','as'=>'teacher::'], function(){
+Route::group(['prefix'=>'teacher','namespace'=>'Teacher','middleware'=>['auth','role:3'],'as'=>'teacher::'], function(){
 	Route::group(['prefix'=>'class', 'as'=>'cl4ss::'], function(){
 		Route::get('teaching', 'Cl4ssController@cl4ssCurrent')->name('current');
 		Route::get('teached', 'Cl4ssController@cl4ssPast')->name('past');
@@ -112,13 +111,13 @@ Route::group(['prefix'=>'teacher','namespace'=>'Teacher','middleware'=>'auth','a
 	});
 });
 
-Route::group(['prefix'=>'parent','namespace'=>'Parent','middleware'=>'auth','as'=>'parent::'], function(){
+Route::group(['prefix'=>'parent','namespace'=>'Parent','middleware'=>['auth','role:2'],'as'=>'parent::'], function(){
 	Route::group(['prefix'=>'student', 'as'=>'student::'], function(){
 		Route::get('/', 'StudentController@index')->name('index');
 	});
 });
 
-Route::group(['prefix'=>'student','namespace'=>'Student','middleware'=>'auth','as'=>'student::'], function(){
+Route::group(['prefix'=>'student','namespace'=>'Student','middleware'=>['auth','role:1'],'as'=>'student::'], function(){
 	Route::group(['prefix'=>'subject', 'as'=>'subject::'], function(){
 		Route::get('/', 'SubjectController@showCurrent')->name('current');
 		Route::get('/all', 'SubjectController@showAll')->name('all');

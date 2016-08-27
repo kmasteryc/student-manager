@@ -1,3 +1,3 @@
-<div class="footer" style="text-align: center">
-  Develop by KmasterYC 2016
+<div id="footer">
+  Developed by KmasterYC 2016
 </div>

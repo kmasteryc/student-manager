@@ -6,6 +6,15 @@
 
         </div>
     <?php endif; ?>
+
+    <?php if(session()->has('error')): ?>
+        <div class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <?php echo session('error'); ?>
+
+        </div>
+    <?php endif; ?>
+
     <?php if(count($errors) > 0): ?>
         <div class="alert alert-danger">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

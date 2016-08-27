@@ -7,8 +7,10 @@
             <div class="side-menu-container">
                 <ul class="nav navbar-nav">
 
+                    <?php echo $__env->make('layouts.partials.sidebar_cate', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
                     <li class="panel panel-default custom-dropdown">
-                        <a data-toggle="collapse" href="#class_layer">Class Layer <span class="caret"></span></a>
+                        <a data-toggle="collapse" href="#class_layer"><b>Class Layer </b></a>
                         <div id="class_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
@@ -22,7 +24,7 @@
                     </li>
 
                     <li class="panel panel-default custom-dropdown">
-                        <a data-toggle="collapse" href="#user_layer">User Layer <span class="caret"></span></a>
+                        <a data-toggle="collapse" href="#user_layer"><b>User Layer </b></a>
                         <div id="user_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
@@ -35,7 +37,7 @@
                     </li>
 
                     <li class="panel panel-default custom-dropdown">
-                        <a data-toggle="collapse" href="#mark_layer">Mark Layer <span class="caret"></span></a>
+                        <a data-toggle="collapse" href="#mark_layer"><b>Mark Layer </b></a>
                         <div id="mark_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">

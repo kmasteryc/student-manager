@@ -8,6 +8,8 @@
             <div class="side-menu-container">
                 <ul class="nav navbar-nav">
 
+                    @include('layouts.partials.sidebar_cate')
+
                     <li class="panel panel-default custom-dropdown">
                         <a data-toggle="collapse" href="#class_layer"><b>Subject's result</b></a>
                         <div id="class_layer" class="panel-collapse collapse in">

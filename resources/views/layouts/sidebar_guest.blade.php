@@ -7,6 +7,8 @@
         <div class="side-menu-container">
             <ul class="nav navbar-nav">
 
+                @include('layouts.partials.sidebar_cate')
+
                 <li class="panel panel-default custom-dropdown">
                     <a data-toggle="collapse" href="#builded"><b>Tài khoản admin</b></a>
                     <div id="builded" class="panel-collapse collapse in">

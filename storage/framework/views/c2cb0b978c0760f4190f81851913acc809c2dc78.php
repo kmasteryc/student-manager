@@ -8,6 +8,8 @@
             <div class="side-menu-container">
                 <ul class="nav navbar-nav">
 
+                    <?php echo $__env->make('layouts.partials.sidebar_cate', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
                     <li class="panel panel-default custom-dropdown">
                         <a data-toggle="collapse" href="#class_layer"><b>Responsible class</b></a>
                         <div id="class_layer" class="panel-collapse collapse in">

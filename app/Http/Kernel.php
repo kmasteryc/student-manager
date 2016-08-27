@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\RoleMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -15,7 +16,7 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
-        \JacobBennett\Pjax\PjaxMiddleware::class
+//        \JacobBennett\Pjax\PjaxMiddleware::class
     ];
 
     /**
@@ -30,6 +31,8 @@ class Kernel extends HttpKernel
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
+	        \JacobBennett\Pjax\PjaxMiddleware::class
+
 //            \Illuminate\Routing\Middleware\ThrottleRequests::class,
 //            'throttle:60,1',
         ],
@@ -53,5 +56,6 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Foundation\Http\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'role' => RoleMiddleware::class,
     ];
 }
