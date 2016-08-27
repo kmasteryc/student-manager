@@ -13,9 +13,10 @@ class RoleMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, ... $role)
+    public function handle($request, Closure $next, $role1, $role2='', $role3='')
     {
-	    if (!in_array($request->user()->role_id, $role)){
+	    $roles = [$role1,$role2,$role3];
+	    if (!in_array($request->user()->role_id, $roles)){
 		    return redirect()->route('index')->with('error','Permission denied!');
 	    }
         return $next($request);

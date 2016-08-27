@@ -4,7 +4,7 @@
         <div class="panel-body">
             <ul class="nav navbar-nav">
                 @foreach(\App\Models\OtherLayer\Category::all() as $category)
-                    <li><a href="{!! url("forum/{$category->id}-".str_slug($category->title)) !!}" data-pjax>{!! $category->title !!}</a></li>
+                    <li><a href="{!! url("forum/{$category->id}-".str_slug($category->title)) !!}">{!! $category->title !!}</a></li>
                 @endforeach
             </ul>
         </div>

@@ -96,7 +96,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware'=>['auth'
 	});
 });
 
-Route::group(['prefix'=>'teacher','namespace'=>'Teacher','middleware'=>['auth','role:3'],'as'=>'teacher::'], function(){
+Route::group(['prefix'=>'teacher','namespace'=>'Teacher','middleware'=>['auth','role:3,2'],'as'=>'teacher::'], function(){
 	Route::group(['prefix'=>'class', 'as'=>'cl4ss::'], function(){
 		Route::get('teaching', 'Cl4ssController@cl4ssCurrent')->name('current');
 		Route::get('teached', 'Cl4ssController@cl4ssPast')->name('past');
