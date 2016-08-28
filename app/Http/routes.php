@@ -125,3 +125,4 @@ Route::group(['prefix'=>'student','namespace'=>'Student','middleware'=>['auth','
 	});
 });
 
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

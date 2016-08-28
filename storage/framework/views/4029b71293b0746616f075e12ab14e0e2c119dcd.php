@@ -32,22 +32,11 @@
                 </li>
 
                 <li class="panel panel-default custom-dropdown">
-                    <a data-toggle="collapse" href="#building"><b>Tài khoản phụ huynh</b></a>
-                    <div id="building" class="panel-collapse collapse in">
-                        <div class="panel-body">
-                            <ul class="nav navbar-nav">
-                                <li><a href="#" data-pjax>parent1/123456</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="panel panel-default custom-dropdown">
                     <a data-toggle="collapse" href="#building"><b>Tài khoản học sinh</b></a>
                     <div id="building" class="panel-collapse collapse in">
                         <div class="panel-body">
                             <ul class="nav navbar-nav">
-                                <li><a href="#" data-pjax>student1/123456</a></li>
+                                <li><a href="#" data-pjax>student261/123456</a></li>
                             </ul>
                         </div>
                     </div>

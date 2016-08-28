@@ -167,6 +167,7 @@ return [
 
 	    Riari\Forum\ForumServiceProvider::class,
 	    Riari\Forum\Frontend\ForumFrontendServiceProvider::class,
+	    Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
     ],
 
     /*
