@@ -168,7 +168,7 @@ class Cl4ss extends Model
 
 		return trans('general.class') . " $grade $cl4ss_type, $semester $scholastic_from - $scholastic_to";
 	}
-/*
+
 	public function scopeSearch($q, $q_scholastic, $q_sesmester, $q_grade, $q_cl4ss_type, $q_teacher_name, $q_cl4ss_state)
 	{
 
@@ -210,7 +210,7 @@ class Cl4ss extends Model
 
 		return $q;
 	}
-*/
+
 	public function withState($state)
 	{
 		return $this->where('cl4ss_state', $state);
