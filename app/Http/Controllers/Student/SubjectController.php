@@ -36,7 +36,14 @@ class SubjectController extends Controller
 
 	public function showAll()
 	{
-		$cl4sses = $this->_student->getCl4ssWithMarks()->get();
+		$cl4sses = $this->_student->getCl4ssWithMarks()
+			->with(['cl4ssSubjects'=>function($q){
+				$q->with(['subject','teacher','marks'=>function($qq){
+					$qq->with('markType','student');
+				}]);
+			}])
+			->loadRelation()
+			->get();
 
 		return view('student.subjects.show_all', [
 			'student'    => $this->_student,

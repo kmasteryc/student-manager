@@ -1,9 +1,9 @@
 <?php $__env->startSection('title'); ?>
-    Total <?php echo $result_cl4sses->total(); ?> classes.
+    <?php echo app('translator')->get('general.total'); ?> <?php echo $result_cl4sses->total(); ?> <?php echo app('translator')->get('general.class'); ?>.
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('sub_title'); ?>
-    <a href="<?php echo route("admin::cl4ss::create"); ?>" data-pjax>Add new class</a>
+    <a href="<?php echo route("admin::cl4ss::create"); ?>" data-pjax><?php echo app('translator')->get('general.add_new_class'); ?></a>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('body'); ?>
@@ -24,7 +24,7 @@
             <?php echo $__env->renderEach('admin.cl4sses.row', $result_cl4sses, 'cl4ss'); ?>
         <?php else: ?>
             <tr>
-                <td colspan="6">No class found!</td>
+                <td colspan="6"><?php echo app('translator')->get('general.no_class_found'); ?>!</td>
             </tr>
         <?php endif; ?>
         </tbody>

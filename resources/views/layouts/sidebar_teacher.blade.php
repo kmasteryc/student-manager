@@ -11,24 +11,24 @@
                     @include('layouts.partials.sidebar_cate')
 
                     <li class="panel panel-default custom-dropdown">
-                        <a data-toggle="collapse" href="#class_layer"><b>Responsible class</b></a>
+                        <a data-toggle="collapse" href="#class_layer"><b>@lang('general.responsible_class')</b></a>
                         <div id="class_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="{!! route('teacher::cl4ss::current') !!}" data-pjax>Current responsible classes</a></li>
-                                    <li><a href="{!! route('teacher::cl4ss::past') !!}" data-pjax>Past responsible classes</a></li>
+                                    <li><a href="{!! route('teacher::cl4ss::current') !!}" data-pjax>@lang('general.current_responsible_class')</a></li>
+                                    <li><a href="{!! route('teacher::cl4ss::past') !!}" data-pjax>@lang('general.past_responsible_class')</a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
 
                     <li class="panel panel-default custom-dropdown">
-                        <a data-toggle="collapse" href="#user_layer"><b>Responsible subjects</b></a>
+                        <a data-toggle="collapse" href="#user_layer"><b>@lang('general.responsible_subject')</b></a>
                         <div id="user_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="{!! route('teacher::subject::teaching') !!}" data-pjax>Teaching subjects</a></li>
-                                    <li><a href="{!! route('teacher::subject::teached') !!}" data-pjax>Teached subjects</a></li>
+                                    <li><a href="{!! route('teacher::subject::teaching') !!}" data-pjax>@lang('general.teaching_subject')</a></li>
+                                    <li><a href="{!! route('teacher::subject::teached') !!}" data-pjax>@lang('general.teached_subject')</a></li>
                                 </ul>
                             </div>
                         </div>

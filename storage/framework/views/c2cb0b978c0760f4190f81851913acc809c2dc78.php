@@ -11,24 +11,24 @@
                     <?php echo $__env->make('layouts.partials.sidebar_cate', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
                     <li class="panel panel-default custom-dropdown">
-                        <a data-toggle="collapse" href="#class_layer"><b>Responsible class</b></a>
+                        <a data-toggle="collapse" href="#class_layer"><b><?php echo app('translator')->get('general.responsible_class'); ?></b></a>
                         <div id="class_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="<?php echo route('teacher::cl4ss::current'); ?>" data-pjax>Current responsible classes</a></li>
-                                    <li><a href="<?php echo route('teacher::cl4ss::past'); ?>" data-pjax>Past responsible classes</a></li>
+                                    <li><a href="<?php echo route('teacher::cl4ss::current'); ?>" data-pjax><?php echo app('translator')->get('general.current_responsible_class'); ?></a></li>
+                                    <li><a href="<?php echo route('teacher::cl4ss::past'); ?>" data-pjax><?php echo app('translator')->get('general.past_responsible_class'); ?></a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
 
                     <li class="panel panel-default custom-dropdown">
-                        <a data-toggle="collapse" href="#user_layer"><b>Responsible subjects</b></a>
+                        <a data-toggle="collapse" href="#user_layer"><b><?php echo app('translator')->get('general.responsible_subject'); ?></b></a>
                         <div id="user_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="<?php echo route('teacher::subject::teaching'); ?>" data-pjax>Teaching subjects</a></li>
-                                    <li><a href="<?php echo route('teacher::subject::teached'); ?>" data-pjax>Teached subjects</a></li>
+                                    <li><a href="<?php echo route('teacher::subject::teaching'); ?>" data-pjax><?php echo app('translator')->get('general.teaching_subject'); ?></a></li>
+                                    <li><a href="<?php echo route('teacher::subject::teached'); ?>" data-pjax><?php echo app('translator')->get('general.teached_subject'); ?></a></li>
                                 </ul>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 <tr>
-    <form action="<?php echo route("admin::mark_type::destroy", $mark_type); ?>" method="POST">
+    <form action="<?php echo route("admin::mark_type::destroy", $mark_type); ?>" method="POST" data-pjax>
         <?php echo csrf_field(); ?>
 
         <?php echo method_field('DELETE'); ?>

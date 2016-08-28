@@ -9,7 +9,7 @@
 @endsection
 
 @section('body')
-    <table class="table table-bordered table-hover">
+    <table class="table table-bordered table-hover datatable">
     	<thead>
     		<tr>
     			<th>@lang('general.action')</th>

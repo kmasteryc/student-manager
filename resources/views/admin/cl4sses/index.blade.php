@@ -1,11 +1,11 @@
 @extends('layouts.page_content')
 
 @section('title')
-    Total {!! $result_cl4sses->total() !!} classes.
+    @lang('general.total') {!! $result_cl4sses->total() !!} @lang('general.class').
 @endsection
 
 @section('sub_title')
-    <a href="{!! route("admin::cl4ss::create") !!}" data-pjax>Add new class</a>
+    <a href="{!! route("admin::cl4ss::create") !!}" data-pjax>@lang('general.add_new_class')</a>
 @endsection
 
 @section('body')
@@ -26,7 +26,7 @@
             @each('admin.cl4sses.row', $result_cl4sses, 'cl4ss')
         @else
             <tr>
-                <td colspan="6">No class found!</td>
+                <td colspan="6">@lang('general.no_class_found')!</td>
             </tr>
         @endif
         </tbody>

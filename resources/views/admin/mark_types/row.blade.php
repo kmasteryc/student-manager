@@ -1,5 +1,5 @@
 <tr>
-    <form action="{!! route("admin::mark_type::destroy", $mark_type) !!}" method="POST">
+    <form action="{!! route("admin::mark_type::destroy", $mark_type) !!}" method="POST" data-pjax>
         {!! csrf_field() !!}
         {!! method_field('DELETE') !!}
         <td>

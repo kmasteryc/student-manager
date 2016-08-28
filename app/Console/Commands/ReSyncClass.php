@@ -52,6 +52,7 @@ class ReSyncClass extends Command
     {
 		$cl4sses = Cl4ss::where('parent_id',0)->orWhere('teacher_id',0)->get();
 	    $this->info("FOUND {$cl4sses->count()} CLASSES UNSYNC!. START NOW...");
+	    
 	    if ($cl4sses->count()>0){
 		    $cl4sses->each(function($cl4ss){
 			    $rand_teacher = Teacher::inRandomOrder()->first();

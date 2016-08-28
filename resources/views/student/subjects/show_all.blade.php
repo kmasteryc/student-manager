@@ -32,7 +32,7 @@
                             <?php
                             $mark = $cl4ssSubject->marks->where('mark_type_id', $mark_type->id)->first();
                             echo $mark === null ? '' : $mark->mark_point;
-                            $average = Tool::average($cl4ssSubject->marks);
+                            $average = Tool::average($cl4ssSubject->marks->where('student_id',$student->id));
                             ?>
                         </td>
                     @endforeach

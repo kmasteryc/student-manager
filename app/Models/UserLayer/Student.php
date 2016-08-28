@@ -2,6 +2,7 @@
 
 namespace App\Models\UserLayer;
 
+use App\Models\MarkLayer\Mark;
 use App\User;
 use App\Models\ClassLayer\Cl4ss;
 use App\Models\ClassLayer\Cl4ssType;
@@ -29,6 +30,10 @@ class Student extends User
 	public function parents()
 	{
 		return $this->belongsToMany(Paren::class, 'parent_student', 'student_id', 'parent_id');
+	}
+
+	public function marks(){
+		return $this->hasMany(Mark::class);
 	}
 
 	public static function storeStudent($request)
@@ -98,7 +103,10 @@ class Student extends User
 		$q = $this->cl4sses()
 			->with([
 				'cl4ssSubjects' => function ($q) {
-					$q->with('subject', 'marks');
+					$q->with(['subject', 'marks'=>function($qq){
+						$qq->where('student_id', $this->id)
+							->with('markType');
+					}]);
 				},
 			]);
 		if ($state) {

@@ -71,29 +71,32 @@ class SeedUser extends Command
 			$this->last_teacher++;
 		}
 
-		foreach ($cl4ss_types as $cl4ss_type) {
+		foreach (Scholastic::all() as $scholastic){
+			foreach ($cl4ss_types as $cl4ss_type) {
 
-			$cl4ss_first = $cl4ss_type->cl4sses->first();
-			$user_ids = [];
+				$cl4ss_first = $cl4ss_type->cl4sses()->where('scholastic_id', $scholastic->id)->first();
+				$user_ids = [];
 
-			for ($i = 1; $i <= 50; $i++) {
-				$student = Student::create($this->templateStudent());
-				$student->parents()->save(Paren::create($this->templateParent()));
-				$user_ids[] = $student->id;
-				$this->last_student++;
-				$this->last_parent++;
+				for ($i = 1; $i <= 50; $i++) {
+					$student = Student::create($this->templateStudent());
+					$student->parents()->save(Paren::create($this->templateParent()));
+					$user_ids[] = $student->id;
+					$this->last_student++;
+					$this->last_parent++;
+				}
+
+				$serial_cl4sses = $cl4ss_first->getSerialCl4ss()->get();
+				$serial_cl4sses->each(function ($cl4ss) use ($user_ids, $faker) {
+
+					$this->info("Attach teacher, students to class...." . $cl4ss->detail_name);
+					$cl4ss->teacher_id = Teacher::inRandomOrder()->first()->id;
+
+					$cl4ss->students()->sync($user_ids);
+					$cl4ss->save();
+				});
 			}
-
-			$serial_cl4sses = $cl4ss_first->getSerialCl4ss()->get();
-			$serial_cl4sses->each(function ($cl4ss) use ($user_ids, $faker) {
-
-				$this->info("Attach teacher, students to class...." . $cl4ss->detail_name);
-				$cl4ss->teacher_id = Teacher::inRandomOrder()->first()->id;
-
-				$cl4ss->students()->sync($user_ids);
-				$cl4ss->save();
-			});
 		}
+
 
 		// Create admin
 		User::create($this->templateAdmin());

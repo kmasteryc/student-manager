@@ -11,7 +11,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">STUDENT MANAGER</a>
+            <a class="navbar-brand" href="<?php echo url('/'); ?>">STUDENT MANAGER</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -32,9 +32,9 @@
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <?php if(auth()->check()): ?>
-                            <li><a href="<?php echo url('/logout'); ?>">Logout (<?php echo auth()->user()->username; ?>)</a></li>
+                            <li><a href="<?php echo url('/logout'); ?>"><?php echo app('translator')->get('general.logout'); ?> (<?php echo auth()->user()->username; ?>)</a></li>
                         <?php else: ?>
-                            <li><a href="<?php echo url('/login'); ?>">Login</a></li>
+                            <li><a href="<?php echo url('/login'); ?>"><?php echo app('translator')->get('general.login'); ?></a></li>
                         <?php endif; ?>
                     </ul>
                 </li>

@@ -70,6 +70,11 @@ class SeedAll extends Command
 
 		    $this->info("--- RESYNC CLASS ---");
 		    $this->call('resync:cl4ss');
+
+		    $this->info("--- SET ACTIVE CLASS ---");
+		    $this->call('resync:set-active-class');
+		    
+
 	    });
     }
 }

@@ -82,7 +82,8 @@ class Cl4ss extends Model
 				'students'   => function ($q) {
 					$q->orderBy('last_name', 'ASC')->with('parents');
 				},
-			]);
+			])
+			->orderBy('id', 'DESC');
 	}
 
 	// MODEL MAIN

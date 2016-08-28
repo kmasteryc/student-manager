@@ -42,9 +42,4 @@ class Tool
 		}
 		return $total/100 ?:'';
 	}
-
-	public static function TestResponse(){
-		return redirect()->to();
-	}
-
 }

@@ -11,7 +11,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">STUDENT MANAGER</a>
+            <a class="navbar-brand" href="{!! url('/') !!}">STUDENT MANAGER</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -30,9 +30,9 @@
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         @if(auth()->check())
-                            <li><a href="{!! url('/logout') !!}">Logout ({!! auth()->user()->username !!})</a></li>
+                            <li><a href="{!! url('/logout') !!}">@lang('general.logout') ({!! auth()->user()->username !!})</a></li>
                         @else
-                            <li><a href="{!! url('/login') !!}">Login</a></li>
+                            <li><a href="{!! url('/login') !!}">@lang('general.login')</a></li>
                         @endif
                     </ul>
                 </li>

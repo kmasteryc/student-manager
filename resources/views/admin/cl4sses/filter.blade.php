@@ -4,11 +4,11 @@
         <div class="col-sm-6">
             <div class="form-group">
                 <div class="col-sm-5">
-                    <label>Filter by scholastic</label>
+                    <label>@lang('general.scholastic')</label>
                 </div>
                 <div class="col-sm-7">
                     <select name="filter_scholastic" class="form-control select2">
-                        <option value="0">All scholastics</option>
+                        <option value="0">@lang('general.all_scholastic')</option>
                         @foreach($scholastics as $scholastic)
                             <option value="{!! $scholastic->id !!}">{!! $scholastic->scholastic_from.' - '.$scholastic->scholastic_to !!}</option>
                         @endforeach
@@ -19,11 +19,11 @@
         <div class="col-sm-6">
             <div class="form-group">
                 <div class="col-sm-5">
-                    <label>Filter by semester</label>
+                    <label>@lang('general.semester')</label>
                 </div>
                 <div class="col-sm-7">
                     <select name="filter_semester" class="form-control select2">
-                        <option value="0">All semesters</option>
+                        <option value="0">@lang('general.all_semester')</option>
                         @foreach($semesters as $semester)
                             <option value="{!! $semester->id !!}">{!! $semester->semester_name !!}</option>
                         @endforeach
@@ -34,11 +34,11 @@
         <div class="col-sm-6">
             <div class="form-group">
                 <div class="col-sm-5">
-                    <label>Filter by grade</label>
+                    <label>@lang('general.grade')</label>
                 </div>
                 <div class="col-sm-7">
                     <select name="filter_grade" class="form-control select2">
-                        <option value="0">All grades</option>
+                        <option value="0">@lang('general.all_grade')</option>
                         @foreach($grades as $grade)
                             <option value="{!! $grade->id !!}">{!! $grade->grade_name !!}</option>
                         @endforeach
@@ -53,11 +53,11 @@
         <div class="col-sm-6">
             <div class="form-group">
                 <div class="col-sm-5">
-                    <label>Filter by class</label>
+                    <label>@lang('general.cl4ss_type')</label>
                 </div>
                 <div class="col-sm-7">
                     <select name="filter_cl4ss_type" class="form-control select2">
-                        <option value="0">All classes</option>
+                        <option value="0">@lang('general.all_class')</option>
                         @foreach($cl4ss_types as $cl4ss_type)
                             <option value="{!! $cl4ss_type->id !!}">{!! $cl4ss_type->cl4ss_type_name !!}</option>
                         @endforeach
@@ -69,7 +69,7 @@
         <div class="col-sm-6">
             <div class="form-group">
                 <div class="col-sm-5">
-                    <label>Filter by response teacher's name</label>
+                    <label>@lang('general.response_teacher')</label>
                 </div>
                 <div class="col-sm-7">
                     <input type="text" name="filter_teacher_name" class="form-control">
@@ -82,13 +82,13 @@
         <div class="col-sm-6">
             <div class="form-group">
                 <div class="col-sm-5">
-                    <label>Filter by class's state</label>
+                    <label>@lang('general.class_state')</label>
                 </div>
                 <div class="col-sm-7">
                     <select name="filter_cl4ss_state" class="form-control select2">
-                        <option value="0">All states</option>
-                        <option value="1">Deactive</option>
-                        <option value="2">Active</option>
+                        <option value="0">@lang('general.all_state')</option>
+                        <option value="1">@lang('general.deactived')</option>
+                        <option value="2">@lang('general.actived')</option>
                     </select>
                 </div>
             </div>
@@ -97,7 +97,7 @@
         <div class="col-sm-6">
             <div class="form-group">
                 <div class="col-sm-7 col-sm-offset-5">
-                    <button type="submit" class="btn btn-primary"><i class="fa fa-filter"></i> Filter</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-filter"></i> @lang('general.filter')</button>
                 </div>
             </div>
         </div>

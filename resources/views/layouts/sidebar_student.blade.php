@@ -11,12 +11,12 @@
                     @include('layouts.partials.sidebar_cate')
 
                     <li class="panel panel-default custom-dropdown">
-                        <a data-toggle="collapse" href="#class_layer"><b>Subject's result</b></a>
+                        <a data-toggle="collapse" href="#class_layer"><b>@lang('general.learn_result')</b></a>
                         <div id="class_layer" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="{!! route("student::subject::current") !!}" data-pjax>Current result</a></li>
-                                    <li><a href="{!! route("student::subject::all") !!}" data-pjax>All result</a></li>
+                                    <li><a href="{!! route("student::subject::current") !!}" data-pjax>@lang('general.current_result')</a></li>
+                                    <li><a href="{!! route("student::subject::all") !!}" data-pjax>@lang('general.all_result')</a></li>
                                 </ul>
                             </div>
                         </div>

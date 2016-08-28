@@ -27,7 +27,7 @@ class Cl4ssSubject extends Model
 		return $this->hasMany(Mark::class);
 	}
 
-	public function loadRelation(){
+	public function scopeLoadRelation(){
 		return $this->with([
 			'cl4ss' => function($q){
 				$q->loadRelation();

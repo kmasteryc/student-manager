@@ -17,6 +17,7 @@ class Kernel extends ConsoleKernel
 	protected $commands = [
 		Commands\Inspire::class,
 		Commands\ReSyncClass::class,
+		Commands\SetActiveClass::class,
 		Commands\Truncate::class,
 		
 		Commands\SeedAll::class,
@@ -30,6 +31,7 @@ class Kernel extends ConsoleKernel
 		Commands\SeedScholastic::class,
 		Commands\SeedSemester::class,
 		Commands\SeedCl4ssSubject::class,
+		Commands\SeedMark::class,
 	];
 
 	/**
