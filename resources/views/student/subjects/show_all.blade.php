@@ -16,7 +16,7 @@
                 @foreach($mark_types as $mark_type)
                     <th>{!! $mark_type->mark_type_name !!} ({!! $mark_type->mark_type_multiple !!})</th>
                 @endforeach
-                <th>Average</th>
+                {{--<th>Average</th>--}}
             </tr>
             </thead>
             <tbody>
@@ -28,23 +28,13 @@
                     <td>{!! $cl4ssSubject->subject->subject_name !!}</td>
                     <td>{!! $cl4ssSubject->teacher->full_name !!} - {!! $cl4ssSubject->teacher->id !!}</td>
                     @foreach($mark_types as $mark_type)
-                        <?php
-                        //                        $mark = $cl4ssSubject->marks->where('mark_type_id', $mark_type->id)->first();
-                        //                        dd($cl4ssSubject->marks);
-                        $mark = '';
-                        if ($cl4ssSubject->marks->count() > 0) {
-                            foreach ($cl4ssSubject->marks as $mark) {
-                                if ($mark->mark_type_id == $mark_type->id) {
-                                    $mark = $mark->mark_point;
-                                    break;
-                                }
-                            }
-                        }
-                        $mark = $mark?:'-';
-
-                        $average = Tool::average($cl4ssSubject->marks);
-                        ?>
-                        <td>{!! $mark !!}</td>
+                        <td>
+                            <?php
+                            $mark = $cl4ssSubject->marks->where('mark_type_id', $mark_type->id)->first();
+                            echo $mark === null ? '' : $mark->mark_point;
+                            $average = Tool::average($cl4ssSubject->marks);
+                            ?>
+                        </td>
                     @endforeach
                     <td>{!! $average !!}</td>
                 </tr>
