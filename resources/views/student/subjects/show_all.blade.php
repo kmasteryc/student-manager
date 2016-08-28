@@ -30,6 +30,7 @@
                     @foreach($mark_types as $mark_type)
                         <?php
                         $mark = $cl4ssSubject->marks->where('mark_type_id', $mark_type->id)->first();
+                        var_dump($mark);
                         $mark = !$mark ? '-' : $mark->mark_point;
                         $average = Tool::average($cl4ssSubject->marks);
                         ?>
