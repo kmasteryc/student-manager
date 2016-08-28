@@ -28,13 +28,12 @@
                     <td>{!! $cl4ssSubject->subject->subject_name !!}</td>
                     <td>{!! $cl4ssSubject->teacher->full_name !!} - {!! $cl4ssSubject->teacher->id !!}</td>
                     @foreach($mark_types as $mark_type)
-                        <td>
-                            <?php
-                            $mark = $cl4ssSubject->marks->where('mark_type_id', $mark_type->id)->first();
-                            echo $mark === null ? '' : $mark->mark_point;
-                            $average = Tool::average($cl4ssSubject->marks);
-                            ?>
-                        </td>
+                        <?php
+                        $mark = $cl4ssSubject->marks->where('mark_type_id', $mark_type->id)->first();
+                        $mark = $mark === null ? '' : $mark->mark_point;
+                        $average = Tool::average($cl4ssSubject->marks);
+                        ?>
+                        <td>{!! $mark !!}</td>
                     @endforeach
                     <td>{!! $average !!}</td>
                 </tr>
