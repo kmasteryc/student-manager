@@ -8,26 +8,11 @@
                         <?php echo e(csrf_field()); ?>
 
 
-
-                        <?php /*<div class="form-group<?php echo e($errors->has('email') ? ' has-error' : ''); ?>">*/ ?>
-                            <?php /*<label for="email" class="col-md-4 control-label">E-Mail Address</label>*/ ?>
-
-                            <?php /*<div class="col-md-6">*/ ?>
-                                <?php /*<input id="email" type="email" class="form-control" name="email" value="<?php echo e(old('email')); ?>">*/ ?>
-
-                                <?php /*<?php if($errors->has('email')): ?>*/ ?>
-                                    <?php /*<span class="help-block">*/ ?>
-                                        <?php /*<strong><?php echo e($errors->first('email')); ?></strong>*/ ?>
-                                    <?php /*</span>*/ ?>
-                                <?php /*<?php endif; ?>*/ ?>
-                            <?php /*</div>*/ ?>
-                        <?php /*</div>*/ ?>
-
                         <div class="form-group<?php echo e($errors->has('username') ? ' has-error' : ''); ?>">
                             <label for="username" class="col-md-4 control-label">Username</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="username" value="<?php echo e(old('username')); ?>">
+                                <input id="name" type="text" class="form-control" name="username" value="<?php echo e(request()->query('u')); ?>">
 
                                 <?php if($errors->has('username')): ?>
                                     <span class="help-block">
@@ -41,7 +26,7 @@
                             <label for="password" class="col-md-4 control-label">Password</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password">
+                                <input id="password" type="password" class="form-control" name="password" value="<?php echo request()->query('p'); ?>">
 
                                 <?php if($errors->has('password')): ?>
                                     <span class="help-block">

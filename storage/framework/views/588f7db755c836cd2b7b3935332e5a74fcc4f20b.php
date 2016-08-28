@@ -1,5 +1,5 @@
 <?php $__env->startSection('title'); ?>
-    You are teaching <?php echo $teachable_subjects->count(); ?> subjects in <?php echo $teaching_subjects->count(); ?> classes!
+    Subjects which you are teaching
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('body'); ?>

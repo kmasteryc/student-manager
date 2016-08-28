@@ -1,7 +1,7 @@
 @extends('layouts.page_content')
 
 @section('title')
-    You are teaching {!! $teachable_subjects->count() !!} subjects in {!! $teaching_subjects->count() !!} classes!
+    Subjects which you are teaching
 @endsection
 
 @section('body')

@@ -14,7 +14,7 @@
                     <div id="builded" class="panel-collapse collapse in">
                         <div class="panel-body">
                             <ul class="nav navbar-nav">
-                                <li><a href="#" data-pjax>admin/123456</a></li>
+                                <li><a href="/login?u=admin&p=123456">admin - 123456</a></li>
                             </ul>
                         </div>
                     </div>
@@ -25,7 +25,11 @@
                     <div id="building" class="panel-collapse collapse in">
                         <div class="panel-body">
                             <ul class="nav navbar-nav">
-                                <li><a href="#" data-pjax>teacher1/123456</a></li>
+                                {{--<li><a href="#">Username: teacher31,teacher11,teacher4,teacher32,teacher9,teacher28,teacher29</a></li>--}}
+                                <li><a href="/login?u=teacher31&p=123456">teacher31 - 123456</a></li>
+                                <li><a href="/login?u=teacher11&p=123456">teacher11 - 123456</a></li>
+                                <li><a href="/login?u=teacher4&p=123456">teacher4 - 123456</a></li>
+                                <li><a href="/login?u=teacher32&p=123456">teacher32 - 123456</a></li>
                             </ul>
                         </div>
                     </div>
@@ -36,7 +40,11 @@
                     <div id="building" class="panel-collapse collapse in">
                         <div class="panel-body">
                             <ul class="nav navbar-nav">
-                                <li><a href="#" data-pjax>student261/123456</a></li>
+                                {{--<li><a href="#">Username: student501,student504,student514,student523</a></li>--}}
+                                <li><a href="/login?u=student501&p=123456">student501 - 123456</a></li>
+                                <li><a href="/login?u=student504&p=123456">student504 - 123456</a></li>
+                                <li><a href="/login?u=student514&p=123456">student514 - 123456</a></li>
+                                <li><a href="/login?u=student523&p=123456">student523 - 123456</a></li>
                             </ul>
                         </div>
                     </div>
