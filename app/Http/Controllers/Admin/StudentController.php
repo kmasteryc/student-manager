@@ -1,53 +1,40 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
 
 use App\Http\Requests\Students\StoreRequest;
 use App\Http\Requests\Students\UpdateRequest;
 use App\Http\Requests\Students\DeleteRequest;
 
-use App\Models\ClassLayer\Cl4ss;
-use App\Models\ClassLayer\Cl4ssType;
-use App\Models\ClassLayer\Scholastic;
-use App\Models\ClassLayer\Grade;
-use App\Models\ClassLayer\Semester;
-
-use App\Models\UserLayer\Paren;
 use App\Models\UserLayer\Student;
 
 class StudentController extends Controller
 {
-
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
 	public function index()
 	{
-		$q_sesmester = request()->query('filter_semester');
-		$q_scholastic = request()->query('filter_scholastic');
-		$q_grade = request()->query('filter_grade');
-		$q_cl4ss_type = request()->query('filter_cl4ss_type');
-		$q_student_name = request()->query('filter_student_name');
+		$param['q_sesmester'] = request()->query('q_sesmester');
+		$param['q_scholastic'] = request()->query('q_scholastic');
+		$param['q_grade'] = request()->query('q_grade');
+		$param['q_cl4ss_type'] = request()->query('q_cl4ss_type');
+		$param['q_student_name'] = request()->query('q_student_name');
 
-		$students = Student::search($q_scholastic, $q_sesmester, $q_grade, $q_cl4ss_type, $q_student_name)
-			->with(['parents', 'cl4sses'=>function($q){
-				$q->loadRelation();
-			}])
-			->paginate(10);
-//		$students = Student::whereHas('cl4sses',function($q){})->count();
-//		dd($students);
-//		dd($students->count());
-		$students->setPath(request()->getUri());
+		$options = [
+			'paginate' => [
+				'url' => request()->getUri(),
+				'perpage' => 10,
+			],
+		];
+
+		$students = $this->repo('student')->search($param, $options);
 
 		return view('admin.students.index', [
-			'students'           => $students,
-			'scholastics' => Scholastic::all(),
-			'semesters'   => Semester::all(),
-			'grades'      => Grade::all(),
-			'cl4ss_types'     => Cl4ssType::all()
+			'students'    => $students,
+			'scholastics' => $this->repo('scholastic')->get(),
+			'semesters'   => $this->repo('semester')->get(),
+			'grades'      => $this->repo('grade')->get(),
+			'cl4ss_types' => $this->repo('cl4ss_type')->get(),
 		]);
 	}
 
@@ -58,12 +45,9 @@ class StudentController extends Controller
 	 */
 	public function create()
 	{
-		$parents = Paren::all();
-		$cl4sses = Cl4ss::loadRelation()->get();
-
 		return view('admin.students.create', [
-			'parents' => $parents,
-			'cl4sses' => $cl4sses,
+			'parents' => $this->repo('parent')->get(),
+			'cl4sses' => $this->repo('class')->get(),
 		]);
 	}
 
@@ -102,8 +86,8 @@ class StudentController extends Controller
 	public function edit(Student $student)
 	{
 		return view('admin.students.edit', [
-			'parents' => Paren::all(),
-			'cl4sses' => Cl4ss::loadRelation()->get(),
+			'parents' => $this->repo('parent')->get(),
+			'cl4sses' => $this->repo('class')->get(),
 			'student' => $student,
 		]);
 	}

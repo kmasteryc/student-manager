@@ -15,11 +15,20 @@ class Cl4ss extends Model
 	const STATE_ALL = 0;
 	const STATE_DEACTIVE = 1;
 	const STATE_ACTIVE = 2;
+
 	public $table = 'cl4sses';
+
 	public $fillable = [
 		'cl4ss_type_id', 'scholastic_id', 'semester_id', 'grade_id',
 		'parent_id', 'teacher_id',
 		'cl4ss_state',
+	];
+
+	public $with = [
+		'scholastic',
+		'grade', 'semester', 'cl4ssType',
+		'teacher', 'parent',
+		'students'
 	];
 
 	public $timestamps = false;
@@ -159,7 +168,7 @@ class Cl4ss extends Model
 
 		return trans('general.class') . " $grade $cl4ss_type, $semester $scholastic_from - $scholastic_to";
 	}
-
+/*
 	public function scopeSearch($q, $q_scholastic, $q_sesmester, $q_grade, $q_cl4ss_type, $q_teacher_name, $q_cl4ss_state)
 	{
 
@@ -201,7 +210,7 @@ class Cl4ss extends Model
 
 		return $q;
 	}
-
+*/
 	public function withState($state)
 	{
 		return $this->where('cl4ss_state', $state);

@@ -7,7 +7,7 @@
                     <label>Filter by scholastic</label>
                 </div>
                 <div class="col-sm-7">
-                    <select name="filter_scholastic" class="form-control select2">
+                    <select name="q_scholastic" class="form-control select2">
                         <option value="0">All scholastics</option>
                         @foreach($scholastics as $scholastic)
                             <option value="{!! $scholastic->id !!}">{!! $scholastic->scholastic_from.' - '.$scholastic->scholastic_to !!}</option>
@@ -22,7 +22,7 @@
                     <label>Filter by semester</label>
                 </div>
                 <div class="col-sm-7">
-                    <select name="filter_semester" class="form-control select2">
+                    <select name="q_semester" class="form-control select2">
                         <option value="0">All semesters</option>
                         @foreach($semesters as $semester)
                             <option value="{!! $semester->id !!}">{!! $semester->semester_name !!}</option>
@@ -37,7 +37,7 @@
                     <label>Filter by grade</label>
                 </div>
                 <div class="col-sm-7">
-                    <select name="filter_grade" class="form-control select2">
+                    <select name="q_grade" class="form-control select2">
                         <option value="0">All grades</option>
                         @foreach($grades as $grade)
                             <option value="{!! $grade->id !!}">{!! $grade->grade_name !!}</option>
@@ -56,7 +56,7 @@
                     <label>Filter by class</label>
                 </div>
                 <div class="col-sm-7">
-                    <select name="filter_cl4ss_type" class="form-control select2">
+                    <select name="q_cl4ss_type" class="form-control select2">
                         <option value="0">All classes</option>
                         @foreach($cl4ss_types as $cl4ss_type)
                             <option value="{!! $cl4ss_type->id !!}">{!! $cl4ss_type->cl4ss_type_name !!}</option>
@@ -72,7 +72,7 @@
                     <label>Filter by student's name</label>
                 </div>
                 <div class="col-sm-7">
-                    <input type="text" name="filter_student_name" class="form-control">
+                    <input type="text" name="q_student_name" class="form-control">
                 </div>
             </div>
 
@@ -87,19 +87,19 @@
 </form>
 
 <script>
-    @if(request()->query('filter_semester'))
-        $("select[name=filter_semester]").val({!! request()->query('filter_semester') !!}).trigger('change');
+    @if(request()->query('q_semester'))
+        $("select[name=q_semester]").val({!! request()->query('q_semester') !!}).trigger('change');
     @endif
-    @if(request()->query('filter_scholastic'))
-        $("select[name=filter_scholastic]").val({!! request()->query('filter_scholastic') !!}).trigger('change');
+    @if(request()->query('q_scholastic'))
+        $("select[name=q_scholastic]").val({!! request()->query('q_scholastic') !!}).trigger('change');
     @endif
-    @if(request()->query('filter_grade'))
-        $("select[name=filter_grade]").val({!! request()->query('filter_grade') !!}).trigger('change');
+    @if(request()->query('q_grade'))
+        $("select[name=q_grade]").val({!! request()->query('q_grade') !!}).trigger('change');
     @endif
-    @if(request()->query('filter_cl4ss_type'))
-        $("select[name=filter_cl4ss_type]").val({!! request()->query('filter_cl4ss_type') !!}).trigger('change');
+    @if(request()->query('q_cl4ss_type'))
+        $("select[name=q_cl4ss_type]").val({!! request()->query('q_cl4ss_type') !!}).trigger('change');
     @endif
-    @if(request()->query('filter_student_name'))
-        $("input[name=filter_student_name]").val("{!! request()->query('filter_student_name') !!}");
+    @if(request()->query('q_student_name'))
+        $("input[name=q_student_name]").val("{!! request()->query('q_student_name') !!}");
     @endif
 </script>

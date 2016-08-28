@@ -15,7 +15,7 @@ return [
 	'response_parent' => 'Hội trưởng hội phụ huynh',
 	'teacher' => 'Giáo viên',
 	'response_teacher' => 'Giáo viên chủ nhiệm',
-	'birthday' => 'Sinh nhật',
+	'birthday' => 'Ngày sinh',
 	'class' => 'Lớp',
 	'cl4ss' => 'Lớp',
 	'cl4ss_type' => 'Nhóm lớp',

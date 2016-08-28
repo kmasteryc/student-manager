@@ -163,6 +163,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\RepositoryProvider::class,
 
 	    Riari\Forum\ForumServiceProvider::class,
 	    Riari\Forum\Frontend\ForumFrontendServiceProvider::class,
@@ -212,7 +213,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-	    'Tool' => \App\Tool::class
+
+	    'Tool' => \App\Tool::class,
     ],
 
 ];
