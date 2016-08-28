@@ -29,9 +29,19 @@
                     <td>{!! $cl4ssSubject->teacher->full_name !!} - {!! $cl4ssSubject->teacher->id !!}</td>
                     @foreach($mark_types as $mark_type)
                         <?php
-                        $mark = $cl4ssSubject->marks->where('mark_type_id', $mark_type->id)->first();
-                        var_dump($mark);
-                        $mark = !$mark ? '-' : $mark->mark_point;
+                        //                        $mark = $cl4ssSubject->marks->where('mark_type_id', $mark_type->id)->first();
+                        //                        dd($cl4ssSubject->marks);
+                        $mark = '';
+                        if ($cl4ssSubject->marks->count() > 0) {
+                            foreach ($cl4ssSubject->marks as $mark) {
+                                if ($mark->mark_type_id == $mark_type->id) {
+                                    $mark = $mark->mark_point;
+                                    break;
+                                }
+                            }
+                        }
+                        $mark = $mark?:'-';
+
                         $average = Tool::average($cl4ssSubject->marks);
                         ?>
                         <td>{!! $mark !!}</td>
