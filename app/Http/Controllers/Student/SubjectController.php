@@ -39,7 +39,7 @@ class SubjectController extends Controller
 		$cl4sses = $this->_student->getCl4ssWithMarks()
 			->with(['cl4ssSubjects'=>function($q){
 				$q->with(['subject','teacher','marks'=>function($qq){
-					$qq->with('markType','student');
+					$qq->where('student_id', $this->_student->id)->with(['markType','student']);
 				}]);
 			}])
 			->loadRelation()

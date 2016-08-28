@@ -16,7 +16,7 @@
                 @foreach($mark_types as $mark_type)
                     <th>{!! $mark_type->mark_type_name !!} ({!! $mark_type->mark_type_multiple !!})</th>
                 @endforeach
-                {{--<th>Average</th>--}}
+                <th>Average</th>
             </tr>
             </thead>
             <tbody>
@@ -32,11 +32,11 @@
                             <?php
                             $mark = $cl4ssSubject->marks->where('mark_type_id', $mark_type->id)->first();
                             echo $mark === null ? '' : $mark->mark_point;
-//                            $average = Tool::average($cl4ssSubject->marks->where('student_id',$student->id));
+                            $average = Tool::average($cl4ssSubject->marks);
                             ?>
                         </td>
                     @endforeach
-{{--                    <td>{!! $average !!}</td>--}}
+                    <td>{!! $average !!}</td>
                 </tr>
 
             @endforeach
